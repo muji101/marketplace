@@ -3,200 +3,9 @@
 @section('title', 'Chat')
     
 @section('content')
-    <!-- BEGIN: Top Bar -->
-    <div class="top-bar">
-        <!-- BEGIN: Breadcrumb -->
-        <div class="-intro-x breadcrumb mr-auto hidden sm:flex"> <a href="">Application</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Dashboard</a> </div>
-        <!-- END: Breadcrumb -->
-        <!-- BEGIN: Search -->
-        <div class="intro-x relative mr-3 sm:mr-6">
-            <div class="search hidden sm:block">
-                <input type="text" class="search__input form-control border-transparent placeholder-theme-13" placeholder="Search...">
-                <i data-feather="search" class="search__icon dark:text-gray-300"></i> 
-            </div>
-            <a class="notification sm:hidden" href=""> <i data-feather="search" class="notification__icon dark:text-gray-300"></i> </a>
-            <div class="search-result">
-                <div class="search-result__content">
-                    <div class="search-result__content__title">Pages</div>
-                    <div class="mb-5">
-                        <a href="" class="flex items-center">
-                            <div class="w-8 h-8 bg-theme-18 text-theme-9 flex items-center justify-center rounded-full"> <i class="w-4 h-4" data-feather="inbox"></i> </div>
-                            <div class="ml-3">Mail Settings</div>
-                        </a>
-                        <a href="" class="flex items-center mt-2">
-                            <div class="w-8 h-8 bg-theme-17 text-theme-11 flex items-center justify-center rounded-full"> <i class="w-4 h-4" data-feather="users"></i> </div>
-                            <div class="ml-3">Users & Permissions</div>
-                        </a>
-                        <a href="" class="flex items-center mt-2">
-                            <div class="w-8 h-8 bg-theme-14 text-theme-10 flex items-center justify-center rounded-full"> <i class="w-4 h-4" data-feather="credit-card"></i> </div>
-                            <div class="ml-3">Transactions Report</div>
-                        </a>
-                    </div>
-                    <div class="search-result__content__title">Users</div>
-                    <div class="mb-5">
-                        <a href="" class="flex items-center mt-2">
-                            <div class="w-8 h-8 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-8.jpg">
-                            </div>
-                            <div class="ml-3">Denzel Washington</div>
-                            <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">denzelwashington@left4code.com</div>
-                        </a>
-                        <a href="" class="flex items-center mt-2">
-                            <div class="w-8 h-8 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-7.jpg">
-                            </div>
-                            <div class="ml-3">Angelina Jolie</div>
-                            <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">angelinajolie@left4code.com</div>
-                        </a>
-                        <a href="" class="flex items-center mt-2">
-                            <div class="w-8 h-8 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-10.jpg">
-                            </div>
-                            <div class="ml-3">Leonardo DiCaprio</div>
-                            <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">leonardodicaprio@left4code.com</div>
-                        </a>
-                        <a href="" class="flex items-center mt-2">
-                            <div class="w-8 h-8 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-15.jpg">
-                            </div>
-                            <div class="ml-3">Al Pacino</div>
-                            <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">alpacino@left4code.com</div>
-                        </a>
-                    </div>
-                    <div class="search-result__content__title">Products</div>
-                    <a href="" class="flex items-center mt-2">
-                        <div class="w-8 h-8 image-fit">
-                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/preview-3.jpg">
-                        </div>
-                        <div class="ml-3">Oppo Find X2 Pro</div>
-                        <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">Smartphone &amp; Tablet</div>
-                    </a>
-                    <a href="" class="flex items-center mt-2">
-                        <div class="w-8 h-8 image-fit">
-                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/preview-9.jpg">
-                        </div>
-                        <div class="ml-3">Oppo Find X2 Pro</div>
-                        <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">Smartphone &amp; Tablet</div>
-                    </a>
-                    <a href="" class="flex items-center mt-2">
-                        <div class="w-8 h-8 image-fit">
-                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/preview-7.jpg">
-                        </div>
-                        <div class="ml-3">Oppo Find X2 Pro</div>
-                        <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">Smartphone &amp; Tablet</div>
-                    </a>
-                    <a href="" class="flex items-center mt-2">
-                        <div class="w-8 h-8 image-fit">
-                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/preview-8.jpg">
-                        </div>
-                        <div class="ml-3">Sony Master Series A9G</div>
-                        <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">Electronic</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- END: Search -->
-        <!-- BEGIN: Notifications -->
-        <div class="intro-x dropdown mr-auto sm:mr-6">
-            <div class="dropdown-toggle notification notification--bullet cursor-pointer" role="button" aria-expanded="false"> <i data-feather="bell" class="notification__icon dark:text-gray-300"></i> </div>
-            <div class="notification-content pt-2 dropdown-menu">
-                <div class="notification-content__box dropdown-menu__content box dark:bg-dark-6">
-                    <div class="notification-content__title">Notifications</div>
-                    <div class="cursor-pointer relative flex items-center ">
-                        <div class="w-12 h-12 flex-none image-fit mr-1">
-                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-8.jpg">
-                            <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
-                        </div>
-                        <div class="ml-2 overflow-hidden">
-                            <div class="flex items-center">
-                                <a href="javascript:;" class="font-medium truncate mr-5">Denzel Washington</a> 
-                                <div class="text-xs text-gray-500 ml-auto whitespace-nowrap">03:20 PM</div>
-                            </div>
-                            <div class="w-full truncate text-gray-600 mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
-                        </div>
-                    </div>
-                    <div class="cursor-pointer relative flex items-center mt-5">
-                        <div class="w-12 h-12 flex-none image-fit mr-1">
-                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-7.jpg">
-                            <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
-                        </div>
-                        <div class="ml-2 overflow-hidden">
-                            <div class="flex items-center">
-                                <a href="javascript:;" class="font-medium truncate mr-5">Angelina Jolie</a> 
-                                <div class="text-xs text-gray-500 ml-auto whitespace-nowrap">05:09 AM</div>
-                            </div>
-                            <div class="w-full truncate text-gray-600 mt-0.5">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 20</div>
-                        </div>
-                    </div>
-                    <div class="cursor-pointer relative flex items-center mt-5">
-                        <div class="w-12 h-12 flex-none image-fit mr-1">
-                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-10.jpg">
-                            <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
-                        </div>
-                        <div class="ml-2 overflow-hidden">
-                            <div class="flex items-center">
-                                <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a> 
-                                <div class="text-xs text-gray-500 ml-auto whitespace-nowrap">06:05 AM</div>
-                            </div>
-                            <div class="w-full truncate text-gray-600 mt-0.5">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomi</div>
-                        </div>
-                    </div>
-                    <div class="cursor-pointer relative flex items-center mt-5">
-                        <div class="w-12 h-12 flex-none image-fit mr-1">
-                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-15.jpg">
-                            <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
-                        </div>
-                        <div class="ml-2 overflow-hidden">
-                            <div class="flex items-center">
-                                <a href="javascript:;" class="font-medium truncate mr-5">Al Pacino</a> 
-                                <div class="text-xs text-gray-500 ml-auto whitespace-nowrap">01:10 PM</div>
-                            </div>
-                            <div class="w-full truncate text-gray-600 mt-0.5">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 20</div>
-                        </div>
-                    </div>
-                    <div class="cursor-pointer relative flex items-center mt-5">
-                        <div class="w-12 h-12 flex-none image-fit mr-1">
-                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-14.jpg">
-                            <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
-                        </div>
-                        <div class="ml-2 overflow-hidden">
-                            <div class="flex items-center">
-                                <a href="javascript:;" class="font-medium truncate mr-5">Angelina Jolie</a> 
-                                <div class="text-xs text-gray-500 ml-auto whitespace-nowrap">05:09 AM</div>
-                            </div>
-                            <div class="w-full truncate text-gray-600 mt-0.5">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomi</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END: Notifications -->
-        <!-- BEGIN: Account Menu -->
-        <div class="intro-x dropdown w-8 h-8">
-            <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false">
-                <img alt="Rubick Tailwind HTML Admin Template" src="source/dist/images/profile-1.jpg">
-            </div>
-            <div class="dropdown-menu w-56">
-                <div class="dropdown-menu__content box bg-theme-26 dark:bg-dark-6 text-white">
-                    <div class="p-4 border-b border-theme-27 dark:border-dark-3">
-                        <div class="font-medium">Denzel Washington</div>
-                        <div class="text-xs text-theme-28 mt-0.5 dark:text-gray-600">Frontend Engineer</div>
-                    </div>
-                    <div class="p-2">
-                        <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="user" class="w-4 h-4 mr-2"></i> Profile </a>
-                        <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="edit" class="w-4 h-4 mr-2"></i> Add Account </a>
-                        <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="lock" class="w-4 h-4 mr-2"></i> Reset Password </a>
-                        <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="help-circle" class="w-4 h-4 mr-2"></i> Help </a>
-                    </div>
-                    <div class="p-2 border-t border-theme-27 dark:border-dark-3">
-                        <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="toggle-right" class="w-4 h-4 mr-2"></i> Logout </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END: Account Menu -->
-    </div>
-    <!-- END: Top Bar -->
+
+@include('includes.back.topbar')
+
     <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
         <h2 class="text-lg font-medium mr-auto">
             Chat
@@ -236,70 +45,70 @@
                                 <div class="flex mt-5">
                                     <a href="" class="w-10 mr-4 cursor-pointer">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-6.jpg">
+                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-6.jpg">
                                             <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                         </div>
                                         <div class="text-xs text-gray-600 truncate text-center mt-2">Leonardo DiCaprio</div>
                                     </a>
                                     <a href="" class="w-10 mr-4 cursor-pointer">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-3.jpg">
+                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-3.jpg">
                                             <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                         </div>
                                         <div class="text-xs text-gray-600 truncate text-center mt-2">Brad Pitt</div>
                                     </a>
                                     <a href="" class="w-10 mr-4 cursor-pointer">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-10.jpg">
+                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-10.jpg">
                                             <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                         </div>
                                         <div class="text-xs text-gray-600 truncate text-center mt-2">Angelina Jolie</div>
                                     </a>
                                     <a href="" class="w-10 mr-4 cursor-pointer">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-10.jpg">
+                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-10.jpg">
                                             <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                         </div>
                                         <div class="text-xs text-gray-600 truncate text-center mt-2">Kevin Spacey</div>
                                     </a>
                                     <a href="" class="w-10 mr-4 cursor-pointer">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-15.jpg">
+                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-15.jpg">
                                             <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                         </div>
                                         <div class="text-xs text-gray-600 truncate text-center mt-2">John Travolta</div>
                                     </a>
                                     <a href="" class="w-10 mr-4 cursor-pointer">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-1.jpg">
+                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-1.jpg">
                                             <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                         </div>
                                         <div class="text-xs text-gray-600 truncate text-center mt-2">Sylvester Stallone</div>
                                     </a>
                                     <a href="" class="w-10 mr-4 cursor-pointer">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-13.jpg">
+                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-13.jpg">
                                             <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                         </div>
                                         <div class="text-xs text-gray-600 truncate text-center mt-2">Johnny Depp</div>
                                     </a>
                                     <a href="" class="w-10 mr-4 cursor-pointer">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-5.jpg">
+                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-5.jpg">
                                             <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                         </div>
                                         <div class="text-xs text-gray-600 truncate text-center mt-2">Robert De Niro</div>
                                     </a>
                                     <a href="" class="w-10 mr-4 cursor-pointer">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-11.jpg">
+                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-11.jpg">
                                             <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                         </div>
                                         <div class="text-xs text-gray-600 truncate text-center mt-2">Brad Pitt</div>
                                     </a>
                                     <a href="" class="w-10 mr-4 cursor-pointer">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-3.jpg">
+                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-3.jpg">
                                             <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                         </div>
                                         <div class="text-xs text-gray-600 truncate text-center mt-2">Brad Pitt</div>
@@ -311,7 +120,7 @@
                     <div class="chat__chat-list overflow-y-auto scrollbar-hidden pr-1 pt-1 mt-4">
                         <div class="intro-x cursor-pointer box relative flex items-center p-5 ">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-6.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-6.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -324,7 +133,7 @@
                         </div>
                         <div class="intro-x cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-3.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-3.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -337,7 +146,7 @@
                         </div>
                         <div class="intro-x cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-10.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-10.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -351,7 +160,7 @@
                         </div>
                         <div class="intro-x cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-10.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-10.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -365,7 +174,7 @@
                         </div>
                         <div class="intro-x cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-15.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-15.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -379,7 +188,7 @@
                         </div>
                         <div class="intro-x cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-1.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-1.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -392,7 +201,7 @@
                         </div>
                         <div class="intro-x cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-13.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-13.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -406,7 +215,7 @@
                         </div>
                         <div class="intro-x cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-5.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-5.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -420,7 +229,7 @@
                         </div>
                         <div class="intro-x cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-11.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-11.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -434,7 +243,7 @@
                         </div>
                         <div class="intro-x cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-3.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-3.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -462,7 +271,7 @@
                         <div class="mt-4 text-gray-600">A</div>
                         <div class="cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-6.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-6.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -481,7 +290,7 @@
                         </div>
                         <div class="cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-3.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-3.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -501,7 +310,7 @@
                         <div class="mt-4 text-gray-600">B</div>
                         <div class="cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-10.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-10.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -520,7 +329,7 @@
                         </div>
                         <div class="cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-10.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-10.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -539,7 +348,7 @@
                         </div>
                         <div class="cursor-pointer box relative flex items-center p-5 mt-5">
                             <div class="w-12 h-12 flex-none image-fit mr-1">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-15.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-15.jpg">
                                 <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                             </div>
                             <div class="ml-2 overflow-hidden">
@@ -562,7 +371,7 @@
                     <div class="pr-1">
                         <div class="box px-5 py-10 mt-5">
                             <div class="w-20 h-20 flex-none image-fit rounded-full overflow-hidden mx-auto">
-                                <img alt="Rubick Tailwind HTML Admin Template" src="source/dist/images/profile-6.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" src="/source/dist/images/profile-6.jpg">
                             </div>
                             <div class="text-center mt-3">
                                 <div class="font-medium text-lg">Leonardo DiCaprio</div>
@@ -612,7 +421,7 @@
                     <div class="flex flex-col sm:flex-row border-b border-gray-200 dark:border-dark-5 px-5 py-4">
                         <div class="flex items-center">
                             <div class="w-10 h-10 sm:w-12 sm:h-12 flex-none image-fit relative">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-6.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-6.jpg">
                             </div>
                             <div class="ml-3 mr-auto">
                                 <div class="font-medium text-base">Leonardo DiCaprio</div>
@@ -636,7 +445,7 @@
                     <div class="overflow-y-scroll scrollbar-hidden px-5 pt-5 flex-1">
                         <div class="chat__box__text-box flex items-end float-left mb-4">
                             <div class="w-10 h-10 hidden sm:block flex-none image-fit relative mr-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-6.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-6.jpg">
                             </div>
                             <div class="bg-gray-200 dark:bg-dark-5 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-r-md rounded-t-md">
                                 Lorem ipsum sit amen dolor, lorem ipsum sit amen dolor 
@@ -668,7 +477,7 @@
                                 <div class="mt-1 text-xs text-theme-21">1 mins ago</div>
                             </div>
                             <div class="w-10 h-10 hidden sm:block flex-none image-fit relative ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-3.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-3.jpg">
                             </div>
                         </div>
                         <div class="clear-both"></div>
@@ -687,14 +496,14 @@
                                 <div class="mt-1 text-xs text-theme-21">59 secs ago</div>
                             </div>
                             <div class="w-10 h-10 hidden sm:block flex-none image-fit relative ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-3.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-3.jpg">
                             </div>
                         </div>
                         <div class="clear-both"></div>
                         <div class="text-gray-500 dark:text-gray-600 text-xs text-center mb-10 mt-5">12 June 2020</div>
                         <div class="chat__box__text-box flex items-end float-left mb-4">
                             <div class="w-10 h-10 hidden sm:block flex-none image-fit relative mr-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-6.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-6.jpg">
                             </div>
                             <div class="bg-gray-200 dark:bg-dark-5 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-r-md rounded-t-md">
                                 Lorem ipsum sit amen dolor, lorem ipsum sit amen dolor 
@@ -726,13 +535,13 @@
                                 <div class="mt-1 text-xs text-theme-21">1 secs ago</div>
                             </div>
                             <div class="w-10 h-10 hidden sm:block flex-none image-fit relative ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-3.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-3.jpg">
                             </div>
                         </div>
                         <div class="clear-both"></div>
                         <div class="chat__box__text-box flex items-end float-left mb-4">
                             <div class="w-10 h-10 hidden sm:block flex-none image-fit relative mr-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="source/dist/images/profile-6.jpg">
+                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/source/dist/images/profile-6.jpg">
                             </div>
                             <div class="bg-gray-200 dark:bg-dark-5 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-r-md rounded-t-md">
                                 Leonardo DiCaprio is typing 
@@ -2170,7 +1979,7 @@
                 <div class="h-full flex items-center">
                     <div class="mx-auto text-center">
                         <div class="w-16 h-16 flex-none image-fit rounded-full overflow-hidden mx-auto">
-                            <img alt="Rubick Tailwind HTML Admin Template" src="source/dist/images/profile-6.jpg">
+                            <img alt="Rubick Tailwind HTML Admin Template" src="/source/dist/images/profile-6.jpg">
                         </div>
                         <div class="mt-3">
                             <div class="font-medium">Hey, Leonardo DiCaprio!</div>

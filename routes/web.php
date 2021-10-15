@@ -72,8 +72,32 @@ Route::get('/seller', function () {
     return view('pages.seller.index');
 });
 
-Route::get('/chat', function () {
-    return view('pages.seller.chat');
+Route::get('/seller/products', function () {
+    return view('pages.seller.product.index');
+});
+
+Route::get('/seller/product-create', function () {
+    return view('pages.seller.product.create');
+});
+
+Route::get('/seller/discutions', function () {
+    return view('pages.seller.discutions');
+});
+
+Route::get('/seller/reviews', function () {
+    return view('pages.seller.reviews');
+});
+
+Route::get('/sell', function () {
+    return view('layouts.sell');
+});
+
+Route::get('/seller/sales', function () {
+    return view('pages.seller.sales');
+});
+
+Route::get('/seller/chats', function () {
+    return view('pages.seller.chats');
 });
 
 

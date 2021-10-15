@@ -3,13 +3,13 @@
 @push('content')
 <div class="mx-4 h-auto p-4 border-2 rounded-lg">
     <!-- Tabs -->
-        <ul id="tabs" class="inline-flex w-full px-1 pt-2 justify-between border-b-2">
+        <ul id="tabs" class="inline-flex w-full px-1 pt-2 border-b-2">
             <li class="px-4 py-2 -mb-px font-semibold text-gray-800 border-b-2 border-green-400 rounded-t opacity-50"><a id="default-tab" href="#first">Biodata Diri</a></li>
             <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#second">Daftar Alamat</a></li>
-            <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#third">Pembayaran</a></li>
+            {{-- <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#third">Pembayaran</a></li>
             <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#fourth">Rekening Bank</a></li>
             <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#five">Notifikasi</a></li>
-            <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#six">Keamanan</a></li>
+            <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#six">Keamanan</a></li> --}}
         </ul>
 
     <!-- Tab Contents -->
@@ -83,7 +83,7 @@
 
                 </div>
             </div>
-            <div id="third" class="hidden p-4">
+            {{-- <div id="third" class="hidden p-4">
                 Third tab
             </div>
             <div id="fourth" class="hidden p-4">
@@ -94,7 +94,7 @@
             </div>
             <div id="six" class="hidden p-4">
                 Six tab
-            </div>
+            </div> --}}
         </div>
 </div>
 @endpush

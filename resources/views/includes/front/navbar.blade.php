@@ -64,9 +64,9 @@
 
     <div class="sticky top-0 z-50 bg-white mx-auto px-16 my-4  shadow-md">
         <div class="grid grid-cols-12 py-4 items-center">
-        <div class="col-span-2">
+        <div class="col-span-2 mx-auto">
             <a href="/">
-            <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg" alt="">
+                <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg" alt="">
             </a>
         </div>
         <div class="col-span-1 text-gray-500">
@@ -173,13 +173,13 @@
                 <a><i class="fas fa-envelope"></i></a>
                 <div class="dropdown-menu absolute hidden w-60 text-gray-700  h-auto flex pt-4">
                     <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
-                        <ul class="text-xs font-normal">
-                            <li class="hover:bg-gray-200 rounded px-2 py-1">Chat</li>
-                            <li class="hover:bg-gray-200 rounded px-2 py-1">Diskusi</li>
-                            <li class="hover:bg-gray-200 rounded px-2 py-1">Ulasan</li>
-                            <li class="hover:bg-gray-200 rounded px-2 py-1">Pesan bantuan</li>
-                            <li class="hover:bg-gray-200 rounded px-2 py-1">Pesan dikomplain</li>
-                        </ul>
+                        <div class="flex flex-col text-xs font-normal">
+                            <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Chat</a>
+                            <a href="/profile/discution" class="hover:bg-gray-200 rounded px-2 py-1">Diskusi</a>
+                            <a href="/profile/review" class="hover:bg-gray-200 rounded px-2 py-1">Ulasan</a>
+                            <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Pesan bantuan</a>
+                            <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Pesan dikomplain</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -204,7 +204,7 @@
                             <h1 class="font-bold">Mahirpedia seller</h1>
                             <p  class="text-xs py-2">Pantau pesanan yang masuk dan cek perkembangan tokomu secara rutin di satu tempat.</p>
                             <div class="text-center bg-green-400 rounded-md py-1">
-                                <a href="/seller" class=" text-white font-bold text-sm">Cek Mahirpedia Seller</a>
+                                <a href="/seller" target="_blank" class=" text-white font-bold text-sm">Cek Mahirpedia Seller</a>
                             </div>
                         </div>
                     </div>
@@ -213,11 +213,39 @@
                 
             {{-- <h6 class="px-4 py-1 font-bold rounded-full bg-green-400 text-gray-50 text-sm">Buka toko</h6> --}}
         </div>
-        <div class="col-span-1">
-            <a href="/profile" class="flex justify-center items-center">
+        <div class="col-span-1 ml-2">
+            {{-- <a href="/profile" class="flex justify-center items-center">
                 <img class="h-8 rounded-full" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt="">
                 <h6 class="pl-2 text-gray-500 text-sm">Muji kuwat</h6>
-            </a>
+            </a> --}}
+            <div class="dropdown inline py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer text-base tracking-wide">
+                <div class="flex items-center space-x-2">
+                    <img class="h-6 rounded-full" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt=""> 
+                    <p class="text-gray-500 text-sm">Muji kuwat</p>
+                </div>
+                <div class="dropdown-menu absolute hidden w-60 text-gray-700  h-auto flex pt-4">
+                    <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
+                        <a href="/store" class="border-b-2 flex items-center space-x-2">
+                            <img class="w-12 rounded-full p-2" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt="">
+                            <div>
+                                <p class="font-bold text-sm">Muji kuwat</p>
+                                <p class="font-bold text-xs">Regular merchant</p>
+                            </div>
+                        </a>
+                        <div class="py-2 space-y-1 text-center">
+                            <div class="py-1 bg-gray-100 rounded">
+                                <a href="/profile/list-transactions" class="py-2 px-4 text-sm"><i  class="fas fa-bag"></i>Pembelian</a>
+                            </div>
+                            <div class="py-1 bg-gray-100 rounded">
+                                <a href="/profile" class="py-2 px-4 text-sm"><i  class="fas fa-settings"></i>Pengaturan</a>
+                            </div>
+                            <div class="text-center bg-green-400 rounded-md py-1">
+                                <a href="/seller" class=" text-white font-bold text-sm">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         </div>
     </div>

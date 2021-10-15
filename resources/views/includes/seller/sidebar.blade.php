@@ -42,13 +42,13 @@
             </a>
         </li>
         <li>
-            <a href="/seller/chats" class="side-menu">
+            <a href="/seller/chat" class="side-menu">
                 <div class="side-menu__icon"> <i data-feather="message-square"></i> </div>
                 <div class="side-menu__title"> Chat </div>
             </a>
         </li>
         <li>
-            <a href="/seller/discutions" class="side-menu">
+            <a href="/seller/discution" class="side-menu">
                 <div class="side-menu__icon"> <i data-feather="feather"></i> </div>
                 <div class="side-menu__title"> Diskusi </div>
             </a>
@@ -63,7 +63,7 @@
             </a>
             <ul class="side-menu__sub-open">
                 <li>
-                    <a href="/seller/products" class="side-menu side-menu--active">
+                    <a href="/seller/product" class="side-menu side-menu--active">
                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                         <div class="side-menu__title"> Daftar produk</div>
                     </a>
@@ -83,7 +83,7 @@
             </a>
         </li>
         <li>
-            <a href="/seller/reviews" class="side-menu">
+            <a href="/seller/review" class="side-menu">
                 <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                 <div class="side-menu__title"> Kata Pembeli </div>
             </a>
