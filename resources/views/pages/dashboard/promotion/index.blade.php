@@ -39,7 +39,8 @@
                 <tr>
                     <th class="whitespace-nowrap">IMAGES</th>
                     <th class="whitespace-nowrap">PROMOTION NAME</th>
-                    <th class="text-center whitespace-nowrap">STOCK</th>
+                    <th class="text-center whitespace-nowrap">CATEGORY</th>
+                    <th class="text-center whitespace-nowrap">TYPE</th>
                     <th class="text-center whitespace-nowrap">STATUS</th>
                     <th class="text-center whitespace-nowrap">ACTIONS</th>
                 </tr>
@@ -49,13 +50,7 @@
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-14.jpg" title="Uploaded at 20 April 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-8.jpg" title="Uploaded at 20 April 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-9.jpg" title="Uploaded at 20 April 2022">
+                                <img data-action="zoom" alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-14.jpg" title="Uploaded at 20 April 2022">
                             </div>
                         </div>
                     </td>
@@ -63,7 +58,8 @@
                         <a href="" class="font-medium whitespace-nowrap">Nike Air Max 270</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
                     </td>
-                    <td class="text-center">177</td>
+                    <td class="text-center">Elektronik</td>
+                    <td class="text-center">slider</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
                     </td>
@@ -78,13 +74,7 @@
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-7.jpg" title="Uploaded at 25 May 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-5.jpg" title="Uploaded at 25 May 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-15.jpg" title="Uploaded at 25 May 2021">
+                                <img data-action="zoom" alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-7.jpg" title="Uploaded at 25 May 2021">
                             </div>
                         </div>
                     </td>
@@ -92,7 +82,8 @@
                         <a href="" class="font-medium whitespace-nowrap">Oppo Find X2 Pro</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet</div>
                     </td>
-                    <td class="text-center">72</td>
+                    <td class="text-center">Elektronik</td>
+                    <td class="text-center">slider</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                     </td>
@@ -107,13 +98,7 @@
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-15.jpg" title="Uploaded at 6 September 2020">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-13.jpg" title="Uploaded at 6 September 2020">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-7.jpg" title="Uploaded at 6 September 2020">
+                                <img data-action="zoom" alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-15.jpg" title="Uploaded at 6 September 2020">
                             </div>
                         </div>
                     </td>
@@ -121,7 +106,8 @@
                         <a href="" class="font-medium whitespace-nowrap">Samsung Q90 QLED TV</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
                     </td>
-                    <td class="text-center">64</td>
+                    <td class="text-center">Elektronik</td>
+                    <td class="text-center">slider</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
                     </td>
@@ -136,13 +122,7 @@
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-10.jpg" title="Uploaded at 30 December 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-5.jpg" title="Uploaded at 30 December 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-6.jpg" title="Uploaded at 30 December 2021">
+                                <img data-action="zoom" alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-10.jpg" title="Uploaded at 30 December 2021">
                             </div>
                         </div>
                     </td>
@@ -150,7 +130,8 @@
                         <a href="" class="font-medium whitespace-nowrap">Dell XPS 13</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">PC &amp; Laptop</div>
                     </td>
-                    <td class="text-center">82</td>
+                    <td class="text-center">Elektronik</td>
+                    <td class="text-center">topAdsBanner</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                     </td>
@@ -165,13 +146,7 @@
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-3.jpg" title="Uploaded at 2 March 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-10.jpg" title="Uploaded at 2 March 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-1.jpg" title="Uploaded at 2 March 2022">
+                                <img data-action="zoom" alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-3.jpg" title="Uploaded at 2 March 2022">
                             </div>
                         </div>
                     </td>
@@ -179,7 +154,8 @@
                         <a href="" class="font-medium whitespace-nowrap">Nikon Z6</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Photography</div>
                     </td>
-                    <td class="text-center">50</td>
+                    <td class="text-center">Elektronik</td>
+                    <td class="text-center">specialBrand</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
                     </td>
@@ -194,13 +170,7 @@
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-14.jpg" title="Uploaded at 19 June 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-7.jpg" title="Uploaded at 19 June 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-9.jpg" title="Uploaded at 19 June 2022">
+                                <img data-action="zoom" alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-14.jpg" title="Uploaded at 19 June 2022">
                             </div>
                         </div>
                     </td>
@@ -208,7 +178,8 @@
                         <a href="" class="font-medium whitespace-nowrap">Sony A7 III</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Photography</div>
                     </td>
-                    <td class="text-center">50</td>
+                    <td class="text-center">Elektronik</td>
+                    <td class="text-center">specialBrand</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                     </td>
@@ -223,13 +194,7 @@
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-10.jpg" title="Uploaded at 13 February 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-13.jpg" title="Uploaded at 13 February 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-13.jpg" title="Uploaded at 13 February 2021">
+                                <img data-action="zoom" alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-10.jpg" title="Uploaded at 13 February 2021">
                             </div>
                         </div>
                     </td>
@@ -237,7 +202,8 @@
                         <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
                     </td>
-                    <td class="text-center">116</td>
+                    <td class="text-center">Elektronik</td>
+                    <td class="text-center">specialBrand</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                     </td>
@@ -252,13 +218,7 @@
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-8.jpg" title="Uploaded at 13 July 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-12.jpg" title="Uploaded at 13 July 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-14.jpg" title="Uploaded at 13 July 2022">
+                                <img data-action="zoom" alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-8.jpg" title="Uploaded at 13 July 2022">
                             </div>
                         </div>
                     </td>
@@ -266,7 +226,8 @@
                         <a href="" class="font-medium whitespace-nowrap">Nike Tanjun</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
                     </td>
-                    <td class="text-center">55</td>
+                    <td class="text-center">Elektronik</td>
+                    <td class="text-center">officialAds</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                     </td>
@@ -281,13 +242,7 @@
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-15.jpg" title="Uploaded at 24 September 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-13.jpg" title="Uploaded at 24 September 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-12.jpg" title="Uploaded at 24 September 2022">
+                                <img data-action="zoom" alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-15.jpg" title="Uploaded at 24 September 2022">
                             </div>
                         </div>
                     </td>
@@ -295,7 +250,8 @@
                         <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
                     </td>
-                    <td class="text-center">50</td>
+                    <td class="text-center">Elektronik</td>
+                    <td class="text-center">officialAds</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                     </td>

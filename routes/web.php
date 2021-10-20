@@ -162,5 +162,8 @@ Route::get('/admin/promotion-create', function () {
 });
 
 Route::get('/admin/transactions', function () {
-    return view('pages.dashboard.product.index');
+    return view('pages.dashboard.transaction.index');
+});
+Route::get('/admin/transaction-detail', function () {
+    return view('pages.dashboard.transaction.detail');
 });
