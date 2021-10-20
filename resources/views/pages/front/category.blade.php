@@ -189,10 +189,10 @@
                 <h1 class="text-xl font-bold text-left">Produk menarik lainnya</h1>
             </div>
             <div class="flex space-x-2">
-                <button class="text-left pl-2 pr-6 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-green-600 to-green-400 text-md">Rekomendasi Untukmu</button>
-                <button class="text-left pl-2 pr-6 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-green-600 to-green-400 text-md">Lampu LED</button>
-                <button class="text-left pl-2 pr-6 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-green-600 to-green-400 text-md">Wireless Buds</button>
-                <button class="text-left pl-2 pr-6 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-green-600 to-green-400 text-md">Microwave</button>
+                <button class="text-left pl-2 pr-6 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-red-600 to-red-400 text-md">Rekomendasi Untukmu</button>
+                <button class="text-left pl-2 pr-6 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-red-600 to-red-400 text-md">Lampu LED</button>
+                <button class="text-left pl-2 pr-6 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-red-600 to-red-400 text-md">Wireless Buds</button>
+                <button class="text-left pl-2 pr-6 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-red-600 to-red-400 text-md">Microwave</button>
             </div>
             <div class="py-8 grid grid-cols-6 gap-4">
                 <div class="shadow-lg rounded-lg text-left ">
@@ -286,13 +286,13 @@
         </div>
         <!-- Tabs -->
         <div id="tabs" class="inline-flex w-full py-4  space-x-2">
-            <div class="text-left pl-2 pt-2 pb-4 pr-12  rounded-lg text-white font-bold bg-gradient-to-r from-green-600 to-green-400 text-md">
+            <div class="text-left pl-2 pt-2 pb-4 pr-12  rounded-lg text-white font-bold bg-gradient-to-r from-red-600 to-red-400 text-md">
                 <a id="default-tab" href="#first">Rekomendasi Untukmu</a>
             </div>
-            <div class="text-left pl-2 pt-2 pb-4 pr-12  rounded-lg text-white font-bold bg-gradient-to-r from-green-600 to-green-400 text-md">
+            <div class="text-left pl-2 pt-2 pb-4 pr-12  rounded-lg text-white font-bold bg-gradient-to-r from-red-600 to-red-400 text-md">
                 <a href="#second">Lampu LED</a>
             </div>
-            <div class="text-left pl-2 pt-2 pb-4 pr-12  rounded-lg text-white font-bold bg-gradient-to-r from-green-600 to-green-400 text-md">
+            <div class="text-left pl-2 pt-2 pb-4 pr-12  rounded-lg text-white font-bold bg-gradient-to-r from-red-600 to-red-400 text-md">
                 <a href="#third">Wireless Buds</a>
             </div>
         </div>
@@ -624,7 +624,7 @@
                 </div>
             </div>
             <div class="text-center py-12">
-                <a href="" class="text-green-500 font-bold px-6 py-2 border-2 border-green-500 rounded-lg">Lebih banyak</a>
+                <a href="" class="text-red-500 font-bold px-6 py-2 border-2 border-red-500 rounded-lg">Lebih banyak</a>
             </div>
         </div>
     </div>

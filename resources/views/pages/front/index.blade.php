@@ -276,7 +276,7 @@
     </div>
 
     <div class="my-12 mx-32 py-6 border-b-2">
-        <h1 class="text-xl font-bold text-left">Official Store <a href="/official" class="text-green-500 text-base">Lihat Semua</a></h1>
+        <h1 class="text-xl font-bold text-left">Official Store <a href="/official" class="text-red-500 text-base">Lihat Semua</a></h1>
         <div class="py-4 flex items-center static">
             <div class="bg-blue-600 rounded-xl w-80">
                 <img class="w-36 rounded-xl ml-8" src="https://images.tokopedia.net/img/cache/240/PYbRbC/2021/9/27/e13312df-5cd0-4144-8d0e-f4a406b260ae.png.webp?ect=4g" alt="">
@@ -288,7 +288,7 @@
                     <div class="px-2 leading-6 py-2">
                         <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
                         <h3 class="font-bold ">Rp 6.950</h3>
-                        <h5 class="text-gray-500 text-xs"><i class="text-green-400 fas fa-check"></i> Kota Tangerang</h5>
+                        <h5 class="text-gray-500 text-xs"><i class="text-red-400 fas fa-check"></i> Kota Tangerang</h5>
                         <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                     </div>
                 </div>
@@ -298,7 +298,7 @@
                     <div class="px-2 leading-6 py-2">
                         <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
                         <h3 class="font-bold ">Rp 6.950</h3>
-                        <h5 class="text-gray-500 text-xs"><i class="text-green-400 fas fa-check"></i> Kota Tangerang</h5>
+                        <h5 class="text-gray-500 text-xs"><i class="text-red-400 fas fa-check"></i> Kota Tangerang</h5>
                         <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                     </div>
                 </div>
@@ -308,7 +308,7 @@
                     <div class="px-2 leading-6 py-2">
                         <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
                         <h3 class="font-bold ">Rp 6.950</h3>
-                        <h5 class="text-gray-500 text-xs"><i class="text-green-400 fas fa-check"></i> Kota Tangerang</h5>
+                        <h5 class="text-gray-500 text-xs"><i class="text-red-400 fas fa-check"></i> Kota Tangerang</h5>
                         <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                     </div>
                 </div>
@@ -318,7 +318,7 @@
                     <div class="px-2 leading-6 py-2">
                         <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
                         <h3 class="font-bold ">Rp 6.950</h3>
-                        <h5 class="text-gray-500 text-xs"><i class="text-green-400 fas fa-check"></i> Kota Tangerang</h5>
+                        <h5 class="text-gray-500 text-xs"><i class="text-red-400 fas fa-check"></i> Kota Tangerang</h5>
                         <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                     </div>
                 </div>
@@ -328,7 +328,7 @@
                     <div class="px-2 leading-6 py-2">
                         <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
                         <h3 class="font-bold ">Rp 6.950</h3>
-                        <h5 class="text-gray-500 text-xs"><i class="text-green-400 fas fa-check"></i> Kota Tangerang</h5>
+                        <h5 class="text-gray-500 text-xs"><i class="text-red-400 fas fa-check"></i> Kota Tangerang</h5>
                         <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                     </div>
                 </div>
@@ -345,7 +345,7 @@
             <div class="flex-auto text-left pl-2 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-yellow-600 to-yellow-400 text-md">
                 <a href="#second">Produk Populer</a>
             </div>
-            <div class="flex-auto text-left pl-2 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-green-600 to-green-400 text-md">
+            <div class="flex-auto text-left pl-2 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-red-600 to-red-400 text-md">
                 <a href="#third">Kompor</a>
             </div>
             <div class="flex-auto text-left pl-2 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-blue-600 to-blue-400 text-md">
@@ -354,7 +354,7 @@
             <div class="flex-auto text-left pl-2 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-yellow-600 to-yellow-400 text-md">
                 <a href="#five">Aktivitasmu</a>
             </div>
-            <div class="flex-auto text-left pl-2 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-green-600 to-green-400 text-md">
+            <div class="flex-auto text-left pl-2 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-red-600 to-red-400 text-md">
                 <a href="#six">Special Discount</a>
             </div>
             <div class="flex-auto text-left pl-2 pt-2 pb-4  rounded-lg text-white font-bold bg-gradient-to-r from-blue-600 to-blue-400 text-md">
@@ -701,7 +701,7 @@
                 </div>
             </div>
             <div class="text-center py-12">
-                <a href="" class="text-green-500 font-bold px-6 py-2 border-2 border-green-500 rounded-lg">Lebih banyak</a>
+                <a href="" class="text-red-500 font-bold px-6 py-2 border-2 border-red-500 rounded-lg">Lebih banyak</a>
             </div>
         </div>
     </div>
@@ -736,14 +736,14 @@
 
             for (let i = 0; i < tabContents.children.length; i++) {
 
-            tabTogglers[i].parentElement.classList.remove("border-green-400", "border-b",  "-mb-px", "opacity-100", "transition", "duration-400");  tabContents.children[i].classList.remove("hidden");
+            tabTogglers[i].parentElement.classList.remove("border-red-400", "border-b",  "-mb-px", "opacity-100", "transition", "duration-400");  tabContents.children[i].classList.remove("hidden");
             if ("#" + tabContents.children[i].id === tabName) {
                 continue;
             }
             tabContents.children[i].classList.add("hidden");
 
             }
-            e.target.parentElement.classList.add("border-green-400", "border-b-4", "-mb-px", "opacity-100", "transition", "duration-400");
+            e.target.parentElement.classList.add("border-red-400", "border-b-4", "-mb-px", "opacity-100", "transition", "duration-400");
         });
         });
 

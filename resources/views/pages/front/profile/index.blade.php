@@ -4,7 +4,7 @@
 <div class="mx-4 h-auto p-4 border-2 rounded-lg">
     <!-- Tabs -->
         <ul id="tabs" class="inline-flex w-full px-1 pt-2 border-b-2">
-            <li class="px-4 py-2 -mb-px font-semibold text-gray-800 border-b-2 border-green-400 rounded-t opacity-50"><a id="default-tab" href="#first">Biodata Diri</a></li>
+            <li class="px-4 py-2 -mb-px font-semibold text-gray-800 border-b-2 border-red-400 rounded-t opacity-50"><a id="default-tab" href="#first">Biodata Diri</a></li>
             <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#second">Daftar Alamat</a></li>
             {{-- <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#third">Pembayaran</a></li>
             <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#fourth">Rekening Bank</a></li>
@@ -52,15 +52,20 @@
             </div>
             <div id="second" class="hidden p-4">
                 <div class="text-right">
-                    <button class="py-2 px-4 bg-green-400 font-bold rounded mb-2 text-white">Tambah alamat baru</button>
+                    {{-- <button class="py-2 px-4 bg-red-400 font-bold rounded mb-2 text-white">Tambah alamat baru</button> --}}
+                    <button
+                        class="py-2 px-4 bg-red-400 font-bold rounded mb-2 text-white active:bg-red-600  hover:shadow-md"
+                        type="button" onclick="toggleModal('modal-example-small')">
+                        Tambah alamat baru
+                    </button>
                 </div>
-                <div class="border-2 border-green-500 rounded p-4 bg-green-50">
+                <div class="border-2 border-red-500 rounded p-4 bg-red-50">
                     <h2 class="font-semibold">Rumah</h2>
                     <h1 class="font-bold text-lg">Muji Kuwat</h1>
                     <p>6285747245474</p>
                     <p>Ds. wonosari Rt 6 Rw 3 no rumah 21</p>
                     <p><i class="fas fa-map-marker-alt"></i> Sudah Pinpoint</p>
-                    <button class="text-green-400">ubah alamat</button>
+                    <button class="text-red-400">ubah alamat</button>
                 </div>
                 <div class="border-2 rounded p-4 mt-2">
                     <h2 class="font-semibold">Pondok</h2>
@@ -71,14 +76,14 @@
                             <p>Pondok IT Al Madinah, Kabupaten Sleman, Jogja, 55584[Tokopedia notes: Pondok IT Al Madinah]</p>
                         </div>
                         <div class="">
-                            <button class="bg-green-400 rounded text-white px-4 py-2">Pilih</button>
+                            <button class="bg-red-400 rounded text-white px-4 py-2">Pilih</button>
                         </div>
                     </div>
                     <p><i class="fas fa-map-marker-alt"></i> Sudah Pinpoint</p>
                     <div class="">
-                        <button class="text-green-400">ubah alamat</button> |
-                        <button class="text-green-400">jadikan alamat utama</button> |
-                        <button class="text-green-400">hapus</button>
+                        <button class="text-red-400">ubah alamat</button> |
+                        <button class="text-red-400">jadikan alamat utama</button> |
+                        <button class="text-red-400">hapus</button>
                     </div>
 
                 </div>
@@ -97,6 +102,80 @@
             </div> --}}
         </div>
 </div>
+<!-- Button trigger modal -->
+    {{-- <button
+        class="bg-red-500 text-white active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        type="button" onclick="toggleModal('modal-example-small')">
+        Open small modal
+    </button> --}}
+    <!-- Modal -->
+    <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-example-small">
+        <div class="relative w-auto my-6 mx-auto max-w-xl">
+            <!--content-->
+            <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+            <!--header-->
+            <div class="flex items-start justify-between p-5 border-b border-solid border-gray-200 rounded-t">
+                <h3 class="text-lg font-semibold">
+                    Tambah alamat baru
+                </h3>
+                <button
+                class="p-1 ml-auto bg-transparent border-0 text-gray-300 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                onclick="toggleModal('modal-example-small')">
+                <span class="bg-transparent h-6 w-6 text-2xl block outline-none focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </span>
+                </button>
+            </div>
+            <div class="p-4">
+                <form action="#">
+                    <div class="py-1">
+                        <label class="font-bold text-gray-500 text-md">Label Alamat</label>
+                        <input type="text" class="w-full p-2 block border rounded-lg" placeholder="Tulis label alamat">
+                    </div>
+                    <div class="flex space-x-4">
+                        <div class="py-1">
+                            <label class="font-bold text-gray-500 text-md">Nama penerima</label>
+                            <input type="text" class="p-2 block border rounded-lg" placeholder="Tulis nama penerima">
+                        </div>
+                        <div class="py-1">
+                            <label class="font-bold text-gray-500 text-md">No. Ponsel</label>
+                            <input type="text" class="p-2 block border rounded-lg" placeholder="Tulis nomor Ponsel">
+                        </div>
+                    </div>
+                    <div class="flex  space-x-4">
+                        <div class="py-1">
+                            <label class="font-bold text-gray-500 text-md">Kota atau Kecamatan</label>
+                            <input type="text" class="p-2 block border rounded-lg" placeholder="Tulis Kota/Kecamatan">
+                        </div>
+                        <div class="py-1">
+                            <label class="font-bold text-gray-500 text-md">Kode pos</label>
+                            <input type="text" class="p-2 block border rounded-lg" placeholder="Tulis kode pos">
+                        </div>
+                    </div>
+                    <div class="py-1">
+                        <label class="font-bold text-gray-500 text-md">Alamat</label>
+                        <input type="text" class="w-full p-2 block border rounded-lg" placeholder="Tulis nama jalan, nomor rumah, nomor kompleks, nama gedung, lantai atau nomor unit">
+                    </div>
+                </form>
+            </div>
+            <!--footer-->
+                <div class="flex items-center justify-end p-6 border-t border-solid border-gray-200 rounded-b">
+                    <button
+                        class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button" onclick="toggleModal('modal-example-small')">
+                        Batal
+                    </button>
+                    <button
+                        class="bg-red-500 text-white active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button" onclick="toggleModal('modal-example-small')">
+                        Tambah
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-example-small-backdrop"></div>
+
 @endpush
 
 @push('after-style')
@@ -166,6 +245,15 @@
 @endpush
 
 @push('after-script')
+    <script type="text/javascript">
+        function toggleModal(modalID) {
+        document.getElementById(modalID).classList.toggle("hidden");
+        document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+        document.getElementById(modalID).classList.toggle("flex");
+        document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+        }
+    </script>
+
     <script>
         var myRadios = document.getElementsByName('tabs2');
         var setCheck;
@@ -198,14 +286,14 @@
 
             for (let i = 0; i < tabContents.children.length; i++) {
 
-            tabTogglers[i].parentElement.classList.remove("border-green-400", "border-b",  "-mb-px", "opacity-100");  tabContents.children[i].classList.remove("hidden");
+            tabTogglers[i].parentElement.classList.remove("border-red-400", "border-b",  "-mb-px", "opacity-100");  tabContents.children[i].classList.remove("hidden");
             if ("#" + tabContents.children[i].id === tabName) {
                 continue;
             }
             tabContents.children[i].classList.add("hidden");
 
             }
-            e.target.parentElement.classList.add("border-green-400", "border-b-4", "-mb-px", "opacity-100");
+            e.target.parentElement.classList.add("border-red-400", "border-b-4", "-mb-px", "opacity-100");
         });
         });
 

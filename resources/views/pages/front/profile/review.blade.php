@@ -4,7 +4,7 @@
 <div class="mx-4 h-auto p-4 border-2 rounded-lg">
     <!-- Tabs -->
         <ul id="tabs" class="inline-flex w-full px-1 pt-2 border-b-2">
-            <li class="px-4 py-2 -mb-px font-semibold text-gray-800 border-b-2 border-green-400 rounded-t opacity-50"><a id="default-tab" href="#first">Menunggu Diulas</a></li>
+            <li class="px-4 py-2 -mb-px font-semibold text-gray-800 border-b-2 border-red-400 rounded-t opacity-50"><a id="default-tab" href="#first">Menunggu Diulas</a></li>
             <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#second">Ulasan Saya</a></li>
             <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#third">Ulasan Pembeli</a></li>
             <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#fourth">Penalti dan Reward</a></li>
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div>
-                        <a href="#" class="bg-green-400 rounded py-2 px-4 text-white font-bold">Beri ulasan</a>
+                        <a href="#" class="bg-red-400 rounded py-2 px-4 text-white font-bold">Beri ulasan</a>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                                     <p>Absolutek Comp</p>
                                     <span class="text-xs px-2 py-1 bg-red-400 rounded">Penjual</span>
                                 </div>
-                                <a href="#" class="bg-green-400 rounded px-4 text-sm font-bold text-white">Follow</a>
+                                <a href="#" class="bg-red-400 rounded px-4 text-sm font-bold text-white">Follow</a>
                             </div>
                             <div class="py-2 mx-2 text-center text-gray-400 text-sm  border-b-2  border-t-2">
                                 <p>Penilaian Anda</p>
@@ -73,7 +73,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <a href="#" class="bg-green-400 rounded py-2 px-4 text-white font-bold">Lihat ulasan</a>
+                                    <a href="#" class="bg-red-400 rounded py-2 px-4 text-white font-bold">Lihat ulasan</a>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                     <p class="text-sm">Blue Sky Communication</p>
                                     <span class="text-xs px-2 py-1 bg-red-400 rounded">Penjual</span>
                                 </div>
-                                <a href="#" class="bg-green-400 rounded px-4 text-sm font-bold text-white">Follow</a>
+                                <a href="#" class="bg-red-400 rounded px-4 text-sm font-bold text-white">Follow</a>
                             </div>
                             <div class="py-2 mx-2 text-center text-gray-400 text-sm  border-b-2  border-t-2">
                                 <p>Penilaian Anda</p>
@@ -119,7 +119,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <a href="#" class="bg-green-400 rounded py-2 px-4 text-white font-bold">Lihat ulasan</a>
+                                    <a href="#" class="bg-red-400 rounded py-2 px-4 text-white font-bold">Lihat ulasan</a>
                                 </div>
                             </div>
                         </div>

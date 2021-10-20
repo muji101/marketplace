@@ -6,110 +6,161 @@
     </a>
     <div class="side-nav__devider my-6"></div>
     <ul>
-        {{-- <li>
-            <a href="javascript:;.html" class="side-menu side-menu--active">
-                <div class="side-menu__icon"> <i data-feather="home"></i> </div>
-                <div class="side-menu__title">
-                    Home 
-                    <div class="side-menu__sub-icon transform rotate-180"> <i data-feather="chevron-down"></i> </div>
-                </div>
-            </a>
-            <ul class="side-menu__sub-open">
-                <li>
-                    <a href="index.html" class="side-menu side-menu--active">
-                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                        <div class="side-menu__title"> Overview 1 </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-dashboard-overview-2.html" class="side-menu">
-                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                        <div class="side-menu__title"> Overview 2 </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-dashboard-overview-3.html" class="side-menu">
-                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                        <div class="side-menu__title"> Overview 3 </div>
-                    </a>
-                </li>
-            </ul>
-        </li> --}}
         <li>
-            <a href="/seller" class="side-menu  side-menu--active">
+            <a href="/admin" class="side-menu  side-menu--active">
                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                 <div class="side-menu__title"> Home </div>
             </a>
         </li>
         <li>
-            <a href="/seller/chats" class="side-menu">
-                <div class="side-menu__icon"> <i data-feather="message-square"></i> </div>
-                <div class="side-menu__title"> Chat </div>
-            </a>
-        </li>
-        <li>
-            <a href="/seller/discutions" class="side-menu">
-                <div class="side-menu__icon"> <i data-feather="feather"></i> </div>
-                <div class="side-menu__title"> Diskusi </div>
-            </a>
-        </li>
-        <li>
-            <a href="javascript:;.html" class="side-menu side-menu--active">
-                <div class="side-menu__icon"> <i data-feather="shopping-cart"></i> </div>
+            <a href="javascript:;" class="side-menu">
+                <div class="side-menu__icon"> <i data-feather="shopping-bag"></i> </div>
                 <div class="side-menu__title">
                     Produk 
-                    <div class="side-menu__sub-icon transform rotate-180"> <i data-feather="chevron-down"></i> </div>
+                    <div class="side-menu__sub-icon "> <i data-feather="chevron-down"></i> </div>
                 </div>
             </a>
-            <ul class="side-menu__sub-open">
+            <ul class="">
                 <li>
-                    <a href="/seller/products" class="side-menu side-menu--active">
-                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                        <div class="side-menu__title"> Daftar produk</div>
+                    <a href="/admin/products" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="list"></i> </div>
+                        <div class="side-menu__title"> Daftar Produk </div>
                     </a>
                 </li>
                 <li>
-                    <a href="/seller/product-create" class="side-menu">
-                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                        <div class="side-menu__title"> Tambah produk </div>
+                    <a href="/admin/product-create" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="file-plus"></i> </div>
+                        <div class="side-menu__title"> Tambah Produk </div>
                     </a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="/seller/sales" class="side-menu">
-                <div class="side-menu__icon"> <i data-feather="trending-up"></i> </div>
-                <div class="side-menu__title"> Penjualan </div>
-            </a>
-        </li>
-        <li>
-            <a href="/seller/reviews" class="side-menu">
-                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                <div class="side-menu__title"> Kata Pembeli </div>
-            </a>
-        </li>
-        <<li>
-            <a href="javascript:;.html" class="side-menu side-menu--active">
-                <div class="side-menu__icon"> <i data-feather="settings"></i> </div>
+            <a href="javascript:;.html" class="side-menu">
+                <div class="side-menu__icon"> <i data-feather="grid"></i> </div>
                 <div class="side-menu__title">
-                    Settings 
-                    <div class="side-menu__sub-icon transform rotate-180"> <i data-feather="chevron-down"></i> </div>
+                    Kategori 
+                    <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
                 </div>
             </a>
-            <ul class="side-menu__sub-open">
+            <ul class="">
                 <li>
-                    <a href="side-menu-light-dashboard-overview-2.html" class="side-menu">
-                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                        <div class="side-menu__title"> Pengaturan toko </div>
+                    <a href="/admin/categories" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="list"></i> </div>
+                        <div class="side-menu__title"> Daftar Kategori</div>
                     </a>
                 </li>
                 <li>
-                    <a href="side-menu-light-dashboard-overview-3.html" class="side-menu">
-                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                        <div class="side-menu__title">Pengaturan Admin </div>
+                    <a href="/admin/category-create" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="file-plus"></i> </div>
+                        <div class="side-menu__title"> Tambah Kategori </div>
                     </a>
                 </li>
             </ul>
+        </li>
+        <li>
+            <a href="javascript:;.html" class="side-menu">
+                <div class="side-menu__icon"> <i data-feather="image"></i> </div>
+                <div class="side-menu__title">
+                    Galeri 
+                    <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
+                </div>
+            </a>
+            <ul class="">
+                <li>
+                    <a href="/admin/galleries" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="list"></i> </div>
+                        <div class="side-menu__title"> Daftar Galeri</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/gallery-create" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="file-plus"></i> </div>
+                        <div class="side-menu__title"> Tambah Galeri </div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;.html" class="side-menu">
+                <div class="side-menu__icon"> <i data-feather="users"></i> </div>
+                <div class="side-menu__title">
+                    Pengguna 
+                    <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
+                </div>
+            </a>
+            <ul class="">
+                <li>
+                    <a href="/admin/users" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="list"></i> </div>
+                        <div class="side-menu__title"> Daftar Pengguna</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/user-create" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="file-plus"></i> </div>
+                        <div class="side-menu__title"> Tambah Pengguna </div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;.html" class="side-menu">
+                <div class="side-menu__icon"> <i data-feather="briefcase"></i> </div>
+                <div class="side-menu__title">
+                    Toko 
+                    <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
+                </div>
+            </a>
+            <ul class="">
+                <li>
+                    <a href="/admin/stores" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="list"></i> </div>
+                        <div class="side-menu__title"> Daftar Toko</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/store-create" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="file-plus"></i> </div>
+                        <div class="side-menu__title"> Tambah Toko </div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;.html" class="side-menu">
+                <div class="side-menu__icon"> <i data-feather="tv"></i> </div>
+                <div class="side-menu__title">
+                    Promosi 
+                    <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
+                </div>
+            </a>
+            <ul class="">
+                <li>
+                    <a href="/admin/promotions" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="list"></i> </div>
+                        <div class="side-menu__title"> Daftar Promosi</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/promotion-create" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="file-plus"></i> </div>
+                        <div class="side-menu__title"> Tambah Promosi </div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/admin/transactions" class="side-menu">
+                <div class="side-menu__icon"> <i data-feather="truck"></i> </div>
+                <div class="side-menu__title"> Transaksi </div>
+            </a>
+        </li>
+        <li>
+            <a href="/admin/logouts" class="side-menu">
+                <div class="side-menu__icon"> <i data-feather="log-out"></i> </div>
+                <div class="side-menu__title"> Keluar </div>
+            </a>
         </li>
     </ul>
 </nav>

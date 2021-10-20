@@ -113,7 +113,7 @@
                                                 <input type="checkbox">
                                                 <p>Jabodetabek</p>
                                             </label>
-                                            <a href="#" class="text-green-400">Lihat selengkapnya</a>
+                                            <a href="#" class="text-red-400">Lihat selengkapnya</a>
                                         </div>
                                     </div>
                                 </li>
@@ -129,8 +129,8 @@
                 <div class="mx-4 h-auto">
                     <!-- Tabs -->
                     <ul id="tabs" class="inline-flex w-full px-1 pt-2 border-b-2">
-                        <li class="px-4 py-2 -mb-px font-semibold text-green-600 border-b-2 border-green-400 rounded-t opacity-50"><a id="default-tab" href="#first"><i class="fas fa-briefcase"></i> Produk</a></li>
-                        <li class="px-4 py-2 font-semibold text-green-600 rounded-t opacity-50"><a href="#second"><i class="fas fa-store"></i> Toko</a></li>
+                        <li class="px-4 py-2 -mb-px font-semibold text-red-600 border-b-2 border-red-400 rounded-t opacity-50"><a id="default-tab" href="#first"><i class="fas fa-briefcase"></i> Produk</a></li>
+                        <li class="px-4 py-2 font-semibold text-red-600 rounded-t opacity-50"><a href="#second"><i class="fas fa-store"></i> Toko</a></li>
                     </ul>
 
                     <!-- Tab Contents -->
@@ -337,14 +337,14 @@
 
             for (let i = 0; i < tabContents.children.length; i++) {
 
-            tabTogglers[i].parentElement.classList.remove("border-green-400", "border-b",  "-mb-px", "opacity-100");  tabContents.children[i].classList.remove("hidden");
+            tabTogglers[i].parentElement.classList.remove("border-red-400", "border-b",  "-mb-px", "opacity-100");  tabContents.children[i].classList.remove("hidden");
             if ("#" + tabContents.children[i].id === tabName) {
                 continue;
             }
             tabContents.children[i].classList.add("hidden");
 
             }
-            e.target.parentElement.classList.add("border-green-400", "border-b-4", "-mb-px", "opacity-100");
+            e.target.parentElement.classList.add("border-red-400", "border-b-4", "-mb-px", "opacity-100");
         });
         });
 

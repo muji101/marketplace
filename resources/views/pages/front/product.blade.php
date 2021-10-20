@@ -7,9 +7,12 @@
             <div class="grid grid-cols-3 gap-4">
                 <div class="col-span-1">
                     <div class="sticky top-32">
-                        <img class="w-64 rounded-lg" src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/8/1/9d7ef661-9696-4811-bfa8-a753c14e8280.jpg" alt="">
+                        {{-- <img class="w-64 rounded-lg transform hover:scale-150" src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/8/1/9d7ef661-9696-4811-bfa8-a753c14e8280.jpg" alt=""> --}}
+                        <img id="zoom_01" class="rounded-lg" src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/8/1/9d7ef661-9696-4811-bfa8-a753c14e8280.jpg"
+                            data-zoom-image="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/8/1/9d7ef661-9696-4811-bfa8-a753c14e8280.jpg"/>
+                        
                         <div class="py-4 flex space-x-2">
-                            <img class="w-12 border-2 border-green-400 rounded-lg" src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/8/1/9d7ef661-9696-4811-bfa8-a753c14e8280.jpg" alt="">
+                            <img class="w-12 border-2 border-red-400 rounded-lg" src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/8/1/9d7ef661-9696-4811-bfa8-a753c14e8280.jpg" alt="">
                             <img class="w-12  rounded-lg" src="https://images.tokopedia.net/img/cache/100-square/VqbcmM/2021/8/1/3814c24f-0128-4847-a464-128adf338c13.jpg.webp?ect=4g" alt="">
                         </div>
                     </div>
@@ -24,36 +27,60 @@
                         </div>
                         <h1 class="font-bold text-2xl text-sm">Rp2.000</h1>
                     </div>
-                    <div class="py-2 text-left border-t-2 border-b-2">
-                        <a href="#" class="font-bold text-green-500 px-4">Detail</a>
-                        <a href="#" class="font-bold text-gray-500 px-4">Info Penting</a>
+                    <div id="tabs" class="py-2 text-left border-t-2 border-b-2">
+                        <span>
+                            <a id="default-tab" href="#first" class="font-bold text-gray-500 px-4">Detail</a>
+                        </span>
+                        <span>
+                            <a href="#second" class="font-bold text-gray-500 px-4">Info Penting</a>
+                        </span>
                     </div>
-                    <div class="py-4 text-left">
-                        <ul class="text-gray-500">
-                            <li>Kondisi: <span class="text-black">Baru</span></li>
-                            <li>Berat: <span class="text-black">10 Gram</span></li>
-                            <li>Kategory: <span class="font-bold text-green-400">Humidifier</span></li>
-                            <li>Etalase: <span class="font-bold text-green-400">Semua Etalase</span></li>
-                        </ul>
-                        <p class="py-2">
-                            ukuran ada difoto
-                            sangat cocok untuk refill
-                            ready banyak
-                            bisa gosend bisa grab
-                            harga untuk 1pc
-                            bisa beli ecer tidak harus grosir 
-                        </p>
+                    <div id="tab-contents">
+                        <div id="first" class="py-4 text-left">
+                            <ul class="text-gray-500">
+                                <li>Kondisi: <span class="text-black">Baru</span></li>
+                                <li>Berat: <span class="text-black">10 Gram</span></li>
+                                <li>Kategory: <span class="font-bold text-red-400">Humidifier</span></li>
+                                <li>Etalase: <span class="font-bold text-red-400">Semua Etalase</span></li>
+                            </ul>
+                            <p class="py-2 text-gray-500">
+                                ukuran ada difoto
+                                sangat cocok untuk refill
+                                ready banyak
+                                bisa gosend bisa grab
+                                harga untuk 1pc
+                                bisa beli ecer tidak harus grosir 
+                            </p>
+                        </div>
+                        <div id="second" class="py-4 text-left">
+                            <div class="py-2">
+                                <h1 class="font-bold">Aturan Penerimaan Order</h1>
+                                <p class="text-gray-500">Bismillah... Sebelumnya kami ucapkan terimakasih atas kepercayaan anda memilih kami... </p>
+                                <a href="#" class="text-red-400 font-bold text-sm">Selengkapnya</a>
+                            </div>
+                            <div class="py-2">
+                                <h1 class="font-bold">Kebijakan Pengembalian Produk</h1>
+                                <p class="text-gray-500">Barang tidak boleh di buka atau isi barang tersebut tidak boleh dicoba,jika barang sudah di buka dan dicoba KAMI TIDAK BISA MENERIMA BARANG TERSEBUT LAGI.... </p>
+                                <a href="#" class="text-red-400 font-bold text-sm">Selengkapnya</a>
+                            </div>
+                            <div class="py-2">
+                                <h1 class="font-bold">Alamat Kurang Lengkap</h1>
+                                <p class="text-gray-500">Dimohon kepada pembeli untuk melengkapi alamat tujuan,jika alamat tujuan kurang lengkap NO KOMPLAIN.... </p>
+                                <a href="#" class="text-red-400 font-bold text-sm">Selengkapnya</a>
+                            </div>
+                        </div>
                     </div>
+                    
                     <div class="py-2">
                         <div class="flex justify-between">
                             <div class="flex space-x-2">
                                 <img class="w-12" src="https://images.tokopedia.net/img/cache/215-square/GAnVPX/2021/8/27/1c958df4-7d4c-4aa8-b6c0-e5c63e300d22.jpg" alt="">
                                 <div class="text-left">
                                     <h2>Kastil Drakula</h2>
-                                    <h2 class="text-green-400">• Online</h2>
+                                    <h2 class="text-red-400">• Online</h2>
                                 </div>
                             </div>
-                            <button class="font-bold text-green-400 border-2 border-green-400 rounded-lg px-8">Follow</button>
+                            <button class="font-bold text-red-400 border-2 border-red-400 rounded-lg px-8">Follow</button>
                         </div>
                         <div class="flex justify-center space-x-4 py-4">
                             <h5><i class="fas fa-star"></i> 4.8 <span class="text-gray-500 text-sm">rata-rata ulasan</span></h5>
@@ -86,7 +113,7 @@
                     <div class="flex space-x-4 border-b-2 py-4">
                         <img class="w-8 h-8 rounded-full" src="https://ecs7.tokopedia.net/img/cache/100-square/default_picture_user/default_toped-15.jpg" alt="">
                         <div class="text-sm">
-                            <p class="font-bold text-green-400">Sugianto</p>
+                            <p class="font-bold text-red-400">Sugianto</p>
                             <p class="text-gray-400">2 minggu lalu</p>
                         </div>
                         <div class="text-sm">
@@ -111,7 +138,7 @@
                             Ada pertanyaan?
                             <span class="font-bold">Diskusikan dengan penjual atau pengguna lain</span>
                         </h3>
-                        <button class="p-2 font-bold bg-green-400 rounded-lg text-white">Tulis pertanyaan</button>
+                        <button class="p-2 font-bold bg-red-400 rounded-lg text-white">Tulis pertanyaan</button>
                     </div>
                     <div class=" my-4 p-4 border-2">
                         <div class="flex space-x-4 py-4">
@@ -126,7 +153,7 @@
                             <div class="flex space-x-4 py-4">
                                 <img class="w-8 h-8 rounded-full" src="https://images.tokopedia.net/img/cache/215-square/GAnVPX/2021/8/27/1c958df4-7d4c-4aa8-b6c0-e5c63e300d22.jpg" alt="">
                                 <div class="text-sm">
-                                    <p class="font-bold">Kastil Drakula <span class="font-normal text-xs bg-green-200 text-green-600 p-1 rounded">Penjual</span><span class="font-normal text-xs text-gray-500">23 Agt</span></p>
+                                    <p class="font-bold">Kastil Drakula <span class="font-normal text-xs bg-red-200 text-red-600 p-1 rounded">Penjual</span><span class="font-normal text-xs text-gray-500">23 Agt</span></p>
                                     <p class="text-gray-400">bisa di klik = ready , mhon baca deskripsi sebelum cekout juga ya</p>
                                 </div>
                             </div>
@@ -152,16 +179,16 @@
                     <div class="py-4 flex space-x-2 items-center">
                         <i class="fas fa-minus-circle"></i>
                         <input type="number" class="w-12">
-                        <i class="text-green-400 fas fa-plus-circle"></i>
+                        <i class="text-red-400 fas fa-plus-circle"></i>
                         <div>Stock <span class="font-bold">9,3rb</span></div>
                     </div>
-                    <h4 class="text-left text-sm text-green-400 font-bold"><i class="fas fa-pencil"></i> Tambah Catatan</h4>
+                    <h4 class="text-left text-sm text-red-400 font-bold"><i class="fas fa-pencil"></i> Tambah Catatan</h4>
                     <div class="flex items-end justify-between">
                         <h1 class="text-md my-2 text-left text-gray-500">Subtotal</h1>
                         <h1 class="text-lg my-2 text-left font-bold">Rp6.350</h1>
                     </div>
-                    <a href="/cart"  class="block py-2 text-center mb-2 w-full bg-green-400 rounded-lg font-bold text-md text-white"><i class="fas fa-plus"></i> Keranjang</a>
-                    <a  href="/checkout" class="block text-center py-2 w-full text-green-400 border-2 border-green-400 rounded-lg font-bold text-md text-white">Beli Langsung</a>
+                    <a href="/cart"  class="block py-2 text-center mb-2 w-full bg-red-400 rounded-lg font-bold text-md text-white"><i class="fas fa-plus"></i> Keranjang</a>
+                    <a  href="/checkout" class="block text-center py-2 w-full text-red-400 border-2 border-red-400 rounded-lg font-bold text-md text-white">Beli Langsung</a>
                     <div class="pt-2 flex justify-center space-x-2 text-xs">
                         <a href=""><i class="fas fa-comment-dots"></i> Chat</a>
                         <a href=""><i class="fas fa-heart"></i> Wishlist</a>
@@ -433,6 +460,15 @@
 @endsection
 
 @push('after-script')
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
+
+    <script>
+        $('#zoom_01').ezPlus({
+            zoomType: 'inner',
+            cursor: 'crosshair'
+        });
+    </script>
     <script>
         new Splide( '.splide', {
         type  : 'loop',
@@ -443,4 +479,34 @@
         autoplay: true,
         } ).mount();
     </script>
-@endpush  
+
+    <script>
+        let tabsContainer = document.querySelector("#tabs");
+
+        let tabTogglers = tabsContainer.querySelectorAll("a");
+        console.log(tabTogglers);
+
+        tabTogglers.forEach(function(toggler) {
+        toggler.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            let tabName = this.getAttribute("href");
+
+            let tabContents = document.querySelector("#tab-contents");
+
+            for (let i = 0; i < tabContents.children.length; i++) {
+
+            tabTogglers[i].parentElement.classList.remove("border-red-400", "border-b",  "-mb-px", "opacity-100", "transition", "duration-400");  tabContents.children[i].classList.remove("hidden");
+            if ("#" + tabContents.children[i].id === tabName) {
+                continue;
+            }
+            tabContents.children[i].classList.add("hidden");
+
+            }
+            e.target.parentElement.classList.add("border-red-400", "border-b-4", "-mb-px", "opacity-100", "transition", "duration-400");
+        });
+        });
+
+        document.getElementById("default-tab").click();
+    </script>
+    @endpush  

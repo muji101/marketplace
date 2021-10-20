@@ -1,8 +1,9 @@
-    <div class="sticky top-0 z-50 bg-white mx-auto px-16 my-4  shadow-md">
+    <div class="sticky top-0 z-50 bg-white mx-auto px-16 shadow-md">
         <div class="grid grid-cols-12 py-4 items-center">
         <div class="col-span-2">
-            <a href="/sell">
-                <img src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/icarus/kratos/d35bd309.jpg" alt="">
+            <a href="/sell" class="text-red-500 font-bold text-2xl">
+                {{-- <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg" alt=""> --}}
+                TokoMerah<span class="text-gray-700">Seller</span>
             </a>
         </div>
         <div class="col-span-8 flex w-full pl-10">
@@ -79,7 +80,7 @@
                         </a>
                         <div class="py-2 space-y-1">
                             <div class="py-2 border-t-2">
-                                <a href="/profile/list-transactions" class="py-2 text-sm"><i  class="fas fa-bag"></i>Kembali ke Mahirpedia</a>
+                                <a href="/" class="py-2 text-sm"><i  class="fas fa-bag"></i>Kembali ke Tokomerah</a>
                             </div>
                             <div class="py-1 border-t-2">
                                 <a href="/profile" class="py-2 text-md font-bold"><i  class="fas fa-cog"></i>Pengaturan Akun</a>

@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+//frontend
 Route::get('/', function () {
     return view('pages.front.index');
 });
@@ -36,8 +37,16 @@ Route::get('/checkout', function () {
     return view('pages.front.checkout');
 });
 
+Route::get('/buy-direct', function () {
+    return view('pages.front.buy-direct');
+});
+
 Route::get('/cart', function () {
     return view('pages.front.cart');
+});
+
+Route::get('/wishlist', function () {
+    return view('pages.front.wishlist');
 });
 
 Route::get('/find', function () {
@@ -68,6 +77,7 @@ Route::get('/official', function () {
     return view('pages.front.official');
 });
 
+// seller
 Route::get('/seller', function () {
     return view('pages.seller.index');
 });
@@ -96,8 +106,61 @@ Route::get('/seller/sales', function () {
     return view('pages.seller.sales');
 });
 
+Route::get('/seller/store', function () {
+    return view('pages.seller.store');
+});
+
 Route::get('/seller/chats', function () {
     return view('pages.seller.chats');
 });
 
+// Admin
+Route::get('/admin', function () {
+    return view('pages.dashboard.index');
+});
 
+Route::get('/admin/products', function () {
+    return view('pages.dashboard.product.index');
+});
+Route::get('/admin/product-create', function () {
+    return view('pages.dashboard.product.create');
+});
+
+Route::get('/admin/categories', function () {
+    return view('pages.dashboard.category.index');
+});
+Route::get('/admin/category-create', function () {
+    return view('pages.dashboard.category.create');
+});
+
+Route::get('/admin/galleries', function () {
+    return view('pages.dashboard.gallery.index');
+});
+Route::get('/admin/gallery-create', function () {
+    return view('pages.dashboard.gallery.create');
+});
+
+Route::get('/admin/users', function () {
+    return view('pages.dashboard.user.index');
+});
+Route::get('/admin/user-create', function () {
+    return view('pages.dashboard.user.create');
+});
+
+Route::get('/admin/stores', function () {
+    return view('pages.dashboard.store.index');
+});
+Route::get('/admin/store-create', function () {
+    return view('pages.dashboard.store.create');
+});
+
+Route::get('/admin/promotions', function () {
+    return view('pages.dashboard.promotion.index');
+});
+Route::get('/admin/promotion-create', function () {
+    return view('pages.dashboard.promotion.create');
+});
+
+Route::get('/admin/transactions', function () {
+    return view('pages.dashboard.product.index');
+});

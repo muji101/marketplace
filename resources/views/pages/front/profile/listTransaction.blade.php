@@ -9,7 +9,7 @@
                     <span><img class="w-6" src="https://ecs7.tokopedia.net/img/email-footer-190118/new/icon-marketplace.png" alt=""></span>
                     <span class="font-bold">Belanja</span>
                     <span class="text-gray-500">26 Juli 2021</span>
-                    <span class="text-xs bg-green-100 text-green-500 py-1 px-2 font-bold">Selesai</span>
+                    <span class="text-xs bg-red-100 text-red-500 py-1 px-2 font-bold">Selesai</span>
                     <span class="text-gray-500">INV/20210706/MPL/1385205190</span>
                 </div>
                 <div class="py-2 flex items-center space-x-2">
@@ -30,8 +30,8 @@
                     </div>
                 </div>
                 <div class="text-right text-sm">
-                    <a href="#" class="text-green-400 font-bold">Lihat detail transaksi</a>
-                    <a href="#" class="text-white font-bold bg-green-400 py-2 px-8 rounded">Beli Lagi</a>
+                    <a href="#" class="text-red-400 font-bold">Lihat detail transaksi</a>
+                    <a href="#" class="text-white font-bold bg-red-400 py-2 px-8 rounded">Beli Lagi</a>
                 </div>
             </div>
             <div class="p-4 shadow-md rounded-mg">
@@ -39,7 +39,7 @@
                     <span><img class="w-6" src="https://ecs7.tokopedia.net/img/email-footer-190118/new/icon-marketplace.png" alt=""></span>
                     <span class="font-bold">Belanja</span>
                     <span class="text-gray-500">26 Juli 2021</span>
-                    <span class="text-xs bg-green-100 text-green-500 py-1 px-2 font-bold">Selesai</span>
+                    <span class="text-xs bg-red-100 text-red-500 py-1 px-2 font-bold">Selesai</span>
                     <span class="text-gray-500">INV/20210706/MPL/1385205190</span>
                 </div>
                 <div class="py-2 flex items-center space-x-2">
@@ -60,8 +60,8 @@
                     </div>
                 </div>
                 <div class="text-right text-sm">
-                    <a href="#" class="text-green-400 font-bold">Lihat detail transaksi</a>
-                    <a href="#" class="text-white font-bold bg-green-400 py-2 px-8 rounded">Beli Lagi</a>
+                    <a href="#" class="text-red-400 font-bold">Lihat detail transaksi</a>
+                    <a href="#" class="text-white font-bold bg-red-400 py-2 px-8 rounded">Beli Lagi</a>
                 </div>
             </div>
         </div>

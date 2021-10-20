@@ -21,9 +21,13 @@
         <div id="main">
             @include("includes.seller.navbar")
             
-            <div class="flex">
-                @include('includes.seller.sidebar')
-                @yield('content')
+            <div class="grid grid-cols-6">
+                <div class="col-span-1 p-1 h-screen overflow-y-auto">
+                    @include('includes.seller.sidebar')
+                </div>
+                <div class="col-span-5 bg-gray-100">
+                    @yield('content')
+                </div>
             </div>
         </div>
     </div>

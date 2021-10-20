@@ -15,12 +15,12 @@
                         </div>
                     </label>
                     <div class="text-gray-500 text-right flex justify-between px-6 py-4">
-                        <button class="text-green-600">Tulis catatan untuk barang ini</button>
+                        <button class="text-red-600">Tulis catatan untuk barang ini</button>
                         <h5 class="">Pindahkan ke Wishlist | <i class="fas fa-trash-alt"></i></h5>
                         <div class="space-x-2">
                             <i class="fas fa-minus-circle"></i>
                             <input type="number" class="w-12">
-                            <i class="text-green-400 fas fa-plus-circle"></i>
+                            <i class="text-red-400 fas fa-plus-circle"></i>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="py-8 px-4">
                     <div class="flex justify-between">
                         <h1 class="text-lg text-left font-bold">Terakhir Dilihat</h1>
-                        <a href="#" class="text-md text-left text-green-500 font-bold">Lihat Semua</a>
+                        <a href="#" class="text-md text-left text-red-500 font-bold">Lihat Semua</a>
                     </div>
                     <div class="py-4 grid grid-cols-5 gap-2">
                         
@@ -39,7 +39,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -52,7 +52,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -65,7 +65,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -78,7 +78,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -91,7 +91,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -104,7 +104,7 @@
                 <div class="py-8 px-4">
                     <div class="flex justify-between">
                         <h1 class="text-lg text-left font-bold">Rekomendasi Untukmu</h1>
-                        <a href="#" class="text-md text-left text-green-500 font-bold">Lihat Semua</a>
+                        <a href="#" class="text-md text-left text-red-500 font-bold">Lihat Semua</a>
                     </div>
                     <div class="py-4 grid grid-cols-5 gap-2">
                         
@@ -115,7 +115,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -128,7 +128,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -141,7 +141,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -154,7 +154,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -167,7 +167,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -180,7 +180,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -193,7 +193,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -206,7 +206,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -219,7 +219,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -232,7 +232,7 @@
                                 <h3 class="font-bold ">Rp 6.950</h3>
                                 <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                                <button class="border-2 border-green-400 rounded-lg text-green-400 w-full mt-4 font-bold py-2">
+                                <button class="border-2 border-red-400 rounded-lg text-red-400 w-full mt-4 font-bold py-2">
                                 <i class="fas fa-plus"></i>
                                 Keranjang
                             </button>
@@ -260,7 +260,7 @@
                         <h1 class="text-lg my-2 text-left font-bold">Total Harga</h1>
                         <h1 class="text-lg my-2 text-left font-bold">Rp6.350</h1>
                     </div>
-                    <a href="/checkout"  class="py-2 block text-center bg-green-400 rounded-lg font-bold text-md text-white">Beli (1)</a>
+                    <a href="/checkout"  class="py-2 block text-center bg-red-400 rounded-lg font-bold text-md text-white">Beli (1)</a>
                 </div>
             </div>
         </div>
