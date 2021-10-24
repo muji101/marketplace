@@ -39,6 +39,7 @@
                 <tr>
                     <th class="whitespace-nowrap">IMAGES</th>
                     <th class="whitespace-nowrap">PRODUCT NAME</th>
+                    <th class="text-center whitespace-nowrap">CONDITION</th>
                     <th class="text-center whitespace-nowrap">PRICE</th>
                     <th class="text-center whitespace-nowrap">STOCK</th>
                     <th class="text-center whitespace-nowrap">STATUS</th>
@@ -64,6 +65,7 @@
                         <a href="" class="font-medium whitespace-nowrap">Nike Air Max 270</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
                     </td>
+                    <td class="text-center">Baru</td>
                     <td class="text-center">Rp.1011000</td>
                     <td class="text-center">177</td>
                     <td class="w-40">
@@ -71,6 +73,7 @@
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -94,6 +97,7 @@
                         <a href="" class="font-medium whitespace-nowrap">Oppo Find X2 Pro</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet</div>
                     </td>
+                    <td class="text-center">Baru</td>
                     <td class="text-center">Rp.1011000</td>
                     <td class="text-center">72</td>
                     <td class="w-40">
@@ -101,6 +105,7 @@
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -124,6 +129,7 @@
                         <a href="" class="font-medium whitespace-nowrap">Samsung Q90 QLED TV</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
                     </td>
+                    <td class="text-center">Baru</td>
                     <td class="text-center">Rp.1011000</td>
                     <td class="text-center">64</td>
                     <td class="w-40">
@@ -131,6 +137,7 @@
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -154,6 +161,7 @@
                         <a href="" class="font-medium whitespace-nowrap">Dell XPS 13</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">PC &amp; Laptop</div>
                     </td>
+                    <td class="text-center">Baru</td>
                     <td class="text-center">Rp.1011000</td>
                     <td class="text-center">82</td>
                     <td class="w-40">
@@ -161,6 +169,7 @@
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -184,6 +193,7 @@
                         <a href="" class="font-medium whitespace-nowrap">Nikon Z6</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Photography</div>
                     </td>
+                    <td class="text-center">Baru</td>
                     <td class="text-center">Rp.1011000</td>
                     <td class="text-center">50</td>
                     <td class="w-40">
@@ -191,6 +201,7 @@
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -214,6 +225,7 @@
                         <a href="" class="font-medium whitespace-nowrap">Sony A7 III</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Photography</div>
                     </td>
+                    <td class="text-center">Baru</td>
                     <td class="text-center">Rp.1011000</td>
                     <td class="text-center">50</td>
                     <td class="w-40">
@@ -221,6 +233,7 @@
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -244,6 +257,7 @@
                         <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
                     </td>
+                    <td class="text-center">Baru</td>
                     <td class="text-center">Rp.1011000</td>
                     <td class="text-center">116</td>
                     <td class="w-40">
@@ -251,6 +265,7 @@
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -274,6 +289,7 @@
                         <a href="" class="font-medium whitespace-nowrap">Nike Tanjun</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
                     </td>
+                    <td class="text-center">Baru</td>
                     <td class="text-center">Rp.1011000</td>
                     <td class="text-center">55</td>
                     <td class="w-40">
@@ -281,6 +297,7 @@
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -304,6 +321,7 @@
                         <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
                     </td>
+                    <td class="text-center">Baru</td>
                     <td class="text-center">Rp.1011000</td>
                     <td class="text-center">50</td>
                     <td class="w-40">
@@ -311,6 +329,7 @@
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>

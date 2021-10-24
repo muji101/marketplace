@@ -69,7 +69,7 @@
             </div>
             <div class="grid grid-cols-4 py-4">
                 <div class="col-span-1">
-                    Nama Produk <span class="text-xs text-gray-500">wajib</span>
+                    Deskripsi Produk
                     <p class="text-sm py-1 text-gray-500">
                         Wajib Cantumkan min. 40 karakter agar semakin menarik dan mudah ditemukan oleh pembeli, terdiri dari jenis produk, merek, dan keterangan seperti warna, bahan, atau tipe.
                     </p>
@@ -107,7 +107,6 @@ Ukuran
             <div class="grid grid-cols-4 py-4">
                 <div class="col-span-1">
                     Harga Satuan <span class="text-xs text-gray-500">wajib</span>
-                    <p class="text-sm py-1 text-gray-500">Atur jumlah minimum yang harus dibeli untuk produk ini..</p>
                 </div>
                 <div class="col-span-3">
                     <input type="number" class="p-2 rounded w-full border-2" placeholder="Masukkan harga">
@@ -126,7 +125,7 @@ Ukuran
                         <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
                         <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                     </div>
-                    <label for="toggle" class="text-xs text-gray-700">Toggle me.</label>
+                    <label for="toggle" class="text-xs text-gray-700">Aktif</label>
                 </div>
             </div>
             <div class="grid grid-cols-4 py-4">
@@ -136,6 +135,24 @@ Ukuran
                 </div>
                 <div class="col-span-3">
                     <input type="number" class="p-2 rounded w-full border-2" placeholder="Masukkan harga">
+                </div>
+            </div>
+        </div>
+        <div class="p-4 bg-white rounded-lg shadow mt-4">
+            <h2 class="font-bold">Berat</h2>
+            <div class="grid grid-cols-4 py-4">
+                <div class="col-span-1">
+                    Berat Produk<span class="text-xs text-gray-500">wajib</span>
+                    <p class="text-sm py-1 text-gray-500">Masukkan berat dengan menimbang produk setelah dikemas.</p>
+                </div>
+                <div class="col-span-3">
+                    <label class="flex space-x-2 items-center">
+                        <select class="form-select block w-full mt-1 border-2 w-full p-2">
+                            <option>Gram (g)</option>
+                            <option>Kilogram (kg)</option>
+                        </select>
+                        <input type="number" class="p-2 rounded w-full border-2" placeholder="Masukkan berat">
+                    </label>
                 </div>
             </div>
         </div>

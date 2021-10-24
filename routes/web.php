@@ -125,6 +125,9 @@ Route::get('/admin/products', function () {
 Route::get('/admin/product-create', function () {
     return view('pages.dashboard.product.create');
 });
+Route::get('/admin/product-detail', function () {
+    return view('pages.dashboard.product.detail');
+});
 
 Route::get('/admin/categories', function () {
     return view('pages.dashboard.category.index');
@@ -146,12 +149,18 @@ Route::get('/admin/users', function () {
 Route::get('/admin/user-create', function () {
     return view('pages.dashboard.user.create');
 });
+Route::get('/admin/user-detail', function () {
+    return view('pages.dashboard.user.detail');
+});
 
 Route::get('/admin/stores', function () {
     return view('pages.dashboard.store.index');
 });
 Route::get('/admin/store-create', function () {
     return view('pages.dashboard.store.create');
+});
+Route::get('/admin/store-detail', function () {
+    return view('pages.dashboard.store.detail');
 });
 
 Route::get('/admin/promotions', function () {

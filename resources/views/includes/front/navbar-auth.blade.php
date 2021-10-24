@@ -103,7 +103,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-6 flex">
+        <div class="col-span-5 flex">
             <div class="relative text-gray-600 w-full">
             <input type="search" name="serch" placeholder="Search" class="bg-white h-10 px-5 pr-10 rounded-full text-sm w-full border-2">
             <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
@@ -113,30 +113,172 @@
             </button>
             </div>
         </div>
-        <div class="col-span-1 flex flex-column justify-center items-center space-x-8 text-gray-500">
+        <div class="col-span-2 flex flex-column justify-center items-center space-x-8 text-gray-500">
             {{-- <a href="/cart"><i class="fas fa-shopping-cart"></i></a> --}}
             <div class="dropdown inline px-2 py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer font-bold text-base tracking-wide">
-                <a><i class="fas fa-shopping-cart"></i></a>
+                <div class="relative">
+                    <a><i class="fas fa-shopping-cart"></i></a>
+                    <span class="absolute top-0 -right-3 bg-red-500 px-1 rounded-full text-white text-xs ">1</span>
+                </div>
                 <div class="dropdown-menu absolute hidden w-96 text-gray-700  h-auto flex pt-4">
                     <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
-                        <div class="text-center">
-                            <img class="my-2 mx-auto" src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/zeus/kratos/4ac40a43.jpg" alt="">
-                            <h3 class="text-sm">Wah keranjang belanjaanmu kosong!</h3>
-                            <p class="my-2 text-xs font-normal">Daripada dianggurin, isi saja dengan barang-barang menarik. Lihat-lihat dulu, siapa tahu ada yang kamu suka!</p>
-                            {{-- <a href="#" class="text-xs text-white py-2 px-4  bg-red-400 rounded-lg w-full">Mulai belanja</a> --}}
+                        <div class="border-b-2 flex items-center justify-between">
+                            <h1 class="">Keranjang</h1>
+                            <a href="/cart" class="text-red-400 text-xs">Lihat sekarang</a>
+                        </div>
+                        <div class="flex items-center space-x-4 py-2">
+                            <img class="w-12" src="https://ecs7.tokopedia.net/img/cache/700/product-1/2020/7/11/48690432/48690432_73f8cf51-8be9-4323-8850-0df7f71abfc8_800_800" alt="">
+                            <div class="">
+                                <h2 class="hover:text-red-400 text-sm">Korek Api Kompor - Lighter Peman...</h2>
+                                <h5  class="text-xs font-normal">1 Barang (70gr)</h5>
+                            </div>
+                            <h2 class="text-yellow-500">Rp6.350</h2>
+                        </div>
+                        <div class="flex items-center space-x-4 py-2">
+                            <img class="w-12" src="https://ecs7.tokopedia.net/img/cache/700/product-1/2020/7/11/48690432/48690432_73f8cf51-8be9-4323-8850-0df7f71abfc8_800_800" alt="">
+                            <div class="">
+                                <h2 class="hover:text-red-400 text-sm">Korek Api Kompor - Lighter Peman...</h2>
+                                <h5  class="text-xs font-normal">1 Barang (70gr)</h5>
+                            </div>
+                            <h2 class="text-yellow-500">Rp6.350</h2>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
-
-        <div class="col-span-1 flex items-center border-l-2 space-x-2 pl-10">
-            <div class="py-2">
-                <a href="/login" class="border-2 border-red-400 py-2 px-4 rounded-lg text-red-400 font-bold">Masuk</a>
+            <div class="dropdown inline px-2 py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer font-bold text-base tracking-wide">
+                <div class="relative">
+                    <a><i class="fas fa-bell"></i></a>
+                    <span class="absolute top-0 -right-3 bg-red-500 px-1 rounded-full text-white text-xs ">1</span>
+                </div>
+                <div class="dropdown-menu absolute hidden w-72 text-gray-700  h-auto flex pt-4">
+                    <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md h-96 overflow-y-auto">
+                        <div class="border-b-2 flex items-center justify-between">
+                            <h1 class="">Notifikasi</h1>
+                            <a href="/profile" class="text-base"><i class="fas fa-cog"></i></a>
+                        </div>
+                        <div class="flex items-end justify-between py-2">
+                            <h1 class="text-sm">Pembelian</h1>
+                            <a href="#"  class="text-xs text-red-400 font-normal">Lihat semua</a>
+                        </div>
+                        <div class="py-4 text-xs font-normal border-b-2">
+                            <h2>Menunggu pembayaran</h2>
+                            <div class="flex py-2">
+                                <div class="text-center">
+                                    <img class="mx-auto" src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/zeus/kratos/5e972574.svg" alt="">
+                                    Menunggu konfirmasi
+                                </div>
+                                <div class="text-center">
+                                    <img class="mx-auto" src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/zeus/kratos/7764102f.svg" alt="">
+                                    Pesanan diproses
+                                </div>
+                                <div class="text-center">
+                                    <img class="mx-auto" src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/zeus/kratos/a39f2a72.svg" alt="">
+                                    Sedang dikirim
+                                </div>
+                                <div class="text-center">
+                                    <img class="mx-auto" src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/zeus/kratos/b590a65c.svg" alt="">
+                                    Sampai tujuan
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-4 border-b-4">
+                            <h2  class="text-sm">Penjualan</h2>
+                            <p class="py-2 text-xs font-normal">Cek pesanan yang masuk dan perkembangan tokomu secara rutin di satu tempat</p>
+                            <button href="#" class="text-sm text-red-600 my-1 border-2 border-red-500 rounded-lg w-full">Masuk ke Tokomerah seller</button>
+                        </div>
+                        <div class="py-4">
+                            <h2  class="text-sm">Untuk kamu</h2>
+                            <div class="text-center">
+                                <img class="my-2" src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/zeus/kratos/4ac40a43.jpg" alt="">
+                                <h3 class="text-sm">Belum ada notifikasi</h3>
+                                <p class="my-2 text-xs font-normal">Notifikasi terkait transaksi kamu bakal muncul di sini</p>
+                                <a href="#" class="text-xs text-white py-2 px-4  bg-red-400 rounded-lg w-full">Mulai belanja</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="py-2">
-                <a href="/login" class=" py-2 px-4 rounded-lg bg-red-400 text-white font-bold ring-2 ring-red-400">Daftar</a>
+            
+            <div class="dropdown inline px-2 py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer font-bold text-base tracking-wide">
+                <a><i class="fas fa-envelope"></i></a>
+                <div class="dropdown-menu absolute hidden w-60 text-gray-700  h-auto flex pt-4">
+                    <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
+                        <div class="flex flex-col text-xs font-normal">
+                            <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Chat</a>
+                            <a href="/profile/discution" class="hover:bg-gray-200 rounded px-2 py-1">Diskusi</a>
+                            <a href="/profile/review" class="hover:bg-gray-200 rounded px-2 py-1">Ulasan</a>
+                            <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Pesan bantuan</a>
+                            <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Pesan dikomplain</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-span-1 flex items-center border-l-2">
+            <div class="dropdown inline px-2 py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer text-base tracking-wide">
+                <div class="flex items-center space-x-2">
+                    <img class="h-8 rounded-full" src="https://images.tokopedia.net/img/seller_no_logo_3.png" alt=""> 
+                    <p class="text-gray-500 text-sm">mystore.id</p>
+                </div>
+                <div class="dropdown-menu absolute hidden w-96 text-gray-700  h-auto flex pt-4">
+                    <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
+                        <a href="/store" class="border-b-2 flex items-center space-x-2">
+                            <img class="w-12" src="https://images.tokopedia.net/img/seller_no_logo_3.png" alt="">
+                            <div>
+                                <p class="font-bold text-sm">mystore.id</p>
+                                <p class="font-bold text-xs">Regular merchant</p>
+                            </div>
+                        </a>
+                        <div class="py-2">
+                            <h1 class="font-bold">Tokomerah seller</h1>
+                            <p  class="text-xs py-2">Pantau pesanan yang masuk dan cek perkembangan tokomu secara rutin di satu tempat.</p>
+                            <div class="text-center bg-red-400 rounded-md py-1">
+                                <a href="/seller" target="_blank" class=" text-white font-bold text-sm">Cek Tokomerah Seller</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            {{-- <h6 class="px-4 py-1 font-bold rounded-full bg-red-400 text-gray-50 text-sm">Buka toko</h6> --}}
+        </div>
+        <div class="col-span-1 ml-2">
+            {{-- <a href="/profile" class="flex justify-center items-center">
+                <img class="h-8 rounded-full" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt="">
+                <h6 class="pl-2 text-gray-500 text-sm">Muji kuwat</h6>
+            </a> --}}
+            <div class="dropdown inline py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer text-base tracking-wide">
+                <div class="flex items-center space-x-2">
+                    <img class="h-6 rounded-full" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt=""> 
+                    <p class="text-gray-500 text-sm">Muji kuwat</p>
+                </div>
+                <div class="dropdown-menu absolute hidden w-60 text-gray-700  h-auto flex pt-4">
+                    <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
+                        <a href="/profile" class="border-b-2 flex items-center space-x-2">
+                            <img class="w-12 rounded-full p-2" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt="">
+                            <div>
+                                <p class="font-bold text-sm">Muji kuwat</p>
+                                <p class="font-bold text-xs">Regular merchant</p>
+                            </div>
+                        </a>
+                        <div class="py-2 space-y-1 text-center">
+                            <div class="py-1 bg-gray-100 rounded">
+                                <a href="/profile/list-transactions" class="py-2 px-4 text-sm"><i  class="fas fa-bag"></i>Pembelian</a>
+                            </div>
+                            <div class="py-1 bg-gray-100 rounded">
+                                <a href="/wishlist" class="py-2 px-4 text-sm"><i  class="fas fa-bag"></i>Wishlist</a>
+                            </div>
+                            <div class="py-1 bg-gray-100 rounded">
+                                <a href="/profile" class="py-2 px-4 text-sm"><i  class="fas fa-settings"></i>Pengaturan</a>
+                            </div>
+                            <div class="text-center bg-red-400 rounded-md py-1">
+                                <a href="/seller" class=" text-white font-bold text-sm">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </div>

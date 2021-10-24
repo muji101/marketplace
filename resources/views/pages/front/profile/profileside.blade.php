@@ -13,7 +13,7 @@
                 <label class="font-bold block p-5 leading-normal cursor-pointer" for="tab-multi-one">Kotak masuk</label>
                 <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-red-400 leading-normal">
                     <ul class="p-2 space-y-4">
-                        <li><a href="#" class="px-4 py-1 hover:bg-gray-200">Chat</a></li>
+                        <li><a href="/profile/chat" class="px-4 py-1 hover:bg-gray-200">Chat</a></li>
                         <li><a href="/profile/discution" class="px-4 py-1 hover:bg-gray-200">Diskusi produk</a></li>
                         <li><a href="/profile/review" class="px-4 py-1 hover:bg-gray-200">Ulasan</a></li>
                         <li><a href="#" class="px-4 py-1 hover:bg-gray-200">Pesan bantuan</a></li>
@@ -37,7 +37,7 @@
                 <label class="font-bold block p-5 leading-normal cursor-pointer" for="tab-multi-three">Profile saya</label>
                 <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-red-400 leading-normal">
                     <ul class="p-2 space-y-4">
-                        <li><a href="#" class="px-4 py-1  hover:bg-gray-200">Wishlist</a></li>
+                        <li><a href="/wishlist" class="px-4 py-1  hover:bg-gray-200">Wishlist</a></li>
                         <li><a href="#" class="px-4 py-1  hover:bg-gray-200">Toko favorit</a></li>
                         <li><a href="/profile" class="px-4 py-1  hover:bg-gray-200">Pengaturan</a></li>
                     </ul>

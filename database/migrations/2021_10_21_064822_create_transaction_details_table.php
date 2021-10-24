@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductGalleriesTable extends Migration
+class CreateTransactionDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateProductGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_galleries', function (Blueprint $table) {
+        Schema::create('transaction_details', function (Blueprint $table) {
             $table->id();
-
-            $table->string('photo');
-            $table->boolean('is_default');
+            
+            $table->foreignId('transaction_id');
             $table->foreignId('product_id');
+            $table->string('shipping_status');
+            $table->string('resi');
+            $table->string('code');
             
             $table->timestamps();
         });
@@ -31,6 +33,6 @@ class CreateProductGalleriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_galleries');
+        Schema::dropIfExists('transaction_details');
     }
 }

@@ -7,9 +7,9 @@
         <li class="mt-3 text-red-400 border-l-4 border-red-400">
             <a href="/seller" class="font-semibold p-3 cursor-pointer"><i class="fas fa-home"></i> Home</a>
         </li>
-        {{-- <li class="mt-3">
-            <a href="#" class="font-semibold p-3 cursor-pointer"><i class="fas fa-comment-dots"></i> Chat</a>
-        </li> --}}
+        <li class="mt-3">
+            <a href="/seller/chats" class="font-semibold p-3 cursor-pointer"><i class="fas fa-comment-dots"></i> Chat</a>
+        </li>
         <li class="mt-3">
             <a href="/seller/discutions" class="font-semibold p-3 cursor-pointer"><i class="fas fa-comments"></i> Diskusi</a>
         </li>

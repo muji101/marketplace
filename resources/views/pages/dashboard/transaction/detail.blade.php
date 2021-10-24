@@ -27,12 +27,11 @@
 <!-- BEGIN: Invoice -->
 <div class="intro-y box overflow-hidden mt-5">
     <div class="border-b border-gray-200 dark:border-dark-5 text-center sm:text-left">
-        <div class="px-5 py-10 sm:px-20 sm:py-20">
-            <div class="text-theme-1 dark:text-theme-10 font-semibold text-3xl">DETAIL TRANSACTION</div>
-            <div class="mt-2"> Id Transaction <span class="font-medium">#1923195</span> </div>
+        <div class="px-5 sm:px-20 sm:py-20">
+            <div class="text-theme-1 dark:text-theme-10 font-semibold text-3xl">TRX-1324923195</div>
             <div class="mt-1">Jan 02, 2021</div>
         </div>
-        <div class="flex flex-col lg:flex-row px-5 sm:px-20 pt-10 pb-10 sm:pb-20">
+        <div class="flex flex-col lg:flex-row px-5 sm:px-20">
             <div>
                 <div class="text-base text-gray-600">Buyer Details</div>
                 <div class="text-lg font-medium text-theme-1 dark:text-theme-10 mt-2">Arnold Schwarzenegger</div>

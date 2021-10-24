@@ -39,7 +39,14 @@
                     </select>
                 </div>
                 <div class="mt-3">
-                    <label for="crud-form-3" class="form-label">Quantity</label>
+                    <label for="crud-form-2" class="form-label">Condition</label>
+                    <select data-placeholder="Find" class="tom-select w-full" id="crud-form-2">
+                        <option value="1" selected>Baru</option>
+                        <option value="2">Bekas</option>
+                    </select>
+                </div>
+                <div class="mt-3">
+                    <label for="crud-form-3" class="form-label">Stock</label>
                     <div class="input-group">
                         <input id="crud-form-3" type="text" class="form-control" placeholder="Quantity" aria-describedby="input-group-1">
                         <div id="input-group-1" class="input-group-text">pcs</div>
@@ -54,18 +61,26 @@
                 </div>
                 <div class="mt-3">
                     <label class="form-label">Price</label>
-                    <div class="sm:grid grid-cols-3 gap-2">
+                    <div class="sm:grid grid-cols-1 gap-2">
                         <div class="input-group">
                             <div id="input-group-3" class="input-group-text">Unit</div>
                             <input type="text" class="form-control" placeholder="Unit" aria-describedby="input-group-3">
                         </div>
-                        <div class="input-group mt-2 sm:mt-0">
+                        {{-- <div class="input-group mt-2 sm:mt-0">
                             <div id="input-group-4" class="input-group-text">Wholesale</div>
                             <input type="text" class="form-control" placeholder="Wholesale" aria-describedby="input-group-4">
                         </div>
                         <div class="input-group mt-2 sm:mt-0">
                             <div id="input-group-5" class="input-group-text">Bulk</div>
                             <input type="text" class="form-control" placeholder="Bulk" aria-describedby="input-group-5">
+                        </div> --}}
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label>Description</label>
+                    <div class="mt-2">
+                        <div data-simple-toolbar="false" class="editor">
+                            <p>Content of the editor.</p>
                         </div>
                     </div>
                 </div>
@@ -73,14 +88,6 @@
                     <label>Active Status</label>
                     <div class="mt-2">
                         <input type="checkbox" class="form-check-switch">
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <label>Description</label>
-                    <div class="mt-2">
-                        <div data-simple-toolbar="true" class="editor">
-                            <p>Content of the editor.</p>
-                        </div>
                     </div>
                 </div>
                 <div class="text-right mt-5">

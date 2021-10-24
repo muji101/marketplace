@@ -39,8 +39,8 @@
                 <tr>
                     <th class="whitespace-nowrap">IMAGES</th>
                     <th class="whitespace-nowrap">USER NAME</th>
-                    <th class="text-center whitespace-nowrap">INCOME</th>
-                    <th class="text-center whitespace-nowrap">PRODUCT</th>
+                    <th class="text-center whitespace-nowrap">STORE NAME</th>
+                    <th class="text-center whitespace-nowrap">ROLE</th>
                     <th class="text-center whitespace-nowrap">STATUS</th>
                     <th class="text-center whitespace-nowrap">ACTIONS</th>
                 </tr>
@@ -58,13 +58,14 @@
                         <a href="" class="font-medium whitespace-nowrap">Nikon Z6</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Admin</div>
                     </td>
-                    <td class="text-center font-bold text-theme-12">Rp.12.523.234</td>
-                    <td class="text-center">50</td>
+                    <td class="text-center font-bold text-theme-12">TokoCilik</td>
+                    <td class="text-center">USER</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="/admin/user-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -82,13 +83,14 @@
                         <a href="" class="font-medium whitespace-nowrap">Sony A7 III</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Admin</div>
                     </td>
-                    <td class="text-center font-bold text-theme-12">Rp.12.523.234</td>
-                    <td class="text-center">50</td>
+                    <td class="text-center font-bold text-theme-12">TokoCilik</td>
+                    <td class="text-center">USER</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="javascript:;"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -106,13 +108,14 @@
                         <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">User</div>
                     </td>
-                    <td class="text-center font-bold text-theme-12">Rp.12.523.234</td>
-                    <td class="text-center">116</td>
+                    <td class="text-center font-bold text-theme-12">TokoCilik</td>
+                    <td class="text-center">USER</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="javascript:;"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -130,13 +133,14 @@
                         <a href="" class="font-medium whitespace-nowrap">Nike Tanjun</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">User</div>
                     </td>
-                    <td class="text-center font-bold text-theme-12">Rp.12.523.234</td>
-                    <td class="text-center">55</td>
+                    <td class="text-center font-bold text-theme-12">TokoCilik</td>
+                    <td class="text-center">USER</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="javascript:;"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
@@ -154,13 +158,14 @@
                         <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> 
                         <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">User</div>
                     </td>
-                    <td class="text-center font-bold text-theme-12">Rp.12.523.234</td>
-                    <td class="text-center">50</td>
+                    <td class="text-center font-bold text-theme-12">TokoCilik</td>
+                    <td class="text-center">USER</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3 text-theme-12" href="javascript:;"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
                             <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                             <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
