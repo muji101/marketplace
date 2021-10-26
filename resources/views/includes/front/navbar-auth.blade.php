@@ -241,14 +241,8 @@
                     </div>
                 </div>
             </div>
-                
-            {{-- <h6 class="px-4 py-1 font-bold rounded-full bg-red-400 text-gray-50 text-sm">Buka toko</h6> --}}
         </div>
         <div class="col-span-1 ml-2">
-            {{-- <a href="/profile" class="flex justify-center items-center">
-                <img class="h-8 rounded-full" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt="">
-                <h6 class="pl-2 text-gray-500 text-sm">Muji kuwat</h6>
-            </a> --}}
             <div class="dropdown inline py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer text-base tracking-wide">
                 <div class="flex items-center space-x-2">
                     <img class="h-6 rounded-full" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt=""> 

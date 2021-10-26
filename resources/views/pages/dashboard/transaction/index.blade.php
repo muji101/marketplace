@@ -5,7 +5,6 @@
 @section('content')
 
 @include('includes.back.topbar')
-
 <h2 class="intro-y text-lg font-medium mt-10">
     Transaction List
 </h2>
@@ -48,59 +47,6 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        #TMT-389
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Nike Air Max 270</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
-                    </td>
-                    {{-- <td class="text-center">transaction@gmail.com</td> --}}
-                    <td class="text-center">20-10-2021</td>
-                    <td class="text-center">Transfer Bank</td>
-                    <td class="text-center font-bold">Rp.1011000</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-6"> <i data-feather="x-square" class="w-4 h-4 mr-2"></i> Failed </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-9 tooltip" title="Set Success" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-6" href="javascript:;"> <i data-feather="x-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-16" href="javascript:;"> <i data-feather="truck" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-1" href="javascript:;"> <i data-feather="edit" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-12" href="/admin/transaction-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i></a>
-                            {{-- <a class="flex items-center mr-3 text-theme-12" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="eye" class="w-4 h-4 mr-1"></i></a> --}}
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        #TMT-389
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Oppo Find X2 Pro</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet</div>
-                    </td>
-                    {{-- <td class="text-center">transaction@gmail.com</td> --}}
-                    <td class="text-center">20-10-2021</td>
-                    <td class="text-center">Transfer Bank</td>
-                    <td class="text-center font-bold">Rp.1011000</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Success </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-9" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-6" href="javascript:;"> <i data-feather="x-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-16" href="javascript:;"> <i data-feather="truck" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-1" href="javascript:;"> <i data-feather="edit" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-12" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="eye" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i></a>
-                        </div>
-                    </td>
-                </tr>
                 <tr class="intro-x">
                     <td class="w-40">
                         #TMT-389
@@ -181,110 +127,6 @@
                         </div>
                     </td>
                 </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        #TMT-389
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Sony A7 III</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Photography</div>
-                    </td>
-                    {{-- <td class="text-center">transaction@gmail.com</td> --}}
-                    <td class="text-center">20-10-2021</td>
-                    <td class="text-center">Transfer Bank</td>
-                    <td class="text-center font-bold">Rp.1011000</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Success </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-9" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-6" href="javascript:;"> <i data-feather="x-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-16" href="javascript:;"> <i data-feather="truck" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-1" href="javascript:;"> <i data-feather="edit" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-12" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="eye" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        #TMT-389
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
-                    </td>
-                    {{-- <td class="text-center">transaction@gmail.com</td> --}}
-                    <td class="text-center">20-10-2021</td>
-                    <td class="text-center">Transfer Bank</td>
-                    <td class="text-center font-bold">Rp.1011000</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Success </div>
-                    </td>
-                    <<td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-9" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-6" href="javascript:;"> <i data-feather="x-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-16" href="javascript:;"> <i data-feather="truck" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-1" href="javascript:;"> <i data-feather="edit" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-12" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="eye" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        #TMT-389
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Nike Tanjun</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
-                    </td>
-                    {{-- <td class="text-center">transaction@gmail.com</td> --}}
-                    <td class="text-center">20-10-2021</td>
-                    <td class="text-center">Transfer Bank</td>
-                    <td class="text-center font-bold">Rp.1011000</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-12"> <i data-feather="square" class="w-4 h-4 mr-2"></i> Pending </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-9" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-6" href="javascript:;"> <i data-feather="x-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-16" href="javascript:;"> <i data-feather="truck" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-1" href="javascript:;"> <i data-feather="edit" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-12" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="eye" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        #TMT-389
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
-                    </td>
-                    {{-- <td class="text-center">transaction@gmail.com</td> --}}
-                    <td class="text-center">20-10-2021</td>
-                    <td class="text-center">Transfer Bank</td>
-                    <td class="text-center font-bold">Rp.1011000</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Success </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-9" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-6" href="javascript:;"> <i data-feather="x-square" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-16" href="javascript:;"> <i data-feather="truck" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-1" href="javascript:;"> <i data-feather="edit" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center mr-3 text-theme-12" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="eye" class="w-4 h-4 mr-1"></i></a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i></a>
-                        </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
     </div>
@@ -342,4 +184,7 @@
     </div>
 </div>
 <!-- END: Delete Confirmation Modal -->
+
 @endsection
+
+

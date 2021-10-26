@@ -21,7 +21,34 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'gender',
+        'photo',
+        'province_id',
+        'regency_id',
+        'district_id',
+        'village_id',
+        'zip_code',
+        'country',
+        'role'
     ];
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class);
+    }
+    public function regency()
+    {
+        return $this->belongsTo(Regency::class);
+    }
+    public function district()
+    {
+        return $this->belongsTo(District::class);
+    }
+    public function village()
+    {
+        return $this->belongsTo(Village::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -41,4 +68,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
 }

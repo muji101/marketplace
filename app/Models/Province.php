@@ -17,6 +17,11 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Province extends Model
 {
+    protected $fillable = [
+        'id',
+        'name',
+    ];
+    
     use ProvinceTrait;
     /**
      * Table name.
@@ -33,5 +38,10 @@ class Province extends Model
     public function regencies()
     {
         return $this->hasMany(Regency::class);
+    }
+
+    public function user()
+    {
+        return $this->hasMany(User::class);
     }
 }

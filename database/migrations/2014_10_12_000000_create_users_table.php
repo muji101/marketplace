@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use League\CommonMark\Extension\Table\Table;
 
 class CreateUsersTable extends Migration
 {
@@ -19,19 +20,22 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->text('phone');
-            $table->enum('gender', ['L', 'P']);
-            $table->string('photo');
-            $table->foreignId('province_id');
-            $table->foreignId('regency_id');
-            $table->foreignId('district_id');
-            $table->foreignId('village_id');
-            $table->integer('zip_code');
+            $table->text('phone')->nullable();
+            $table->enum('gender', ['L', 'P'])->nullable();
+            $table->string('photo')->nullable();
+            $table->foreignId('province_id')->nullable();
+            $table->foreignId('regency_id')->nullable();
+            $table->foreignId('district_id')->nullable();
+            $table->foreignId('village_id')->nullable();
+            $table->integer('zip_code')->nullable();
+            $table->string('country')->nullable();
             $table->string('role');
+            $table->boolean('status')->default(1);
             // $table->text('address');
             
             // $table->timestamp('email_verified_at')->nullable();
             // $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
