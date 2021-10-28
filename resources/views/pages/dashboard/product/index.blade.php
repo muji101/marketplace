@@ -11,7 +11,7 @@
 </h2>
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-        <button class="btn btn-primary shadow-md mr-2">Add New Product</button>
+        <a href="{{ route('products.create') }}" class="btn btn-primary shadow-md mr-2">Add New Product</a>
         <div class="dropdown">
             <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
                 <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-feather="plus"></i> </span>
@@ -47,6 +47,7 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($products as $product)
                 <tr class="intro-x">
                     <td class="w-40">
                         <div class="flex">
@@ -59,282 +60,43 @@
                             <div class="w-10 h-10 image-fit zoom-in -ml-5">
                                 <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-9.jpg" title="Uploaded at 20 April 2022">
                             </div>
+                            {{-- @foreach ($galleries as $gallery)
+                                <div class="w-10 h-10 image-fit zoom-in">
+                                    <img alt="photo" class="tooltip rounded-full" src="{{ asset('/storage/'.$gallery->photo) }}" title="Uploaded at 20 April 2022">
+                                </div>
+                            @endforeach --}}
                         </div>
                     </td>
                     <td>
-                        <a href="" class="font-medium whitespace-nowrap">Nike Air Max 270</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
+                        <a href="" class="font-medium whitespace-nowrap">{{ $product->name }}</a> 
+                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">{{ $product->subcategory->name }}</div>
                     </td>
-                    <td class="text-center">Baru</td>
-                    <td class="text-center">Rp.1011000</td>
-                    <td class="text-center">177</td>
+                    <td class="text-center">{{ $product->condition }}</td>
+                    <td class="text-center">Rp.{{{ $product->price }}}</td>
+                    <td class="text-center">{{ $product->quantity }}</td>
                     <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
+                        @if ($product->status == 1)
+                            <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
+                        @else
+                            <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
+                        @endif
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                            <a class="flex items-center mr-3 text-theme-12" href="{{ route('products.show', $product->id) }}"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
+                            <a class="flex items-center mr-3" href="{{ route('products.edit', $product->id) }}"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
+                            {{-- <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a> --}}
+                            <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button class="text-theme-6" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete Data">
+                                    <i data-feather="trash-2" class="w-4 h-4 mr-1"></i>Delete
+                                </button>
+                            </form>
                         </div>
                     </td>
                 </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-7.jpg" title="Uploaded at 25 May 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-5.jpg" title="Uploaded at 25 May 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-15.jpg" title="Uploaded at 25 May 2021">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Oppo Find X2 Pro</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet</div>
-                    </td>
-                    <td class="text-center">Baru</td>
-                    <td class="text-center">Rp.1011000</td>
-                    <td class="text-center">72</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-15.jpg" title="Uploaded at 6 September 2020">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-13.jpg" title="Uploaded at 6 September 2020">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-7.jpg" title="Uploaded at 6 September 2020">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Samsung Q90 QLED TV</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
-                    </td>
-                    <td class="text-center">Baru</td>
-                    <td class="text-center">Rp.1011000</td>
-                    <td class="text-center">64</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-10.jpg" title="Uploaded at 30 December 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-5.jpg" title="Uploaded at 30 December 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-6.jpg" title="Uploaded at 30 December 2021">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Dell XPS 13</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">PC &amp; Laptop</div>
-                    </td>
-                    <td class="text-center">Baru</td>
-                    <td class="text-center">Rp.1011000</td>
-                    <td class="text-center">82</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-3.jpg" title="Uploaded at 2 March 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-10.jpg" title="Uploaded at 2 March 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-1.jpg" title="Uploaded at 2 March 2022">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Nikon Z6</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Photography</div>
-                    </td>
-                    <td class="text-center">Baru</td>
-                    <td class="text-center">Rp.1011000</td>
-                    <td class="text-center">50</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-14.jpg" title="Uploaded at 19 June 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-7.jpg" title="Uploaded at 19 June 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-9.jpg" title="Uploaded at 19 June 2022">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Sony A7 III</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Photography</div>
-                    </td>
-                    <td class="text-center">Baru</td>
-                    <td class="text-center">Rp.1011000</td>
-                    <td class="text-center">50</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-10.jpg" title="Uploaded at 13 February 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-13.jpg" title="Uploaded at 13 February 2021">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-13.jpg" title="Uploaded at 13 February 2021">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
-                    </td>
-                    <td class="text-center">Baru</td>
-                    <td class="text-center">Rp.1011000</td>
-                    <td class="text-center">116</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-8.jpg" title="Uploaded at 13 July 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-12.jpg" title="Uploaded at 13 July 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-14.jpg" title="Uploaded at 13 July 2022">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Nike Tanjun</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
-                    </td>
-                    <td class="text-center">Baru</td>
-                    <td class="text-center">Rp.1011000</td>
-                    <td class="text-center">55</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-15.jpg" title="Uploaded at 24 September 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-13.jpg" title="Uploaded at 24 September 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-12.jpg" title="Uploaded at 24 September 2022">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> 
-                        <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Electronic</div>
-                    </td>
-                    <td class="text-center">Baru</td>
-                    <td class="text-center">Rp.1011000</td>
-                    <td class="text-center">50</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3 text-theme-12" href="/admin/product-detail"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

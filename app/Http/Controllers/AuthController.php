@@ -90,7 +90,7 @@ class AuthController extends Controller
         $data = $request->all();
 
         $data['password'] = Hash::make($data['password']);
-        $data['photo'] = $request->file('photo')->store('assets/class','public');
+        $data['photo'] = $request->file('photo')->store('assets/user','public');
         
         User::create($data);
         
@@ -106,41 +106,64 @@ class AuthController extends Controller
 
     public function edit($id)
     {
+        $provinces = Province::get();
+        $regencies = Regency::get();
+        $districts = District::get();
+        $villages = Village::get();
+
         $users = User::findOrFail($id);
         
-        return view('pages.dashboard.user.create', ['users' => $users]);
+        return view('pages.dashboard.user.create', [
+            'users' => $users,
+            'provinces' => $provinces,
+            'regencies' => $regencies,
+            'districts' => $districts,
+            'villages' => $villages,
+        ]);
     }
 
     public function update(Request $request, $id)
     {
-        $data = User::findOrFail($id);
+        // $data = User::findOrFail($id);
         // dd($request->password);
-        if($request->password){
-            $request->validate([
-                'name'=> 'required|max:25',
-                'email'=> 'required|min:4|max:25|email:rfc,dns|unique:users,email,'.$id,
-                // 'current_password' => 'required',
-                'password' =>'required|min:5',
-                // 'image'
-            ]);
+        // if($request->password){
+        //     $request->validate([
+        //         'name'=> 'required|max:25',
+        //         'email'=> 'required|min:4|max:25|email:rfc,dns|unique:users,email,'.$id,
+        //         // 'current_password' => 'required',
+        //         'password' =>'required|min:5',
+        //         'photo'
+        //     ]);
     
-            $request->merge([
-                'password' => Hash::make($request->password)
-            ]);
+        //     $request->merge([
+        //         'password' => Hash::make($request->password)
+        //     ]);
     
-            }else{
-                $request->validate([
-                    'name'=> 'required|max:25',
-                    'email'=> 'required|min:4|max:25|email:rfc,dns|unique:users,email,'. $id,
-                    // 'image' => 'required'
-                ]);
-            }
+        //     }else{
+        //         $request->validate([
+        //             'name'=> 'required|max:25',
+        //             'email'=> 'required|min:4|max:25|email:rfc,dns|unique:users,email,'. $id,
+        //             // 'image' => 'required'
+        //         ]);
+        //     }
 
-        if ($request->password) {
-            $data->update($request->all());
-        }else{
-            $data->update($request->except('password'));
-        }
+        // if ($request->password) {
+        //     $data->update($request->all());
+        // }else{
+        //     $data['photo'] = $request->file('photo')->store('assets/user','public');
+        //     $data->update($request->except('password'));
+        // }
+
+        // $data['password'] = Hash::make($data['password']);
+        // $data['photo'] = $request->file('photo')->store('assets/user','public');
+        
+        $data = $request->all();
+        $data['photo'] = $request->file('photo')->store('assets/user', 'public');
+        $data['password'] = Hash::make($data['password']);
+        $item = User::find($id);
+        $item->update($data);
+        
+        // $data->update($request->all());
 
         return redirect()->route('user.index');
     }

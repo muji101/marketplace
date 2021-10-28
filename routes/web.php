@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\dash\CategoryController;
+use App\Http\Controllers\dash\SubCategoryController;
+use App\Http\Controllers\dash\ProductController;
+use App\Http\Controllers\dash\ProductGalleryController;
+use App\Http\Controllers\dash\PromotionController;
+use App\Http\Controllers\dash\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,23 +44,35 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/user/delete/{id}', [AuthController::class, 'delete'])->name('user.delete');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+    Route::resource('categories', CategoryController::class);
+    Route::resource('subcategory', SubCategoryController::class);
+    Route::get('/categories/{id}/create', [SubCategoryController::class, 'create'])->name('subcategory-create');
+    Route::get('/categories/{cateId}/{id}', [SubCategoryController::class, 'edit'])->name('subcategory-edit');
 
-    Route::get('/admin/products', function () {
-        return view('pages.dashboard.product.index');
-    });
-    Route::get('/admin/product-create', function () {
-        return view('pages.dashboard.product.create');
-    });
-    Route::get('/admin/product-detail', function () {
-        return view('pages.dashboard.product.detail');
-    });
+    Route::resource('products', ProductController::class);
 
-    Route::get('/admin/categories', function () {
-        return view('pages.dashboard.category.index');
-    });
-    Route::get('/admin/category-create', function () {
-        return view('pages.dashboard.category.create');
-    });
+    Route::resource('galleries', ProductGalleryController::class);
+
+    Route::resource('promotions', PromotionController::class);
+
+    Route::resource('stores', StoreController::class);
+
+    // Route::get('/admin/products', function () {
+    //     return view('pages.dashboard.product.index');
+    // });
+    // Route::get('/admin/product-create', function () {
+    //     return view('pages.dashboard.product.create');
+    // });
+    // Route::get('/admin/product-detail', function () {
+    //     return view('pages.dashboard.product.detail');
+    // });
+
+    // Route::get('/admin/categories', function () {
+    //     return view('pages.dashboard.category.index');
+    // });
+    // Route::get('/admin/category-create', function () {
+    //     return view('pages.dashboard.category.create');
+    // });
 
     Route::get('/admin/galleries', function () {
         return view('pages.dashboard.gallery.index');

@@ -20,22 +20,18 @@
                     <div class="absolute mb-1 mr-1 flex items-center justify-center bottom-0 right-0 bg-theme-1 rounded-full p-2"> <i class="w-4 h-4 text-white" data-feather="camera"></i> </div>
                 </div>
                 <div class="ml-5">
-                    <div class="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-lg">Nike Air Max 270</div>
-                    <div class="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-md">Rp5.899.000</div>
-                    <div class="text-gray-600">Sport & Outdoor</div>
+                    <div class="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-lg">{{ $products->name }}</div>
+                    <div class="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-md">Rp.{{ $products->price }}</div>
+                    <div class="text-gray-600">{{ $products->subcategory->name }}</div>
+                    <div class="text-gray-600 font-bold">Store : {{ $stores->first()->name }}</div>
                 </div>
             </div>
             <div class="mt-6 lg:mt-0 flex-1 dark:text-gray-300 px-5 border-l border-r border-gray-200 dark:border-dark-5 border-t lg:border-t-0 pt-5 lg:pt-0">
                 <div class="font-medium text-center lg:text-left lg:mt-3">Detail</div>
                 <div class="flex flex-col justify-center items-center lg:items-start mt-4">
-                    <p>Kondisi: Baru</p>
-                    <p>Berat: 100 Gram</p>
-                    <p>Deskripsi: NIKE AIR MAX PATTA MONARCH
-                        Size available:
-                        US 9.5 / EU 43
-                        Original authentic 1000% money back guaranteed
-                        Local pair
-                        Comes with ‘Special Box’</p>
+                    <p>Kondisi: {{ $products->condition }}</p>
+                    <p>Berat: {{ $products->weight }} Gram</p>
+                    <p>Deskripsi: {!! $products->description !!}</p>
                 </div>
             </div>
             <div class="mt-6 lg:mt-0 flex-1 px-5 border-t lg:border-0 border-gray-200 dark:border-dark-5 pt-5 lg:pt-0">

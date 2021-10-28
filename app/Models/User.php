@@ -30,9 +30,14 @@ class User extends Authenticatable
         'village_id',
         'zip_code',
         'country',
-        'role'
+        'role',
+        'status'
     ];
-
+    public function product()
+    {
+        return $this->hasMany(Product::class, 'id', 'user_id');
+    }
+    
     public function province()
     {
         return $this->belongsTo(Province::class);

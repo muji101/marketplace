@@ -52,7 +52,7 @@
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="photo profile" class="tooltip rounded-full" src="{{ asset('/storage/'.$user->photo) }}" title="Uploaded at {{ $user->created_at }}">
+                                <img data-action="zoom" alt="photo profile" class="tooltip rounded-full" src="{{ asset('/storage/'.$user->photo) }}" title="Uploaded at {{ $user->created_at }}">
                             </div>
                         </div>
                     </td>
@@ -73,8 +73,15 @@
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
                             <a class="flex items-center mr-3 text-theme-12" href="{{ route('user.show', $user->id) }}"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                            <a class="flex items-center mr-3" href="{{ route('user.edit', $user->id) }}"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
+                            {{-- <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a> --}}
+                            <form action="{{ route('user.delete', $user->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button class="text-theme-6" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete Data">
+                                    <i data-feather="trash-2" class="w-4 h-4 mr-1"></i>Delete
+                                </button>
+                            </form>
                         </div>
                     </td>
                 </tr>
@@ -130,6 +137,13 @@
                 <div class="px-5 pb-8 text-center">
                     <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
                     <button type="button" class="btn btn-danger w-24">Delete</button>
+                    {{-- <form action="{{ route('user.delete', $user->id) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button class="" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete Data">
+                            <i data-feather="trash-2" class="w-4 h-4 mr-1"></i>Delete
+                        </button>
+                    </form> --}}
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@
 </h2>
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-        <button class="btn btn-primary shadow-md mr-2">Add New Category</button>
+        <a href="{{ route('categories.create') }}" class="btn btn-primary shadow-md mr-2">Add New Category</a>
         <div class="dropdown">
             <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
                 <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-feather="plus"></i> </span>
@@ -39,210 +39,42 @@
                 <tr>
                     <th class="whitespace-nowrap">IMAGES</th>
                     <th class="whitespace-nowrap">CATEGORY NAME</th>
+                    <th class="text-center whitespace-nowrap">SUB CATEGORY</th>
                     <th class="text-center whitespace-nowrap">PRODUCT</th>
-                    <th class="text-center whitespace-nowrap">STATUS</th>
                     <th class="text-center whitespace-nowrap">ACTIONS</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach ($categories as $category)
                 <tr class="intro-x">
                     <td class="w-40">
                         <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-14.jpg" title="Uploaded at 20 April 2022">
+                                <img data-action="zoom" alt="Photo" class="tooltip rounded-full" src="{{ asset('/storage/'.$category->photo) }}" title="Uploaded at {{ $category->created_at }}">
                             </div>
                         </div>
                     </td>
                     <td>
-                        <a href="" class="font-medium whitespace-nowrap">Elektronik</a> 
+                        <a href="" class="font-medium whitespace-nowrap">{{ $category->name }}</a> 
                     </td>
-                    <td class="text-center">177</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
-                    </td>
+                    <td class="text-center">{{ $category->subcategory->count() }}</td>
+                    <td class="text-center">2001</td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                            <a class="flex items-center mr-3 text-theme-12" href="{{ route('categories.show', $category->id) }}"> <i data-feather="eye" class="w-4 h-4 mr-1"></i> Show </a>
+                            <a class="flex items-center mr-3" href="{{ route('categories.edit', $category->id) }}"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
+                            {{-- <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a> --}}
+                            <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button class="text-theme-6" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete Data">
+                                    <i data-feather="trash-2" class="w-4 h-4 mr-1"></i>Delete
+                                </button>
+                            </form>
                         </div>
                     </td>
                 </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-7.jpg" title="Uploaded at 25 May 2021">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Fashion</a> 
-                    </td>
-                    <td class="text-center">72</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-15.jpg" title="Uploaded at 6 September 2020">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Tools</a> 
-                    </td>
-                    <td class="text-center">64</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-10.jpg" title="Uploaded at 30 December 2021">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Decorations</a> 
-                    </td>
-                    <td class="text-center">82</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-3.jpg" title="Uploaded at 2 March 2022">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Interior</a> 
-                    </td>
-                    <td class="text-center">50</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-14.jpg" title="Uploaded at 19 June 2022">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Eksterior</a> 
-                    </td>
-                    <td class="text-center">50</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-10.jpg" title="Uploaded at 13 February 2021">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Shoes</a> 
-                    </td>
-                    <td class="text-center">116</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-8.jpg" title="Uploaded at 13 July 2022">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Bags</a> 
-                    </td>
-                    <td class="text-center">55</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="intro-x">
-                    <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-15.jpg" title="Uploaded at 24 September 2022">
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="font-medium whitespace-nowrap">Muslim Fashion</a> 
-                    </td>
-                    <td class="text-center">50</td>
-                    <td class="w-40">
-                        <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
-                    </td>
-                    <td class="table-report__action w-56">
-                        <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal"> <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                        </div>
-                    </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

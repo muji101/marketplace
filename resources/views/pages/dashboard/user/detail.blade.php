@@ -36,9 +36,9 @@
             <div class="mt-6 lg:mt-0 flex-1 px-5 border-t lg:border-0 border-gray-200 dark:border-dark-5 pt-5 lg:pt-0">
                 <div class="font-medium text-center lg:text-left lg:mt-4">Address</div>
                 <div class="flex items-center justify-center lg:justify-start mt-2">
-                    @if (isset($user->village))
+                    @if (isset($users->village))
                         <p class="uppercase">
-                            {{ $user->village->name }}, {{ $user->district->name }}, {{ $user->regency->name }}, {{ $user->province->name }}, {{ $user->zip_code }}, {{ $user->country }}
+                            {{ $users->village->name }}, {{ $users->district->name }}, {{ $users->regency->name }}, {{ $users->province->name }}, {{ $users->zip_code }}, {{ $users->country }}
                         </p>
                     @else
                         <p class="uppercase">Tidak ada alamat</p>

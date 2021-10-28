@@ -22,6 +22,8 @@ class CreateStoresTable extends Migration
             $table->string('slogan');
             $table->text('description');
             $table->text('address');
+            $table->enum('type', ['power merchant', 'power merchant pro', 'official store']);
+            $table->boolean('status');
             $table->foreignId('user_id');
 
             $table->softDeletes();
