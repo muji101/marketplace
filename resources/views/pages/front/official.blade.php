@@ -62,7 +62,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -74,7 +74,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -86,7 +86,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -98,7 +98,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -110,7 +110,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -122,7 +122,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -136,7 +136,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -148,7 +148,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -160,7 +160,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -172,7 +172,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -184,7 +184,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -196,7 +196,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -210,7 +210,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -222,7 +222,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -234,7 +234,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -246,7 +246,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -258,7 +258,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -270,7 +270,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -284,7 +284,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -296,7 +296,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -308,7 +308,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -320,7 +320,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -332,7 +332,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>
@@ -344,7 +344,7 @@
                 <div class="px-2 py-2">
                     <h4 class="text-sm font-bold text-gray-700">Case Luxury Candi Love Samsung A10S</h4>
                     <div class="text-yellow-700">
-                        <span class="text-red-600 bg-red-100 py-1 px-2 rounded text-xs ">50%</span>
+                        <span class="text-blue-600 bg-blue-100 py-1 px-2 rounded text-xs ">50%</span>
                         <s class="text-gray-600 py-1 px-2 rounded text-xs ">Rp75.000</s>
                     </div>
                     <h3 class="font-bold text-yellow-500 pt-2">Rp 6.950</h3>

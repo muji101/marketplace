@@ -47,15 +47,15 @@
         <div class="bg-white rounded-lg p-4">
             <h2 class="font-bold">Statistik tokomu</h2>
             <div class="flex space-x-2">
-                <div class="shadow p-4 border-b-4 rounded border-red-400 w-52">
+                <div class="shadow p-4 border-b-4 rounded border-blue-400 w-52">
                     <h4 class="text-sm text-gray-500">Pendapatan bersih baru</h4>
                     <p class="font-bold text-2xl">Rp0</p>
                 </div>
-                <div class="shadow p-4 border-b-4 rounded border-red-400 w-52">
+                <div class="shadow p-4 border-b-4 rounded border-blue-400 w-52">
                     <h4 class="text-sm text-gray-500">Produk dilihat</h4>
                     <p class="font-bold text-2xl">0</p>
                 </div>
-                <div class="shadow p-4 border-b-4 rounded border-red-400 w-52">
+                <div class="shadow p-4 border-b-4 rounded border-blue-400 w-52">
                     <h4 class="text-sm text-gray-500">Produk terjual</h4>
                     <p class="font-bold text-2xl">0</p>
                 </div>
@@ -70,7 +70,7 @@
                 <img class="w-52 mx-auto" src="https://ecs7.tokopedia.net/seller-dashboard/stock_product.png" alt="">
                 <h1 class="font-bold">Belum ada produk yang terjual, nih</h1>
                 <p class="text-gray-500">Yuk, buat produk di tokomu makin laris dengan iklan terbaik!</p>
-                <a href="#" class="block font-bold py-2 px-12 rounded-lg bg-red-400 my-2 text-white">Buat produk</a>
+                <a href="#" class="block font-bold py-2 px-12 rounded-lg bg-blue-400 my-2 text-white">Buat produk</a>
             </div>
         </div>
         

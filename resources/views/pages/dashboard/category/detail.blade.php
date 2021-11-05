@@ -16,8 +16,8 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Photo</th>
                     <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Sub Name</th>
-                    {{-- <th class="border-b-2 dark:border-dark-5 text-right whitespace-nowrap">Photo</th> --}}
                     <th class="border-b-2 dark:border-dark-5 text-right whitespace-nowrap">Product</th>
                     <th class="border-b-2 dark:border-dark-5 text-right whitespace-nowrap">Action</th>
                 </tr>
@@ -25,11 +25,14 @@
             <tbody>
                 @foreach ($subcategory as $sub)
                 <tr>
+                    
+                    <td class="mx-auto border-b dark:border-dark-5 w-32">
+                        <img class="w-12" src="{{ asset('/storage/'.$sub->photo) }}" alt="">
+                    </td>
                     <td class="border-b dark:border-dark-5">
                         <div class="font-medium whitespace-nowrap">{{ $sub->name }}</div>
                         <div class="text-gray-600 text-sm mt-0.5 whitespace-nowrap">{{ $categories->name }}</div>
                     </td>
-                    {{-- <td class="text-right border-b dark:border-dark-5 w-32">$25</td> --}}
                     <td class="text-right border-b dark:border-dark-5 w-32">2</td>
                     <td class="text-right border-b dark:border-dark-5 w-48">
                         <div class="flex justify-center items-center">

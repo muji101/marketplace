@@ -46,7 +46,7 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        // $data['photo'] = $request->file('photo')->store('assets/category','public');
+        $data['photo'] = $request->file('photo')->store('assets/sub-category','public');
         $data['slug'] = Str::slug($request->name);
         SubCategory::create($data);
 
@@ -97,7 +97,7 @@ class SubCategoryController extends Controller
         
         $data = $request->all();
         
-        // $data['photo'] = $request->file('photo')->store('assets/category','public');
+        $data['photo'] = $request->file('photo')->store('assets/sub-category','public');
         $data['slug'] = Str::slug($request->name);
         $item = SubCategory::find($id);
         $item->update($data);

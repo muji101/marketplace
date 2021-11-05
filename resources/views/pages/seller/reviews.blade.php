@@ -8,7 +8,7 @@
         <div class="h-auto p-4 border-2 rounded-lg bg-white">
             <!-- Tabs -->
                 <ul id="tabs" class="inline-flex w-full px-1 pt-2 border-b-2">
-                    <li class="px-4 py-2 -mb-px font-semibold text-gray-800 border-b-2 border-red-400 rounded-t opacity-50"><a id="default-tab" href="#first">Rating Produk</a></li>
+                    <li class="px-4 py-2 -mb-px font-semibold text-gray-800 border-b-2 border-blue-400 rounded-t opacity-50"><a id="default-tab" href="#first">Rating Produk</a></li>
                     <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#second">Inbox Ulasan</a></li>
                     <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50"><a href="#third">Penilaian Pembeli</a></li>
                 </ul>

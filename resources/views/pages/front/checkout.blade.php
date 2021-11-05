@@ -17,7 +17,7 @@
                             <div class="space-x-1">
                                 <span class="font-bold">Muji Kuwat</span>
                                 <span>(Rumah)</span>
-                                <span class="bg-red-100 text-red-600 text-xs py-1 px-2">Utama</span>
+                                <span class="bg-blue-100 text-blue-600 text-xs py-1 px-2">Utama</span>
                             </div>
                             <p>6285747245474</p>
                             <p class="text-gray-500">Ds. wonosari Rt 6 Rw 3 no rumah 21 Bawang, Kab. Batang, 51274
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="font-bold">
                                     <h2>Pilih Durasi</h2>
-                                    <button class="bg-red-400 rounded-lg px-32 py-2 font-bold text-white">Pengiriman</button>
+                                    <button class="bg-blue-400 rounded-lg px-32 py-2 font-bold text-white">Pengiriman</button>
                                 </div>
                             </div>
                             <div class="py-2 font-bold flex justify-between">
@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="font-bold">
                                     <h2>Pilih Durasi</h2>
-                                    <button class="bg-red-400 rounded-lg px-32 py-2 font-bold text-white">Pengiriman</button>
+                                    <button class="bg-blue-400 rounded-lg px-32 py-2 font-bold text-white">Pengiriman</button>
                                 </div>
                             </div>
                             <div class="py-2 font-bold flex justify-between">
@@ -106,7 +106,7 @@
                             <h1 class="text-lg my-2 text-left font-bold">Total Tagihan</h1>
                             <h1 class="text-lg my-2 text-left font-bold">Rp6.350</h1>
                         </div>
-                        <button  class="py-2 w-full bg-red-400 rounded-lg font-bold text-md text-white">Pilih Pembayaran</button>
+                        <button  class="py-2 w-full bg-blue-400 rounded-lg font-bold text-md text-white">Pilih Pembayaran</button>
                     </div>
                 </div>
             </div>

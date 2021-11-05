@@ -9,6 +9,13 @@ use App\Http\Controllers\dash\ProductController;
 use App\Http\Controllers\dash\ProductGalleryController;
 use App\Http\Controllers\dash\PromotionController;
 use App\Http\Controllers\dash\StoreController;
+use App\Http\Controllers\seller\SellerDashboardController;
+use App\Http\Controllers\seller\SellerProductController;
+use App\Http\Controllers\FrontProductController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\FrontCategoryController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\FrontStoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,97 +30,82 @@ use App\Http\Controllers\dash\StoreController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::post('/user/reg', [AuthController::class, 'reg'])->name('user.reg');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/product/{id}', [FrontProductController::class, 'detail'])->name('front.product-detail');
+
+Route::get('/store/create', [FrontStoreController::class, 'create'])->name('store-create');
+Route::post('/store/create', [FrontStoreController::class, 'store'])->name('store-store');
+Route::get('/store/{id}', [FrontStoreController::class, 'show'])->name('store-show');
+
+Route::get('/category', [FrontCategoryController::class, 'index'])->name('category-index');
+Route::get('/category/{id}', [FrontCategoryController::class, 'show'])->name('category-show');
+Route::get('/category/{id}/{subs?}', [FrontCategoryController::class, 'detail'])->name('category-detail');
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/search/{slug}', [SearchController::class, 'searchCategory'])->name('search-category');
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart/{id}', [CartController::class, 'add'])->name('cart-add');
+Route::delete('/cart/{id}', [CartController::class, 'delete'])->name('cart-delete');
 
 
 Route::middleware(['auth'])->group(function () {
     
 // Admin
-    Route::get('/admin', function () {
-        return view('pages.dashboard.index');
+    Route::prefix('admin')->group(function () {
+        Route::get('/', function () {
+            return view('pages.dashboard.index');
+        });
+        Route::get('/users', [AuthController::class, 'index'])->name('user.index');
+        Route::get('/user/create', [AuthController::class, 'create'])->name('user.create');
+        Route::post('/user/store', [AuthController::class, 'store'])->name('user.store');
+        Route::get('/user/{id}', [AuthController::class, 'show'])->name('user.show');
+        Route::get('/user/edit/{id}', [AuthController::class, 'edit'])->name('user.edit');
+        Route::post('/user/update/{id}', [AuthController::class, 'update'])->name('user.update');
+        Route::delete('/user/delete/{id}', [AuthController::class, 'delete'])->name('user.delete');
+        Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+        Route::resource('categories', CategoryController::class);
+        Route::resource('subcategory', SubCategoryController::class);
+        Route::get('/categories/{id}/create', [SubCategoryController::class, 'create'])->name('subcategory-create');
+        Route::get('/categories/{cateId}/{id}', [SubCategoryController::class, 'edit'])->name('subcategory-edit');
+
+        Route::resource('products', ProductController::class);
+
+        Route::resource('galleries', ProductGalleryController::class);
+
+        Route::resource('promotions', PromotionController::class);
+
+        Route::resource('stores', StoreController::class);
+
+
+        Route::get('/transactions', function () {
+            return view('pages.dashboard.transaction.index');
+        });
+        Route::get('/transaction-detail', function () {
+            return view('pages.dashboard.transaction.detail');
+        });
     });
     
-    Route::get('/admin/users', [AuthController::class, 'index'])->name('user.index');
-    Route::get('/user/create', [AuthController::class, 'create'])->name('user.create');
-    Route::post('/user/store', [AuthController::class, 'store'])->name('user.store');
-    Route::get('/user/{id}', [AuthController::class, 'show'])->name('user.show');
-    Route::get('/user/edit/{id}', [AuthController::class, 'edit'])->name('user.edit');
-    Route::post('/user/update/{id}', [AuthController::class, 'update'])->name('user.update');
-    Route::delete('/user/delete/{id}', [AuthController::class, 'delete'])->name('user.delete');
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// Seller
+    Route::prefix('/seller')->group(function () {   
+        Route::get('/', [SellerDashboardController::class, 'index'])->name('seller.dashboard');
 
-    Route::resource('categories', CategoryController::class);
-    Route::resource('subcategory', SubCategoryController::class);
-    Route::get('/categories/{id}/create', [SubCategoryController::class, 'create'])->name('subcategory-create');
-    Route::get('/categories/{cateId}/{id}', [SubCategoryController::class, 'edit'])->name('subcategory-edit');
-
-    Route::resource('products', ProductController::class);
-
-    Route::resource('galleries', ProductGalleryController::class);
-
-    Route::resource('promotions', PromotionController::class);
-
-    Route::resource('stores', StoreController::class);
-
-    // Route::get('/admin/products', function () {
-    //     return view('pages.dashboard.product.index');
-    // });
-    // Route::get('/admin/product-create', function () {
-    //     return view('pages.dashboard.product.create');
-    // });
-    // Route::get('/admin/product-detail', function () {
-    //     return view('pages.dashboard.product.detail');
-    // });
-
-    // Route::get('/admin/categories', function () {
-    //     return view('pages.dashboard.category.index');
-    // });
-    // Route::get('/admin/category-create', function () {
-    //     return view('pages.dashboard.category.create');
-    // });
-
-    Route::get('/admin/galleries', function () {
-        return view('pages.dashboard.gallery.index');
+        Route::get('/products', [SellerProductController::class, 'index'] )->name('seller.product-index');
+        Route::post('/products', [SellerProductController::class, 'store'] )->name('seller.product-store');
+        Route::get('/products/create', [SellerProductController::class, 'create'] )->name('seller.product-create');
+        Route::get('/products/{id}', [SellerProductController::class, 'detail'] )->name('seller.product-detail');
+        Route::post('/products/{id}', [SellerProductController::class, 'update'] )->name('seller.product-update');
+        Route::delete('/products/{id}', [SellerProductController::class, 'destroy'] )->name('seller.product-delete');
+        Route::post('/products/gallery/up', [SellerProductController::class, 'upload'] )->name('seller.gallery-upload');
+        Route::delete('/products/gallery/{id}', [SellerProductController::class, 'delete'] )->name('seller.gallery-delete');
     });
-    Route::get('/admin/gallery-create', function () {
-        return view('pages.dashboard.gallery.create');
-    });
-
-    // Route::get('/admin/users', function () {
-    //     return view('pages.dashboard.user.index');
-    // });
-    // Route::get('/admin/user-create', function () {
-    //     return view('pages.dashboard.user.create');
-    // });
-    // Route::get('/admin/user-detail', function () {
-    //     return view('pages.dashboard.user.detail');
-    // });
-
-    Route::get('/admin/stores', function () {
-        return view('pages.dashboard.store.index');
-    });
-    Route::get('/admin/store-create', function () {
-        return view('pages.dashboard.store.create');
-    });
-    Route::get('/admin/store-detail', function () {
-        return view('pages.dashboard.store.detail');
-    });
-
-    Route::get('/admin/promotions', function () {
-        return view('pages.dashboard.promotion.index');
-    });
-    Route::get('/admin/promotion-create', function () {
-        return view('pages.dashboard.promotion.create');
-    });
-
-    Route::get('/admin/transactions', function () {
-        return view('pages.dashboard.transaction.index');
-    });
-    Route::get('/admin/transaction-detail', function () {
-        return view('pages.dashboard.transaction.detail');
-    });
+    
 
 });
 

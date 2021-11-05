@@ -22,14 +22,14 @@
 
             for (let i = 0; i < tabContents1.children.length; i++) {
 
-            tabTogglers1[i].parentElement.classList.remove("border-red-400", "border-b",  "-mb-px", "opacity-100", "transition", "duration-400");  tabContents1.children[i].classList.remove("hidden");
+            tabTogglers1[i].parentElement.classList.remove("border-blue-400", "border-b",  "-mb-px", "opacity-100", "transition", "duration-400");  tabContents1.children[i].classList.remove("hidden");
             if ("#" + tabContents1.children[i].id === tabName1) {
                 continue;
             }
             tabContents1.children[i].classList.add("hidden");
 
             }
-            e.target.parentElement.classList.add("border-red-400", "border-b-4", "-mb-px", "opacity-100", "transition", "duration-400");
+            e.target.parentElement.classList.add("border-blue-400", "border-b-4", "-mb-px", "opacity-100", "transition", "duration-400");
         });
         });
 

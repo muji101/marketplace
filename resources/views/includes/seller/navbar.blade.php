@@ -1,9 +1,9 @@
     <div class="sticky top-0 z-50 bg-white mx-auto px-16 shadow-md">
         <div class="grid grid-cols-12 py-4 items-center">
         <div class="col-span-2">
-            <a href="/sell" class="text-red-500 font-bold text-2xl">
+            <a href="/sell" class="text-blue-500 font-bold text-2xl">
                 {{-- <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg" alt=""> --}}
-                TokoMerah<span class="text-gray-700">Seller</span>
+                Tokobilu<span class="text-gray-700">Seller</span>
             </a>
         </div>
         <div class="col-span-8 flex w-full pl-10">
@@ -20,7 +20,7 @@
             <div class="dropdown inline px-2 py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer font-bold text-base tracking-wide">
                 <div class="relative">
                     <a><i class="fas fa-bell"></i></a>
-                    <span class="absolute top-0 -right-3 bg-red-500 px-1 rounded-full text-white text-xs ">1</span>
+                    <span class="absolute top-0 -right-3 bg-blue-500 px-1 rounded-full text-white text-xs ">1</span>
                 </div>
                 <div class="dropdown-menu absolute hidden w-72 text-gray-700  h-auto flex pt-4">
                     <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md h-96 overflow-y-auto">
@@ -67,20 +67,20 @@
             <div class="dropdown inline px-2 py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer text-base tracking-wide">
                 <div class="flex items-center space-x-2">
                     <img class="h-6 rounded-full" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt=""> 
-                    <p class="text-gray-500 text-md">Muji kuwat</p>
+                    <p class="text-gray-500 text-md">{{ Auth::user()->name }}</p>
                 </div>
                 <div class="dropdown-menu absolute hidden w-60 text-gray-700  h-auto flex pt-4">
                     <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
                         <a href="/store" class="flex items-center space-x-2">
                             <img class="w-12 rounded-full p-2" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt="">
                             <div>
-                                <p class="font-bold text-sm">Muji kuwat</p>
-                                <p class="font-bold text-xs"><i class="fas fa-store"></i> Onotokoqu</p>
+                                <p class="font-bold text-sm">{{ Auth::user()->name }}</p>
+                                <p class="font-bold text-xs"><i class="fas fa-store"></i> {{ Auth::user()->store->name }}</p>
                             </div>
                         </a>
                         <div class="py-2 space-y-1">
                             <div class="py-2 border-t-2">
-                                <a href="/" class="py-2 text-sm"><i  class="fas fa-bag"></i>Kembali ke Tokomerah</a>
+                                <a href="/" class="py-2 text-sm"><i  class="fas fa-bag"></i>Kembali ke Tokobilu</a>
                             </div>
                             <div class="py-1 border-t-2">
                                 <a href="/profile" class="py-2 text-md font-bold"><i  class="fas fa-cog"></i>Pengaturan Akun</a>

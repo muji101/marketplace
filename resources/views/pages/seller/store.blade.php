@@ -20,7 +20,7 @@
                                 <p>www.tokopedia.com/onotokoqu</p>
                             </div>
                             <div class="pt-4">
-                                <a href="#" class="py-2 px-4 rounded bg-red-300">Ubah</a>
+                                <a href="#" class="py-2 px-4 rounded bg-blue-300">Ubah</a>
                             </div>
                         </div>
                         <div class="col-span-1">
@@ -48,15 +48,15 @@
             </div>
         </div>
         <div class="text-right py-4">
-            <a href="#" class="py-2 px-4 bg-red-300 rounded font-bold  ">Simpan</a>
+            <a href="#" class="py-2 px-4 bg-blue-300 rounded font-bold  ">Simpan</a>
         </div>
     </div>
 
     <div class="p-2">
         <h1 class="font-bold py-2">Status</h1>
         <span>
-            <a href="#" class="py-2 px-4 bg-red-300 rounded border-2 border-red-500">Buka Toko</a>
-            <a href="#" class="py-2 px-4 bg-red-300 rounded">Tutup Toko</a>
+            <a href="#" class="py-2 px-4 bg-blue-300 rounded border-2 border-blue-500">Buka Toko</a>
+            <a href="#" class="py-2 px-4 bg-blue-300 rounded">Tutup Toko</a>
         </span>
     </div>
     <div class="p-2">

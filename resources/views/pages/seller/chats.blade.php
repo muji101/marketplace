@@ -8,7 +8,7 @@
             <div class="col-span-1">
                 <h1 class="font-bold text-2xl py-4">Chat</h1>
                 <div class="flex flex-col">
-                    <div class="py-2 flex space-x-2 items-center border-b-2 border-red-400">
+                    <div class="py-2 flex space-x-2 items-center border-b-2 border-blue-400">
                         <img class="w-12 rounded-full" src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=144&h=144" alt="">
                         <div class="">
                             <p class="font-bold text-gray-600">Muji Kuwat</p>
@@ -52,7 +52,7 @@
                             </button>
                         </div>
                     </div>
-                    <div id="messages" class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-red scrollbar-thumb-rounded scrollbar-track-red-lighter scrollbar-w-2 scrolling-touch">
+                    <div id="messages" class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">
                         <div class="chat-message">
                             <div class="flex items-end">
                                 <div class="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
@@ -64,7 +64,7 @@
                         <div class="chat-message">
                             <div class="flex items-end justify-end">
                                 <div class="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
-                                <div><span class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-red-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
+                                <div><span class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
                                 </div>
                                 <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" class="w-6 h-6 rounded-full order-2">
                             </div>
@@ -88,7 +88,7 @@
                         <div class="chat-message">
                             <div class="flex items-end justify-end">
                                 <div class="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
-                                <div><span class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-red-600 text-white ">Any updates on this issue? I'm getting the same error when trying to install devtools. Thanks</span></div>
+                                <div><span class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Any updates on this issue? I'm getting the same error when trying to install devtools. Thanks</span></div>
                                 </div>
                                 <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" class="w-6 h-6 rounded-full order-2">
                             </div>
@@ -104,8 +104,8 @@
                         <div class="chat-message">
                             <div class="flex items-end justify-end">
                                 <div class="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
-                                <div><span class="px-4 py-2 rounded-lg inline-block bg-red-600 text-white ">Are you using sudo?</span></div>
-                                <div><span class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-red-600 text-white ">Run this command sudo chown -R `whoami` /Users/l/.npm-global/ then install the package globally without using sudo</span></div>
+                                <div><span class="px-4 py-2 rounded-lg inline-block bg-blue-600 text-white ">Are you using sudo?</span></div>
+                                <div><span class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Run this command sudo chown -R `whoami` /Users/l/.npm-global/ then install the package globally without using sudo</span></div>
                                 </div>
                                 <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" class="w-6 h-6 rounded-full order-2">
                             </div>
@@ -122,7 +122,7 @@
                         <div class="chat-message">
                             <div class="flex items-end justify-end">
                                 <div class="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
-                                <div><span class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-red-600 text-white ">yes, I have a mac. I never had issues with root permission as well, but this helped me to solve the problem</span></div>
+                                <div><span class="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">yes, I have a mac. I never had issues with root permission as well, but this helped me to solve the problem</span></div>
                                 </div>
                                 <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" class="w-6 h-6 rounded-full order-2">
                             </div>
@@ -165,7 +165,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                                 </button>
-                                <button type="button" class="inline-flex items-center justify-center rounded-full h-12 w-12 transition duration-500 ease-in-out text-white bg-red-500 hover:bg-red-400 focus:outline-none">
+                                <button type="button" class="inline-flex items-center justify-center rounded-full h-12 w-12 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 transform rotate-90">
                                     <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
                                 </svg>
@@ -186,13 +186,13 @@
       height: 0.25rem;
     }
     
-    .scrollbar-track-red-lighter::-webkit-scrollbar-track {
+    .scrollbar-track-blue-lighter::-webkit-scrollbar-track {
       --bg-opacity: 1;
       background-color: #f7fafc;
       background-color: rgba(247, 250, 252, var(--bg-opacity));
     }
     
-    .scrollbar-thumb-red::-webkit-scrollbar-thumb {
+    .scrollbar-thumb-blue::-webkit-scrollbar-thumb {
       --bg-opacity: 1;
       background-color: #edf2f7;
       background-color: rgba(237, 242, 247, var(--bg-opacity));

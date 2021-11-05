@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\ProductGallery;
 use Illuminate\Support\Str;
 use App\Models\Store;
+use App\Models\User;
 
 class ProductController extends Controller
 {
@@ -35,10 +36,12 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $users = User::get();
         $subcategory = SubCategory::get();
         
         return view('pages.dashboard.product.create', [
-            'subcategory' =>$subcategory
+            'subcategory' =>$subcategory,
+            'users' =>$users
         ]);
     }
 

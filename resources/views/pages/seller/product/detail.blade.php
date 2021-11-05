@@ -1,13 +1,13 @@
 @extends('layouts.sell')
 
-@section('title', 'Product Create')
+@section('title', 'Product Detail')
 
 @section('content')
     <div class="p-4">
-        <h1 class="font-bold text-lg">Tambah Produk</h1>
-        <form action="{{ route('seller.product-store') }}" method="POST" enctype="multipart/form-data">
+        <h1 class="font-bold text-lg">Detail Produk</h1>
+        {{-- <form action="{{ route('seller.product-store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            @method('POST')
+            @method('POST') --}}
             <div class="p-4 bg-white rounded-lg shadow">
                 <h2 class="font-bold">Upload Produk</h2>
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -18,14 +18,35 @@
                         <p class="text-sm py-1 text-gray-500">Pilih foto produk atau tarik dan letakkan hingga 5 foto sekaligus di sini. Cantumkan min. 3 foto yang menarik agar produk semakin menarik pembeli.</p>
                     </div>
                     <div class="col-span-3">
-                        <input type="file" name="photo">
-                        <p class="text-gray-500">Kamu dapat memilih lebih dari foto</p>
-                        {{-- <div class="flex px-4 space-x-4">
-                            <div class="border-dashed  border-2 rounded-lg w-32 h-32 text-center text-gray-500 hover:border-blue-400">foto 1</div>
-                            <div class="border-dashed  border-2 rounded-lg w-32 h-32 text-center text-gray-500 hover:border-blue-400">foto 2</div>
-                            <div class="border-dashed  border-2 rounded-lg w-32 h-32 text-center text-gray-500 hover:border-blue-400">foto 3</div>
-                            <div class="border-dashed  border-2 rounded-lg w-32 h-32 text-center text-gray-500 hover:border-blue-400">foto 4</div>
+                        <div class="flex px-4 space-x-4">
+                            @foreach ($products->galleries as $item)
+                                <div class="border-dashed  border-2 rounded-lg w-32 h-32 text-center text-gray-500 hover:border-blue-400">
+                                    <img class="w-full h-full object-cover rounded-lg p-1" src="{{ asset('/storage/'.$item->photo) }}" alt="">
+                                    <form action="{{ route('seller.gallery-delete', $item->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="py-1"><i class="text-red-500 fas fa-trash"></i></button>
+                                    </form>
+                                </div>
+                            @endforeach
+                        </div>
+                        {{-- <div class="p-4">
+                            <input type="file" name="photo">
+                            <p class="text-gray-500">Kamu dapat memilih lebih dari foto</p>
                         </div> --}}
+                        <div class="col-12 px-4 py-6">
+                            <p class="text-gray-500">Kamu dapat memilih lebih dari foto</p>
+
+                            <form action="{{ route('seller.gallery-upload') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $products->id }}">
+                                <input type="file" name="photo">
+                                {{-- <input type="file" name="photo" id="file" style="display: none;" onchange="form.submit()"> --}}
+                                <button class="bg-gray-100 rounded px-4 py-1" onclick="thisFileUpload()">
+                                    Add Photo
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,7 +60,7 @@
                         </p>
                     </div>
                     <div class="col-span-3">
-                        <input name="name" type="text" class="p-2 rounded w-full border-2" placeholder="Contoh: Sepatu Pria (Jenis/Kategori Produk) + Tokostore (Merek) + Kanvas Hitam (Keterangan)">
+                        <input name="name" value="{{ $products->name }}" type="text" class="p-2 rounded w-full border-2" placeholder="Contoh: Sepatu Pria (Jenis/Kategori Produk) + Tokostore (Merek) + Kanvas Hitam (Keterangan)">
                     </div>
                 </div>
                 <div class="grid grid-cols-4 py-4">
@@ -50,7 +71,7 @@
                         <label class="block text-left" style="max-width: 400px;">
                             <select name="category_id" class="form-select block w-full mt-1 border-2 w-full p-2">
                                 @foreach ($subcategory as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}" {{ $products->category_id == $category->id ? 'selected' : ''  }}>{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </label>
@@ -65,8 +86,8 @@
                     </div>
                     <div class="col-span-3">
                         <select name="condition" class="form-select block w-full mt-1 border-2 w-full p-2">
-                            <option value="1" selected>Baru</option>
-                            <option value="2">Bekas</option>
+                            <option value="Baru" {{ "$products->condition "== 'Baru' ? 'selected' : ''  }}>Baru</option>
+                                <option value="Bekas" {{ $products->condition == 'Bekas' ? 'selected' : ''  }}>Bekas</option>
                         </select>
                     </div>
                 </div>
@@ -78,7 +99,7 @@
                         </p>
                     </div>
                     <div class="col-span-3">
-                        <textarea name="description" id="" class="w-full border-2 p-2 rounded-lg text-xs h-60" 
+                        <textarea name="description" class="w-full border-2 p-2 rounded-lg text-xs h-60" 
                         placeholder="Sepatu Sneakers Pria Tokostore Kanvas Hitam Seri C28B
     
                             - Model simple
@@ -92,7 +113,7 @@
                             39 : 25,5 cm
                             40 : 26 cm
                             41 : 26.5 cm"
-                        ></textarea>
+                        >{{ $products->description }}</textarea>
                     </div>
                 </div>
             </div>
@@ -112,7 +133,7 @@
                         Harga Satuan <span class="text-xs text-gray-500">wajib</span>
                     </div>
                     <div class="col-span-3">
-                        <input name="price" type="number" class="p-2 rounded w-full border-2" placeholder="Masukkan harga">
+                        <input name="price" value="{{ $products->price }}" type="number" class="p-2 rounded w-full border-2" placeholder="Masukkan harga">
                     </div>
                 </div>
             </div>
@@ -137,7 +158,7 @@
                         <p class="text-sm py-1 text-gray-500">Atur jumlah minimum yang harus dibeli untuk produk ini..</p>
                     </div>
                     <div class="col-span-3">
-                        <input name="quantity" type="number" class="p-2 rounded w-full border-2" placeholder="Masukkan harga">
+                        <input name="quantity" value="{{ $products->quantity }}" type="number" class="p-2 rounded w-full border-2" placeholder="Masukkan harga">
                     </div>
                 </div>
             </div>
@@ -154,19 +175,19 @@
                                 <option>Gram (g)</option>
                                 {{-- <option>Kilogram (kg)</option> --}}
                             </select>
-                            <input name="weight" type="number" class="p-2 rounded w-full border-2" placeholder="Masukkan berat">
+                            <input name="weight" type="number" value="{{ $products->weight }}" class="p-2 rounded w-full border-2" placeholder="Masukkan berat">
                         </label>
                     </div>
                 </div>
             </div>
 
-            <div class="text-right px-4 my-8">
+            {{-- <div class="text-right px-4 my-8">
                 <span>
                     <button class="bg-gray-200 rounded py-2 px-6 text-gray-700 font-bold">Batal</button>
                     <button type="submit" class="bg-blue-400 rounded py-2 px-4 text-white font-bold">Simpan</button>
                 </span>
-            </div>
-        </form>
+            </div> --}}
+        {{-- </form> --}}
     </div>
 
     
@@ -186,4 +207,12 @@
         background-color: #68D391;
     }
     </style>
+@endpush
+
+@push('after-script')
+<script>
+    function thisFileUpload() {
+        document.getElementById('file').click();
+    }
+    </script>
 @endpush

@@ -36,10 +36,10 @@
                         <label for="crud-form-1" class="form-label">Sub Category Name</label>
                         <input name="name" id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text" value="{{ $isEdit ? $subcategory->name :  old('name') }}">
                     </div>
-                    {{-- <div class="mt-3">
-                        <label for="crud-form-1" class="form-label">Category Photo</label>
+                    <div class="mt-3">
+                        <label for="crud-form-1" class="form-label">Sub Category Photo</label>
                         <input name="photo" id="crud-form-1" type="file" class="form-control w-full" >
-                    </div> --}}
+                    </div>
                     {{-- <div class="mt-3">
                         <label>Upload Images</label>
                         <form action="/file-upload" class="dropzone mt-2">

@@ -31,7 +31,6 @@
                     @method("POST")
                 @endif
                 <div class="intro-y box p-5">
-                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <div>
                         <label for="crud-form-1" class="form-label">Product Name</label>
                         <input name="name" id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text" value="{{ $isEdit ? $products->name :  old('name') }}">
@@ -118,6 +117,20 @@
                             @endif
                         </select> 
                     </div> --}}
+                    <div class="mt-3">
+                        <label for="crud-form-1" class="form-label">Pemilik Product</label>
+                        <select name="user_id" data-placeholder="Select your favorite actors" class="tom-select w-full">
+                            @if ($isEdit)
+                                @foreach ($users as $user)
+                                    <option value="{{ $user->id }}" {{ $stores->user_id == $user->id ? 'selected' : ''  }}>{{ $user->name }}</option>
+                                @endforeach
+                            @else
+                                @foreach ($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
+                            @endif
+                        </select> 
+                    </div>
                     <div class="mt-3">
                         <div class="form-group">
                             <label for="status" class="form-control-label">Status</label>

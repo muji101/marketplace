@@ -26,7 +26,9 @@ class CreateProductsTable extends Migration
             // $table->enum('variant', ['Warna','Ukuran']);
             $table->boolean('status');
             $table->foreignId('user_id');
+            $table->foreignId('store_id')->nullable();
             $table->foreignId('category_id');
+            $table->foreignId('subcategory_id');
             
             $table->softDeletes();
             $table->timestamps();

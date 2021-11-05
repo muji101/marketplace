@@ -51,7 +51,7 @@
                 <tr class="intro-x">
                     <td class="w-40">
                         <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
+                            {{-- <div class="w-10 h-10 image-fit zoom-in">
                                 <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-14.jpg" title="Uploaded at 20 April 2022">
                             </div>
                             <div class="w-10 h-10 image-fit zoom-in -ml-5">
@@ -59,12 +59,12 @@
                             </div>
                             <div class="w-10 h-10 image-fit zoom-in -ml-5">
                                 <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="/source/dist/images/preview-9.jpg" title="Uploaded at 20 April 2022">
-                            </div>
-                            {{-- @foreach ($galleries as $gallery)
+                            </div> --}}
+                            @foreach ($product->galleries as $gallery)
                                 <div class="w-10 h-10 image-fit zoom-in">
                                     <img alt="photo" class="tooltip rounded-full" src="{{ asset('/storage/'.$gallery->photo) }}" title="Uploaded at 20 April 2022">
                                 </div>
-                            @endforeach --}}
+                            @endforeach
                         </div>
                     </td>
                     <td>

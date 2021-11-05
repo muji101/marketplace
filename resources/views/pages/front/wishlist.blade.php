@@ -20,7 +20,7 @@
                         <i class="text-yellow-400 fas fa-star"></i> 
                         <i class="text-yellow-400 fas fa-star"></i> 
                     ulasan (209)</h5>
-                    <a href="/cart" class="text-center block mt-2 border-2 border-red-500 rounded-md text-red-400 font-bold text-sm py-1">Beli</a>
+                    <a href="/cart" class="text-center block mt-2 border-2 border-blue-500 rounded-md text-blue-400 font-bold text-sm py-1">Beli</a>
                 </div>
             </div>
             <div class="shadow-lg rounded-lg text-left ">
@@ -36,7 +36,7 @@
                         <i class="text-yellow-400 fas fa-star"></i> 
                         <i class="text-yellow-400 fas fa-star"></i> 
                     ulasan (209)</h5>
-                    <a href="/cart" class="text-center block mt-2 border-2 border-red-500 rounded-md text-red-400 font-bold text-sm py-1">Beli</a>
+                    <a href="/cart" class="text-center block mt-2 border-2 border-blue-500 rounded-md text-blue-400 font-bold text-sm py-1">Beli</a>
                 </div>
             </div>
             <div class="shadow-lg rounded-lg text-left ">
@@ -52,7 +52,7 @@
                         <i class="text-yellow-400 fas fa-star"></i> 
                         <i class="text-yellow-400 fas fa-star"></i> 
                     ulasan (209)</h5>
-                    <a href="/cart" class="text-center block mt-2 border-2 border-red-500 rounded-md text-red-400 font-bold text-sm py-1">Beli</a>
+                    <a href="/cart" class="text-center block mt-2 border-2 border-blue-500 rounded-md text-blue-400 font-bold text-sm py-1">Beli</a>
                 </div>
             </div>
             <div class="shadow-lg rounded-lg text-left ">
@@ -68,7 +68,7 @@
                         <i class="text-yellow-400 fas fa-star"></i> 
                         <i class="text-yellow-400 fas fa-star"></i> 
                     ulasan (209)</h5>
-                    <a href="/cart" class="text-center block mt-2 border-2 border-red-500 rounded-md text-red-400 font-bold text-sm py-1">Beli</a>
+                    <a href="/cart" class="text-center block mt-2 border-2 border-blue-500 rounded-md text-blue-400 font-bold text-sm py-1">Beli</a>
                 </div>
             </div>
             <div class="shadow-lg rounded-lg text-left ">
@@ -84,7 +84,7 @@
                         <i class="text-yellow-400 fas fa-star"></i> 
                         <i class="text-yellow-400 fas fa-star"></i> 
                     ulasan (209)</h5>
-                    <a href="/cart" class="text-center block mt-2 border-2 border-red-500 rounded-md text-red-400 font-bold text-sm py-1">Beli</a>
+                    <a href="/cart" class="text-center block mt-2 border-2 border-blue-500 rounded-md text-blue-400 font-bold text-sm py-1">Beli</a>
                 </div>
             </div>
             <div class="shadow-lg rounded-lg text-left ">
@@ -100,7 +100,7 @@
                         <i class="text-yellow-400 fas fa-star"></i> 
                         <i class="text-yellow-400 fas fa-star"></i> 
                     ulasan (209)</h5>
-                    <a href="/cart" class="text-center block mt-2 border-2 border-red-500 rounded-md text-red-400 font-bold text-sm py-1">Beli</a>
+                    <a href="/cart" class="text-center block mt-2 border-2 border-blue-500 rounded-md text-blue-400 font-bold text-sm py-1">Beli</a>
                 </div>
             </div>
             <div class="shadow-lg rounded-lg text-left ">
@@ -116,7 +116,7 @@
                         <i class="text-yellow-400 fas fa-star"></i> 
                         <i class="text-yellow-400 fas fa-star"></i> 
                     ulasan (209)</h5>
-                    <a href="/cart" class="text-center block mt-2 border-2 border-red-500 rounded-md text-red-400 font-bold text-sm py-1">Beli</a>
+                    <a href="/cart" class="text-center block mt-2 border-2 border-blue-500 rounded-md text-blue-400 font-bold text-sm py-1">Beli</a>
                 </div>
             </div>
             <div class="shadow-lg rounded-lg text-left ">
@@ -132,7 +132,7 @@
                         <i class="text-yellow-400 fas fa-star"></i> 
                         <i class="text-yellow-400 fas fa-star"></i> 
                     ulasan (209)</h5>
-                    <a href="/cart" class="text-center block mt-2 border-2 border-red-500 rounded-md text-red-400 font-bold text-sm py-1">Beli</a>
+                    <a href="/cart" class="text-center block mt-2 border-2 border-blue-500 rounded-md text-blue-400 font-bold text-sm py-1">Beli</a>
                 </div>
             </div>
         </div>
@@ -306,14 +306,14 @@
 
             for (let i = 0; i < tabContents.children.length; i++) {
 
-            tabTogglers[i].parentElement.classList.remove("border-red-400", "border-b",  "-mb-px", "opacity-100", "transition", "duration-400");  tabContents.children[i].classList.remove("hidden");
+            tabTogglers[i].parentElement.classList.remove("border-blue-400", "border-b",  "-mb-px", "opacity-100", "transition", "duration-400");  tabContents.children[i].classList.remove("hidden");
             if ("#" + tabContents.children[i].id === tabName) {
                 continue;
             }
             tabContents.children[i].classList.add("hidden");
 
             }
-            e.target.parentElement.classList.add("border-red-400", "border-b-4", "-mb-px", "opacity-100", "transition", "duration-400");
+            e.target.parentElement.classList.add("border-blue-400", "border-b-4", "-mb-px", "opacity-100", "transition", "duration-400");
         });
         });
 

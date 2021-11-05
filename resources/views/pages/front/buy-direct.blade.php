@@ -30,12 +30,12 @@
                                     </div>
                                 </div>
                                 <div class="text-gray-500 text-right flex justify-center space-x-4 px-6 py-4">
-                                    <button class="text-red-600 font-bold">Tulis catatan untuk barang ini</button>
+                                    <button class="text-blue-600 font-bold">Tulis catatan untuk barang ini</button>
                                     <div class="border-l-2"></div>
                                     <div class="space-x-2">
                                         <i class="fas fa-minus-circle"></i>
                                         <input type="number" class="w-12">
-                                        <i class="text-red-400 fas fa-plus-circle"></i>
+                                        <i class="text-blue-400 fas fa-plus-circle"></i>
                                     </div>
                                 </div>
                                 <div class="border-b-4"></div>
@@ -99,7 +99,7 @@
                             <h1 class="text-lg my-2 text-left font-bold">Total Tagihan</h1>
                             <h1 class="text-lg my-2 text-left font-bold">Rp32.500</h1>
                         </div>
-                        <button  class="py-2 w-full bg-red-400 rounded-lg font-bold text-md text-white">Bayar</button>
+                        <button  class="py-2 w-full bg-blue-400 rounded-lg font-bold text-md text-white">Bayar</button>
                     </div>
                 </div>
             </div>

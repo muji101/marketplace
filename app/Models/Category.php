@@ -10,6 +10,7 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'name',
         'slug',
         'photo'
@@ -19,4 +20,9 @@ class Category extends Model
     {
         return $this->hasMany(SubCategory::class);
     }
+
+    // public function product()
+    // {
+    //     return $this->hasMany(Product::class);
+    // }
 }

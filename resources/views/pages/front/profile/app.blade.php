@@ -166,14 +166,14 @@
 
             for (let i = 0; i < tabContents.children.length; i++) {
 
-            tabTogglers[i].parentElement.classList.remove("border-red-400", "border-b",  "-mb-px", "opacity-100");  tabContents.children[i].classList.remove("hidden");
+            tabTogglers[i].parentElement.classList.remove("border-blue-400", "border-b",  "-mb-px", "opacity-100");  tabContents.children[i].classList.remove("hidden");
             if ("#" + tabContents.children[i].id === tabName) {
                 continue;
             }
             tabContents.children[i].classList.add("hidden");
 
             }
-            e.target.parentElement.classList.add("border-red-400", "border-b-4", "-mb-px", "opacity-100");
+            e.target.parentElement.classList.add("border-blue-400", "border-b-4", "-mb-px", "opacity-100");
         });
         });
 

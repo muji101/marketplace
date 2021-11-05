@@ -55,6 +55,16 @@ class User extends Authenticatable
         return $this->belongsTo(Village::class);
     }
 
+    public function store()
+    {
+        return $this->hasOne(Store::class);
+    }
+
+    public function cart()
+    {
+        return $this->hasMany(Cart::class, 'user_id', 'id');
+    }
+    
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -17,6 +17,7 @@ class CreateSubCategoriesTable extends Migration
             $table->id();
 
             $table->string('name');
+            $table->string('photo')->nullable();
             $table->string('slug');
             $table->foreignId('category_id');
             

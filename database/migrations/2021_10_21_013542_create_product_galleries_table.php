@@ -17,7 +17,7 @@ class CreateProductGalleriesTable extends Migration
             $table->id();
 
             $table->string('photo');
-            $table->boolean('is_default');
+            $table->boolean('is_default')->nullable();
             $table->foreignId('product_id');
             
             $table->timestamps();
