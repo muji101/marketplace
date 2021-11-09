@@ -5,17 +5,11 @@
         <div class="splide">
             <div class="splide__track">
                 <ul class="splide__list">
-                    <li class="splide__slide">
-                        <img class="w-full rounded-lg" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2021/9/24/35f78d9d-267d-4557-9e01-f550df118dfe.jpg.webp?ect=3g">
-                    </li>
-                    <li class="splide__slide">
-                        <img class="w-full rounded-lg" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2021/9/24/c476a2aa-5060-4830-a84b-b9d27baee351.jpg.webp?ect=3g">
-                    </li>
-                    <li class="splide__slide">
-                        <img class="w-full rounded-lg" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2021/9/23/638499fa-aae1-4578-8452-b62c1db4c11f.jpg.webp?ect=3g">
-                    </li>
-                    <li class="splide__slide">
-                        <img class="w-full rounded-lg" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2021/9/24/451db117-50f7-4a46-a4ce-6683c2c8dcb2.jpg.webp?ect=3g">
+                    @foreach ($promoslider as $slider)
+                        <li class="splide__slide">
+                            <img class="w-full rounded-lg" src="{{ asset('/storage/'.$slider->photo) }}">
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -38,10 +32,13 @@
             <span class="text-sm text-gray-500">Elektronik yang lagi hits hari ini</span>
         </div>
         <div class="py-8 flex space-x-2">
+            @php
+                $no = 1;
+            @endphp
             @forelse ($products as $product)
                 <a href="{{ route('front.product-detail', $product->id) }}" class="shadow-lg rounded-lg text-left w-56">
                     <img class="mb-2 w-56 h-56 object-cover rounded-t-lg" src="{{ asset('/storage/'.$product->galleries->first()->photo) }}">
-                    <span class="bg-yellow-400 py-1 pl-1 pr-4 text-sm text-white rounded-r-full">#1</span>
+                    <span class="bg-yellow-400 py-1 pl-1 pr-4 text-sm text-white rounded-r-full">#{{ $no++ }}</span>
                     <div class="px-2 leading-6 py-2">
                         <h4 class="text-sm">{{ $product->name }}</h4>
                         <h3 class="font-bold ">Rp {{ $product->price }}</h3>

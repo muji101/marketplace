@@ -20,7 +20,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('inscurance_price');
             $table->integer('shipping_price');
             $table->integer('transaction_total');
-            $table->string('transaction_status');
+            $table->string('transaction_status');//revisi 
             $table->string('code');
             
             $table->softDeletes();

@@ -13,9 +13,13 @@ use App\Http\Controllers\seller\SellerDashboardController;
 use App\Http\Controllers\seller\SellerProductController;
 use App\Http\Controllers\FrontProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\FrontCategoryController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\FrontStoreController;
+use App\Http\Controllers\PayController;
+use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\SubDiscussionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +56,14 @@ Route::get('/search/{slug}', [SearchController::class, 'searchCategory'])->name(
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cart/{id}', [CartController::class, 'add'])->name('cart-add');
 Route::delete('/cart/{id}', [CartController::class, 'delete'])->name('cart-delete');
+
+Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+
+Route::get('pay', [PayController::class, 'index'])->name('pay');
+
+Route::resource('discussions', DiscussionController::class);
+Route::resource('subdiscussions', SubDiscussionController::class);
+
 
 
 Route::middleware(['auth'])->group(function () {
@@ -99,6 +111,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/products', [SellerProductController::class, 'index'] )->name('seller.product-index');
         Route::post('/products', [SellerProductController::class, 'store'] )->name('seller.product-store');
         Route::get('/products/create', [SellerProductController::class, 'create'] )->name('seller.product-create');
+        // Route::post('/products/make', [SellerProductController::class, 'make'] )->name('seller.product-make');
         Route::get('/products/{id}', [SellerProductController::class, 'detail'] )->name('seller.product-detail');
         Route::post('/products/{id}', [SellerProductController::class, 'update'] )->name('seller.product-update');
         Route::delete('/products/{id}', [SellerProductController::class, 'destroy'] )->name('seller.product-delete');

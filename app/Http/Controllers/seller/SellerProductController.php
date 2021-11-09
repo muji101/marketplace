@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\seller;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\ProductGallery;
 use App\Models\Product;
@@ -21,10 +22,12 @@ class SellerProductController extends Controller
     public function detail(Request $request, $id)
     {
         $products = Product::findOrFail($id);
+        $categories = Category::all();
         $subcategory = SubCategory::all();
         
         return view('pages.seller.product.detail',[
             'products' => $products,
+            'categories' => $categories,
             'subcategory' => $subcategory
         ]);
     }
@@ -51,9 +54,31 @@ class SellerProductController extends Controller
     public function create()
     {
         $subcategory = SubCategory::get();
+        $categories = Category::get();
         
-        return view('pages.seller.product.create', ['subcategory' => $subcategory]);
+        return view('pages.seller.product.create', [
+            'subcategory' => $subcategory,
+            'categories' => $categories,
+        ]);
     }
+    // public function make(Request $request)
+    // {
+    //     $data = $request->all();
+
+    //     // $data['photo'] = $request->file('photo')->store('assets/product','public');
+    //     // $data['slug'] = Str::slug($request->name);
+    //     // $data['status'] = $data['status'] == 'on' ? '1' : '0';
+
+    //     Product::create($data);
+    //     // $gallery = [
+    //     //     'product_id' =>$product->id,
+    //     //     'photo' =>$request->file('photo')->store('assets/product', 'public')
+    //     // ];
+
+    //     // ProductGallery::create($gallery);
+
+    //     return redirect()->route('seller.product-create', $request->id);
+    // }
 
     public function store(Request $request)
     {

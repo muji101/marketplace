@@ -6,23 +6,51 @@
         <div class="col-span-3">
             <div class="grid grid-cols-3 gap-4">
                 <div class="col-span-1">
-                    <div class="sticky top-32">
+                    <div class="sticky top-32" id="gallery">
                         {{-- <img class="w-64 rounded-lg transform hover:scale-150" src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/8/1/9d7ef661-9696-4811-bfa8-a753c14e8280.jpg" alt=""> --}}
                         <div class="py-2 h-60">
-                            <img id="zoom_01" class="rounded-lg h-full w-full object-cover" src="{{ asset('/storage/'.$products->galleries->first()->photo) }}"
-                            data-zoom-image="{{ asset('/storage/'.$products->galleries->first()->photo) }}"/>
+                            {{-- <img id="zoom_01" class="rounded-lg h-full w-full object-cover" src="{{ asset('/storage/'.$products->galleries->first()->photo) }}"
+                            data-zoom-image="{{ asset('/storage/'.$products->galleries->first()->photo) }}"/> --}}
+                            <img :src="photos[activePhoto].url" :key="photos[activePhoto].id" id="zoom_01" class="rounded-lg h-full w-full object-cover"
+                            :data-zoom-image="photos[activePhoto].url" />
+
                         </div>
                         
                         <div class="py-4 flex space-x-2">
                             {{-- <img class="w-12 border-2 border-blue-400 rounded-lg" src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/8/1/9d7ef661-9696-4811-bfa8-a753c14e8280.jpg" alt="">
                             <img class="w-12  rounded-lg" src="https://images.tokopedia.net/img/cache/100-square/VqbcmM/2021/8/1/3814c24f-0128-4847-a464-128adf338c13.jpg.webp?ect=4g" alt=""> --}}
-                            @foreach ($products->galleries as $item)
+                            {{-- @foreach ($products->galleries as $item)
                                 <span>
                                     <img class="w-12 h-12  rounded-lg object-cover" src="{{ asset('/storage/'.$item->photo) }}" alt="">
                                 </span>
-                            @endforeach
+                            @endforeach --}}
+                            <div class="col-3 col-lg-12 mt-2 mt-lg-0" v-for="(photo, index) in photos" :key="photo.id">
+                                <a href="#" @click="changeActive(index)">
+                                <img :src="photo.url" class="w-12 h-12  rounded-lg object-cover border-2 hover:border-blue-400 active:border-blue-400" :class="{active: index == activePhoto}" alt="">
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    {{-- <section class="store-gallery mb-3" id="gallery">
+                        <div class="container">
+                            <div class="row">
+                            <div class="col-lg-8" data-aos="zoom-in">
+                                <transition name="slide-fade" mode="out-in">
+                                <img :src="photos[activePhoto].url" :key="photos[activePhoto].id" alt="" class="w-100 main-image">
+                                </transition>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="row">
+                                <div class="col-3 col-lg-12 mt-2 mt-lg-0" v-for="(photo, index) in photos" :key="photo.id" data-aos="zoom-in" data-aos-delay="100">
+                                    <a href="#" @click="changeActive(index)">
+                                    <img :src="photo.url" class="w-100 thumbnail-image" :class="{active: index == activePhoto}" alt="">
+                                    </a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </section> --}}
                 </div>
                 <div class="col-span-2">
                     <div class="pb-4 text-left">
@@ -30,9 +58,9 @@
                         <div class="flex space-x-4 py-2">
                             <h5>Terjual <span class="text-gray-500">338</span></h5>
                             <h5><i class="text-yellow-400 fas fa-star"></i> 4.8 (<span class="text-gray-500">32 Ulasan</span>)</h5>
-                            <h5>Diskusi <span class="text-gray-500">2</span></h5>
+                            <h5>Diskusi <span class="text-gray-500">{{ $discussions->count() }}</span></h5>
                         </div>
-                        <h1 class="font-bold text-sm">Rp.{{ $products->price }}</h1>
+                        <h1 class="font-bold text-lg">Rp {{ number_format($products->price) }}</h1>
                     </div>
                     <div id="tabs" class="py-2 text-left border-t-2 border-b-2">
                         <span>
@@ -79,7 +107,15 @@
                                 <img class="w-12 rounded-full" src="{{ asset('/storage/'.$stores->first()->photo) }}" alt="">
                                 <div class="text-left">
                                     <h2>{{ $stores->first()->name }}</h2>
-                                    <h2 class="text-blue-400">• Online</h2>
+                                    {{-- <h2 class="text-blue-400">• Online</h2> --}}
+                                    <div>
+                                        {{-- online offline status --}}
+                                        @if (Cache::has('user-is-online-' . $stores->first()->user->id))
+                                            <span class="text-blue-400">• Online</span>
+                                        @else
+                                            <div class="text-blue-400">Online <span class="font-bold">{{ \Carbon\Carbon::parse($stores->first()->user->last_seen)->diffForHumans() }}</span></div>
+                                        @endif
+                                    </div>
                                 </div>
                             </a>
                             <button class="font-bold text-blue-400 border-2 border-blue-400 rounded-lg px-8">Follow</button>
@@ -132,7 +168,7 @@
                 </div>
             </div>
             <div class="py-4">
-                <h1 class="font-bold">Diskusi (2)</h1>
+                <h1 class="font-bold">Diskusi ({{ $discussions->count() }})</h1>
                 <h3 class="text-sm">Kapas Filter Air Humidifier Diffuser Purifier Replacement Cotton Swab</h3>
                 <div class="py-4">
                     <div class="flex items-center justify-between text-sm border-2 p-4">
@@ -140,40 +176,118 @@
                             Ada pertanyaan?
                             <span class="font-bold">Diskusikan dengan penjual atau pengguna lain</span>
                         </h3>
-                        <button class="p-2 font-bold bg-blue-400 rounded-lg text-white">Tulis pertanyaan</button>
+                        <button
+                            class="p-2 font-bold bg-blue-400 rounded-lg text-white" ype="button" onclick="toggleModal('modal-example-small')">
+                            Tulis pertanyaan
+                        </button>
                     </div>
-                    <div class=" my-4 p-4 border-2">
-                        <div class="flex space-x-4 py-4">
-                            <img class="w-8 h-8 rounded-full" src="https://ecs7.tokopedia.net/img/cache/100-square/default_picture_user/default_toped-15.jpg" alt="">
+                    @foreach ($discussions as $discussion)
+                    <div class=" my-4 border-2">
+                        <div class="flex space-x-4 p-2">
+                            <img class="w-8 h-8 rounded-full" src="{{ asset('/storage/'.$discussion->user->photo) }}" alt="">
                             <div class="text-sm">
-                                <p class="font-bold">Wendri <span class="font-normal text-xs text-gray-500">23 Agt</span></p>
-                                <p class="text-gray-400">ready same-day bossque</p>
+                                <p class="font-bold">{{ $discussion->user->name }} <span class="font-normal text-xs text-gray-500">| {{ \Carbon\Carbon::parse($discussion->created_at)->diffForHumans() }}</span></p>
+                                <p class="text-gray-600">{{ $discussion->content }}</p>
                             </div>
                         </div>
                         <hr>
-                        <div class="p-4">
+                        <div class="p-4 bg-gray-100">
+                            <div class="pl-8">
+                                @foreach ($discussion->subdiscussion as $subdiscussion)
                             <div class="flex space-x-4 py-4">
-                                <img class="w-8 h-8 rounded-full" src="https://images.tokopedia.net/img/cache/215-square/GAnVPX/2021/8/27/1c958df4-7d4c-4aa8-b6c0-e5c63e300d22.jpg" alt="">
+                                @if ($subdiscussion->user->id == $products->user_id)
+                                    <img class="w-8 h-8 rounded-full" src="{{ asset('/storage/'. $stores->first()->photo) }}" alt="">
+                                @else
+                                    <img class="w-8 h-8 rounded-full" src="{{ asset('/storage/'. $subdiscussion->user->photo) }}" alt="">
+                                @endif
                                 <div class="text-sm">
-                                    <p class="font-bold">Kastil Drakula <span class="font-normal text-xs bg-blue-200 text-blue-600 p-1 rounded">Penjual</span><span class="font-normal text-xs text-gray-500">23 Agt</span></p>
-                                    <p class="text-gray-400">bisa di klik = ready , mhon baca deskripsi sebelum cekout juga ya</p>
+                                    @if ($subdiscussion->user->id == $products->user_id)
+                                        <p class="font-bold">{{ $stores->first()->name }} <span class="font-normal text-xs bg-blue-200 text-blue-600 p-1 rounded">Penjual</span> <span class="font-normal text-xs text-gray-500">| {{ \Carbon\Carbon::parse($subdiscussion->created_at)->diffForHumans() }}</span></p>
+                                        <p class="text-gray-400">{{ $subdiscussion->note }}</p>
+                                    @else
+                                        <p class="font-bold">{{ $subdiscussion->user->name }} <span class="font-normal text-xs text-gray-500">| {{ \Carbon\Carbon::parse($subdiscussion->created_at)->diffForHumans() }}</span></p>
+                                        <p class="text-gray-400">{{ $subdiscussion->note }}</p>
+                                    @endif
                                 </div>
                             </div>
-                            <div class="flex space-x-4 pt-4">
-                                <img class="w-8 h-8 rounded-full" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt="">
-                                <div class="text-sm">
-                                    <textarea name="" id="" cols="70" rows="4" class="p-2 border-2" placeholder="Isi komentar disini..."></textarea>
-                                    <div class="flex justify-end space-x-2 pt-2">
-                                        <button class="py-2 px-4 font-bold border-2 rounded-lg">Batal</button>
-                                        <button class="py-2 px-4 font-bold bg-gray-200 rounded-lg">Kirim</button>
+                            @endforeach
+                            </div>
+                            <div class="flex space-x-4 pt-4 pl-8">
+                                <img class="w-8 h-8 rounded-full" src="{{ asset('/storage/'.Auth::user()->photo) }}" alt="">
+                                <form action="{{ route('subdiscussions.store') }}" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <div class="text-sm">
+                                        <input type="hidden" name="discussion_id" value="{{ $discussion->id }}">
+                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                        <input type="hidden" name="product_id" value="{{ $products->id }}">
+                                        <textarea name="note" id="" cols="100%" rows="2" class="p-2 border-2" placeholder="Tulis komentar disini..."></textarea>
+                                        <div class="flex justify-end space-x-2 pt-2">
+                                            {{-- <button class="py-2 px-4 font-bold border-2 rounded-lg">Batal</button> --}}
+                                            <button class="py-2 px-4 font-bold bg-gray-200 rounded-lg">Kirim</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
+
+        {{-- modal --}}
+        <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-example-small">
+            <div class="relative w-auto my-6 mx-auto max-w-6xl">
+                <!--content-->
+                <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                <!--header-->
+                <div class="flex items-start justify-between p-5 border-b border-solid border-gray-200 rounded-t">
+                    <h3><i class="fas fa-question"></i> 
+                    Ada pertanyaan ?
+                    </h3>
+                    <button
+                    class="p-1 ml-auto bg-transparent border-0 text-gray-300 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                    onclick="toggleModal('modal-example-small')">
+                    <span class="bg-transparent h-6 w-6 text-2xl block outline-none focus:outline-none">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <form action="{{ route('discussions.store') }}" method="POST">
+                        @csrf
+                        @method('POST')
+                        <div class="text-sm">
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                            <input type="hidden" name="product_id" value="{{ $products->id }}">
+                            <textarea name="content" id="" cols="70" rows="4" class="p-2 border-2" placeholder="Tulis pertanyaan disini..."></textarea>
+                            <div class="flex justify-end space-x-2 pt-2">
+                                {{-- <button class="py-2 px-4 font-bold border-2 rounded-lg">Batal</button> --}}
+                                <button class="py-2 px-4 font-bold bg-gray-200 rounded-lg">Kirim</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--footer-->
+                    {{-- <div class="flex items-center justify-end p-6 border-t border-solid border-gray-200 rounded-b">
+                        <button
+                            class="text-blue-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button" onclick="toggleModal('modal-example-small')">
+                            Batal
+                        </button>
+                        <button
+                            class="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button" onclick="toggleModal('modal-example-small')">
+                            Tambah
+                        </button>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+        <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-example-small-backdrop"></div>
+        {{-- endmodal --}}
+        
         <div class="col-span-1">
             <div class="sticky top-32">
                 <div class="border-2 rounded-lg p-4 mb-2">
@@ -182,12 +296,12 @@
                         <i class="fas fa-minus-circle"></i>
                         <input type="number" class="w-12">
                         <i class="text-blue-400 fas fa-plus-circle"></i>
-                        <div>Stock <span class="font-bold">{{ $products->quantity }}</span></div>
+                        <div>Stock <span class="font-bold">{{ number_format($products->quantity) }}</span></div>
                     </div>
                     <h4 class="text-left text-sm text-blue-400 font-bold"><i class="fas fa-pencil"></i> Tambah Catatan</h4>
                     <div class="flex items-end justify-between">
                         <h1 class="text-md my-2 text-left text-gray-500">Subtotal</h1>
-                        <h1 class="text-lg my-2 text-left font-bold">Rp.{{ $products->price }}</h1>
+                        <h1 class="text-lg my-2 text-left font-bold">Rp {{ number_format($products->price) }}</h1>
                     </div>
                     {{-- <form action="{{ route }}">
                         <a href="/cart"  class=""></a>
@@ -204,7 +318,7 @@
                             Sign in to Add
                         </a> --}}
                     @endauth
-                    <a  href="/checkout" class="block text-center py-2 w-full text-blue-400 border-2 border-blue-400 rounded-lg font-bold text-md text-white">Beli Langsung</a>
+                    <a  href="{{ route('pay') }}" class="block text-center py-2 w-full text-blue-400 border-2 border-blue-400 rounded-lg font-bold text-md">Beli Langsung</a>
                     <div class="pt-2 flex justify-center space-x-2 text-xs">
                         <a href=""><i class="fas fa-comment-dots"></i> Chat</a>
                         <a href=""><i class="fas fa-heart"></i> Wishlist</a>
@@ -221,126 +335,23 @@
             <h1 class="text-xl font-bold text-left">Lainnya di toko ini</h1>
         </div>
         <div class="py-8 grid grid-cols-6 gap-4">
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/VqbcmM/2021/6/12/34d8b942-c4f3-41a3-9910-06d6ebb0c400.jpg.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
+            @foreach ($productStore as $productSto)
+                <div class="shadow-lg rounded-lg text-left ">
+                    <img class="mb-2 w-full h-52 object-cover rounded-t-lg" src="{{ asset('/storage/'.$productSto->galleries->first()->photo) }}">
+                    <div class="px-2 leading-6 py-2">
+                        <h4 class="text-sm">{{ $productSto->name }}</h4>
+                        <h3 class="font-bold  text-yellow-600 text-sm">Rp {{ $productSto->price }}</h3>
+                        <h5 class="text-gray-500 text-xs">{{ $stores->first()->address }}</h5>
+                        <h5 class=" text-gray-600 text-xs">
+                            <i class="text-yellow-400 fas fa-star"></i> 
+                            <i class="text-yellow-400 fas fa-star"></i> 
+                            <i class="text-yellow-400 fas fa-star"></i> 
+                            <i class="text-yellow-400 fas fa-star"></i> 
+                            <i class="text-yellow-400 fas fa-star"></i> 
+                        ulasan (209)</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/product-1/2020/6/29/84028385/84028385_e2fa7210-2a30-4f2a-8e90-e0409e8ae1fe_1000_1000.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/product-1/2020/5/16/910865/910865_cf2ccc9b-0d6d-4d80-ab37-b88b2cebeff8_2048_2048.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/VqbcmM/2021/5/10/877fcd2c-85dc-49bb-8571-4ccb7e1d2dc9.jpg.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/product-1/2020/10/10/38905081/38905081_eb25c74b-e46f-4db3-b992-5debf67315c9_1771_1771.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/VqbcmM/2021/6/10/f2040cf0-06bf-4ddc-a65c-6a96ca0ab186.jpg.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/VqbcmM/2020/12/6/2b13c463-fa58-4e22-99b9-6eced60b1478.jpg.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/attachment/2021/6/15/-1/-1_e51276a1-0c95-4558-80dc-184cad8058e6.jpg.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -478,6 +489,40 @@
 @push('after-script')
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
+    <script src="/vendor/vue/vue.js"></script>
+
+    <script type="text/javascript">
+        function toggleModal(modalID) {
+        document.getElementById(modalID).classList.toggle("hidden");
+        document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+        document.getElementById(modalID).classList.toggle("flex");
+        document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+        }
+    </script>
+    <script>
+    var gallery = new Vue({
+        el : "#gallery",
+        mounted(){
+        AOS.init();
+        },
+        data: {
+        activePhoto: 0,
+        photos: [
+            @foreach ($products->galleries as $gallery)
+                {
+                id: {{ $gallery->id }},
+                url: "{{ Storage::url($gallery->photo) }}"
+                },
+            @endforeach
+        ],
+        },
+        methods: {
+        changeActive(id){
+            this.activePhoto = id;
+        }
+        }
+    })
+    </script>
 
     <script>
         $('#zoom_01').ezPlus({
@@ -526,3 +571,4 @@
         document.getElementById("default-tab").click();
     </script>
     @endpush  
+

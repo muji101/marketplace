@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body class="font-sans tracking-wide">
 
     <div id="app">
         <div id="main">

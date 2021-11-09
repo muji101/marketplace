@@ -19,7 +19,7 @@ class CreatePromotionsTable extends Migration
             $table->string('name');
             $table->string('photo');
             $table->foreignId('category_id');
-            $table->enum('type', ['slider', 'special', 'topads', 'officialads']);
+            $table->enum('type', ['slider', 'slidercate', 'special', 'topads', 'officialads']);
             
             $table->softDeletes();
             $table->timestamps();

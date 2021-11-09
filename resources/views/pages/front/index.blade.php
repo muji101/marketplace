@@ -48,11 +48,11 @@
                     <img class="w-full h-48 mb-2  object-cover rounded-t-lg" src="{{ asset('/storage/'.$product->galleries->first()->photo) }}">
                 </div>
                 <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">{{ $product->name }}</h4>
-                    <h3 class="font-bold ">Rp. {{ $product->price }}</h3>
+                <div class="p-2">
+                    <h4 class="text-sm">{{ Str::limit($product->name, 44, '...') }}</h4>
+                    <h3 class="font-bold py-1">Rp {{ number_format($product->price) }}</h3>
                     <h5 class="text-gray-500 text-xs">{{ $product->store->address }}</h5>
-                    <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                    <h5 class=" text-gray-600 text-xs pt-2"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                 </div>
             </a>
             @endforeach
@@ -60,7 +60,7 @@
     </div>
 
     <div class="my-12 mx-32 py-6 border-b-2">
-        <h1 class="text-xl font-bold text-left">Spesial di Tokopedia hari ini</h1>
+        <h1 class="text-xl font-bold text-left">Spesial di Tokobilu hari ini</h1>
         <div class="py-4 grid grid-cols-3 gap-12">
             @foreach ($promospecial as $item)
             <div class="col-span-1">
@@ -136,25 +136,25 @@
     <div class="my-12 mx-32 py-6 border-b-2">
         <h1 class="text-xl font-bold text-left">Official Store <a href="/official" class="text-blue-500 text-base">Lihat Semua</a></h1>
         <div class="py-4 flex items-center static">
-            <div class="bg-blue-600 rounded-xl w-80">
+            <div class="bg-blue-600 rounded-xl w-80 py-4">
                 @foreach ($promoofficial as $item)
                     <img class="w-36 rounded-xl ml-8" src="{{ asset('/storage/'.$item->photo) }}" alt="">
                 @endforeach
             </div>
-            <div class="absolute rounded-lg left-96 bg-white flex space-x-2">
+            <div class="absolute rounded-lg left-80 bg-white flex space-x-4">
                 @foreach ($productoff as $item)
-                    <div class="shadow-lg rounded-lg text-left w-52">
+                    <a href="{{ route('front.product-detail', $item->id) }}" class="shadow-lg rounded-lg text-left w-52">
                         <div class="">
-                            <img class="w-full h-48 mb-2  object-cover rounded-t-lg" src="{{ asset('/storage/'.$item->galleries->first()->photo) }}">
+                            <img class="w-full h-48 object-cover rounded-t-lg" src="{{ asset('/storage/'.$item->galleries->first()->photo) }}">
                         </div>
                         <span class="bg-purple-400 py-1 px-2 text-sm text-white rounded-b-lg">official</span>
                         <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">{{ $item->name }}</h4>
-                            <h3 class="font-bold ">Rp. {{ $item->price }}</h3>
-                            <h5 class="text-gray-500 text-xs"><i class="text-blue-400 fas fa-check"></i> Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                            <h4 class="text-sm">{{ Str::limit($item->name, 44, '...') }}</h4>
+                            <h3 class="font-bold py-1">Rp {{ number_format($item->price) }}</h3>
+                            <h5 class="text-gray-500 text-xs"><i class="text-blue-400 fas fa-check"></i> Kota {{ $item->store->address }}</h5>
+                            <h5 class=" text-gray-600 text-xs pt-2"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>
@@ -189,326 +189,57 @@
         <!-- Tab Contents -->
             <div id="tab-contents">
                 <div id="first">
-                    <div class="py-4 grid grid-cols-6 gap-2">
-        
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                    <div class="py-4 grid grid-cols-6 gap-4">
+                        @foreach ($productall as $product)
+                        <a href="{{ route('front.product-detail', $product->id) }}" class="col-span-1 shadow-lg rounded-lg text-left ">
+                            <div class="">
+                                <img class="w-full h-48 mb-2  object-cover rounded-t-lg" src="{{ asset('/storage/'.$product->galleries->first()->photo) }}">
                             </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
                             <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                            <div class="p-2">
+                                <h4 class="text-sm">{{ Str::limit($product->name, 44, '...') }}</h4>
+                                <h3 class="font-bold py-1">Rp {{ number_format($product->price) }}</h3>
+                                <h5 class="text-gray-500 text-xs">{{ $product->store->address }}</h5>
+                                <h5 class=" text-gray-600 text-xs pt-2"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                             </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/24/cf9ba580-8c0b-49da-a94d-6c9a773f87a3.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
+                        </a>
+                        @endforeach
                     </div>
                 </div>
                 <div id="second" class="hidden">
-                    <div class="py-4 grid grid-cols-6 gap-2">
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                    <div class="py-4 grid grid-cols-6 gap-4">
+                        @foreach ($productall as $product)
+                        <a href="{{ route('front.product-detail', $product->id) }}" class="col-span-1 shadow-lg rounded-lg text-left">
+                            <div class="">
+                                <img class="w-full h-48 mb-2  object-cover rounded-t-lg" src="{{ asset('/storage/'.$product->galleries->first()->photo) }}">
                             </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
                             <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                            <div class="p-2">
+                                <h4 class="text-sm">{{ Str::limit($product->name, 44, '...') }}</h4>
+                                <h3 class="font-bold py-1">Rp {{ number_format($product->price) }}</h3>
+                                <h5 class="text-gray-500 text-xs">{{ $product->store->address }}</h5>
+                                <h5 class=" text-gray-600 text-xs pt-2"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                             </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2021/7/24/1f15f7bf-358f-4925-832f-bac29f2551e1.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
+                        </a>
+                        @endforeach
                     </div>
                 </div>
                 <div id="third" class="hidden">
-                    <div class="py-4 grid grid-cols-6 gap-2">
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/30/0306fc71-e493-4b9a-8ef0-6ff863206e67.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                    <div class="py-4 grid grid-cols-6 gap-4">
+                        @foreach ($productall as $product)
+                        <a href="{{ route('front.product-detail', $product->id) }}" class="col-span-1 shadow-lg rounded-lg text-left">
+                            <div class="">
+                                <img class="w-full h-48 mb-2  object-cover rounded-t-lg" src="{{ asset('/storage/'.$product->galleries->first()->photo) }}">
                             </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/30/0306fc71-e493-4b9a-8ef0-6ff863206e67.jpg.webp?ect=4g">
                             <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                            <div class="p-2">
+                                <h4 class="text-sm">{{ Str::limit($product->name, 44, '...') }}</h4>
+                                <h3 class="font-bold py-1">Rp {{ number_format($product->price) }}</h3>
+                                <h5 class="text-gray-500 text-xs">{{ $product->store->address }}</h5>
+                                <h5 class=" text-gray-600 text-xs pt-2"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                             </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/30/0306fc71-e493-4b9a-8ef0-6ff863206e67.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/30/0306fc71-e493-4b9a-8ef0-6ff863206e67.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/30/0306fc71-e493-4b9a-8ef0-6ff863206e67.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/30/0306fc71-e493-4b9a-8ef0-6ff863206e67.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
-                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
-                            <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/300-square/VqbcmM/2020/9/30/0306fc71-e493-4b9a-8ef0-6ff863206e67.jpg.webp?ect=4g">
-                            <span class="bg-yellow-400 py-1 px-2 text-sm text-white rounded-r-lg">terlaris</span>
-                            <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                            <h3 class="font-bold ">Rp 6.950</h3>
-                            <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                            <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
-                            </div>
-                        </div>
+                        </a>
+                        @endforeach
                     </div>
                 </div>
                 <div id="fourth" class="hidden">

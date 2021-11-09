@@ -1,8 +1,7 @@
     <div class="sticky top-0 z-50 bg-white mx-auto px-16 shadow-md">
         <div class="grid grid-cols-12 py-4 items-center">
         <div class="col-span-2">
-            <a href="/sell" class="text-blue-500 font-bold text-2xl">
-                {{-- <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg" alt=""> --}}
+            <a href="/seller" class="text-blue-500 font-bold text-2xl">
                 Tokobilu<span class="text-gray-700">Seller</span>
             </a>
         </div>

@@ -65,9 +65,15 @@
                     <td class="text-center">{{ $user->gender }}</td>
                     <td class="w-40">
                         @if ($user->status == 1)
-                            <div class="flex items-center justify-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
+                            <div class="flex items-center text-theme-9"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Active </div>
                         @else
-                            <div class="flex items-center justify-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
+                            <div class="flex items-center text-theme-6"> <i data-feather="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
+                        @endif
+
+                        @if (Cache::has('user-is-online-' . $user->id))
+                            <div class="text-theme-9 font-bold">• Online</div>
+                        @else
+                            <div class="text-theme-6">Online <span class="font-bold">{{ \Carbon\Carbon::parse($user->last_seen)->diffForHumans() }}</span></div>
                         @endif
                     </td>
                     <td class="table-report__action w-56">

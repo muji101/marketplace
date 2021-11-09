@@ -138,15 +138,15 @@
                             <div id="first" class="py-4">
                                 <div class="py-4 grid grid-cols-6 gap-2">
                                     @forelse ($products as $product)
-                                        <div class="col-span-1 shadow-lg rounded-lg text-left ">
+                                        <a href="{{ route('front.product-detail', $product->id) }}" class="col-span-1 shadow-lg rounded-lg text-left ">
                                             <img class="mb-2 w-full h-40 object-cover rounded-t-lg" src="{{ asset('/storage/'.$product->galleries->first()->photo) }}">
                                             <div class="px-2 leading-6 py-2">
-                                                <h4 class="text-sm">{{ $product->name }}</h4>
-                                                <h3 class="font-bold ">Rp {{ $product->price }}</h3>
-                                                <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
+                                                <h4 class="text-sm">{{ Str::limit($product->name, 30, '...') }}</h4>
+                                                <h3 class="font-bold py-2">Rp {{ number_format($product->price) }}</h3>
+                                                <h5 class="text-gray-500 text-xs pb-1">{{ $product->store->address }}</h5>
                                                 <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                                             </div>
-                                        </div>
+                                        </a>
                                     @empty
                                     <div class="col-span-12">
                                         <h1 class="text-center text-gray-500 text-sm">Maaf produk belum tersedia!</h1>
@@ -166,7 +166,7 @@
                                                     <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>   
                                                 </div>
                                                 <div class="">
-                                                    <a href="#" class="font-bold text-blue-400 text-sm py-2 px-4 rounded-lg border-2 border-blue-400">Lihat Toko</a>
+                                                    <a href="{{ route('store-show', $store->id) }}" class="font-bold text-blue-400 text-sm py-2 px-4 rounded-lg border-2 border-blue-400">Lihat Toko</a>
                                                 </div>
                                             </div>
                                             <div class="flex space-x-2">

@@ -23,10 +23,9 @@ class CreateProductsTable extends Migration
             $table->text('weight');
             $table->string('slug');
             $table->enum('condition', ['Baru','Bekas']);
-            // $table->enum('variant', ['Warna','Ukuran']);
-            $table->boolean('status');
+            $table->boolean('is_active'); 
             $table->foreignId('user_id');
-            $table->foreignId('store_id')->nullable();
+            $table->foreignId('store_id');
             $table->foreignId('category_id');
             $table->foreignId('subcategory_id');
             

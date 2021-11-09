@@ -7,6 +7,7 @@
 
     <script src="https://unpkg.com/shubox@0.2.1/dist/shubox.umd.js"></script>
 
+
     <script>
         let tabsContainer = document.querySelector("#tabs");
 

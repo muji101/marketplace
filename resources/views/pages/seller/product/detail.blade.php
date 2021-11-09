@@ -11,14 +11,14 @@
             <div class="p-4 bg-white rounded-lg shadow">
                 <h2 class="font-bold">Upload Produk</h2>
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                <div class="grid grid-cols-4 py-4">
+                <div class="grid grid-cols-4">
                     <div class="col-span-1">
                         Foto Produk <span class="text-xs text-gray-500">wajib</span>
                         <p class="text-sm py-1 text-gray-500">Format gambar .jpg .jpeg .png dan ukuran minimum 300 x 300px (Untuk gambar optimal gunakan ukuran minimum 700 x 700 px).</p>
                         <p class="text-sm py-1 text-gray-500">Pilih foto produk atau tarik dan letakkan hingga 5 foto sekaligus di sini. Cantumkan min. 3 foto yang menarik agar produk semakin menarik pembeli.</p>
                     </div>
-                    <div class="col-span-3">
-                        <div class="flex px-4 space-x-4">
+                    <div class="col-span-3  pl-20">
+                        <div class="flex space-x-4">
                             @foreach ($products->galleries as $item)
                                 <div class="border-dashed  border-2 rounded-lg w-32 h-32 text-center text-gray-500 hover:border-blue-400">
                                     <img class="w-full h-full object-cover rounded-lg p-1" src="{{ asset('/storage/'.$item->photo) }}" alt="">
@@ -34,7 +34,7 @@
                             <input type="file" name="photo">
                             <p class="text-gray-500">Kamu dapat memilih lebih dari foto</p>
                         </div> --}}
-                        <div class="col-12 px-4 py-6">
+                        <div class="col-12 py-6">
                             <p class="text-gray-500">Kamu dapat memilih lebih dari foto</p>
 
                             <form action="{{ route('seller.gallery-upload') }}" method="POST" enctype="multipart/form-data">
@@ -59,7 +59,7 @@
                             Wajib Cantumkan min. 40 karakter agar semakin menarik dan mudah ditemukan oleh pembeli, terdiri dari jenis produk, merek, dan keterangan seperti warna, bahan, atau tipe.
                         </p>
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3  pl-20">
                         <input name="name" value="{{ $products->name }}" type="text" class="p-2 rounded w-full border-2" placeholder="Contoh: Sepatu Pria (Jenis/Kategori Produk) + Tokostore (Merek) + Kanvas Hitam (Keterangan)">
                     </div>
                 </div>
@@ -67,14 +67,25 @@
                     <div class="col-span-1">
                         Kategori Produk <span class="text-xs text-gray-500">wajib</span>
                     </div>
-                    <div class="col-span-3">
-                        <label class="block text-left" style="max-width: 400px;">
-                            <select name="category_id" class="form-select block w-full mt-1 border-2 w-full p-2">
-                                @foreach ($subcategory as $category)
-                                    <option value="{{ $category->id }}" {{ $products->category_id == $category->id ? 'selected' : ''  }}>{{ $category->name }}</option>
-                                @endforeach
-                            </select>
-                        </label>
+                    <div class="col-span-3  pl-20">
+                        <div class="flex space-x-2">
+                            <div>
+                                <label class="">Kategori</label>
+                                <select name="category_id" class="border-2 p-2 rounded w-96">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}" {{ $products->category_id == $category->id ? 'selected' : ''  }}>{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div>
+                                <label class="">Sub kategori</label>
+                                <select name="category_id" class="border-2 p-2 rounded w-96">
+                                    @foreach ($subcategory as $category)
+                                        <option value="{{ $category->id }}" {{ $products->subcategory_id == $category->id ? 'selected' : ''  }}>{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,8 +95,8 @@
                     <div class="col-span-1">
                         Kondisi Produk
                     </div>
-                    <div class="col-span-3">
-                        <select name="condition" class="form-select block w-full mt-1 border-2 w-full p-2">
+                    <div class="col-span-3  pl-20">
+                        <select name="condition" class="form-select block w-full mt-1 border-2 p-2">
                             <option value="Baru" {{ "$products->condition "== 'Baru' ? 'selected' : ''  }}>Baru</option>
                                 <option value="Bekas" {{ $products->condition == 'Bekas' ? 'selected' : ''  }}>Bekas</option>
                         </select>
@@ -98,7 +109,7 @@
                             Wajib Cantumkan min. 40 karakter agar semakin menarik dan mudah ditemukan oleh pembeli, terdiri dari jenis produk, merek, dan keterangan seperti warna, bahan, atau tipe.
                         </p>
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3  pl-20">
                         <textarea name="description" class="w-full border-2 p-2 rounded-lg text-xs h-60" 
                         placeholder="Sepatu Sneakers Pria Tokostore Kanvas Hitam Seri C28B
     
@@ -124,7 +135,7 @@
                         Minimum Pemesanan
                         <p class="text-sm py-1 text-gray-500">Atur jumlah minimum yang harus dibeli untuk produk ini..</p>
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3  pl-20">
                         <input type="text" class="p-2 rounded w-full border-2" value="1" disabled>
                     </div>
                 </div>
@@ -132,7 +143,7 @@
                     <div class="col-span-1">
                         Harga Satuan <span class="text-xs text-gray-500">wajib</span>
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3  pl-20">
                         <input name="price" value="{{ $products->price }}" type="number" class="p-2 rounded w-full border-2" placeholder="Masukkan harga">
                     </div>
                 </div>
@@ -144,9 +155,9 @@
                         Status Produk
                         <p class="text-sm py-1 text-gray-500">Jika status aktif, produkmu dapat dicari oleh calon pembeli.</p>
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3  pl-20">
                         <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                            <input name="status" type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                            <input name="status" type="checkbox" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
                             <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                         </div>
                         <label for="toggle" class="text-xs text-gray-700">Aktif</label>
@@ -157,7 +168,7 @@
                         Stok Produk <span class="text-xs text-gray-500">wajib</span>
                         <p class="text-sm py-1 text-gray-500">Atur jumlah minimum yang harus dibeli untuk produk ini..</p>
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3  pl-20">
                         <input name="quantity" value="{{ $products->quantity }}" type="number" class="p-2 rounded w-full border-2" placeholder="Masukkan harga">
                     </div>
                 </div>
@@ -169,7 +180,7 @@
                         Berat Produk<span class="text-xs text-gray-500">wajib</span>
                         <p class="text-sm py-1 text-gray-500">Masukkan berat dengan menimbang produk setelah dikemas.</p>
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3  pl-20">
                         <label class="flex space-x-2 items-center">
                             <select disabled class="form-select block w-full mt-1 border-2 w-full p-2">
                                 <option>Gram (g)</option>

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Store;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class FrontStoreController extends Controller
 {
@@ -13,9 +15,22 @@ class FrontStoreController extends Controller
     {
         $stores = Store::FindOrFail($id);
         $products = Product::where('store_id', $id)->get();
+        // $users = User::select("*")
+        //                 ->whereNotNull('last_seen')
+        //                 ->orderBy('last_seen', 'DESC')
+        //                 ->paginate(10);
+        $users = User::get();
+
+        // foreach ($users as $user) {
+        //     if (Cache::has('user-is-online-' . $user->id))
+        //         echo "User " . $user->name . " is online.";
+        //     else
+        //         echo "User " . $user->name . " is offline.";
+        // }
         return view('pages.front.store', [
             'stores' => $stores,
             'products' => $products,
+            'users' => $users,
         ]);
     }
 

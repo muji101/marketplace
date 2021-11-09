@@ -18,7 +18,7 @@ class CreateTransactionDetailsTable extends Migration
             
             $table->foreignId('transaction_id');
             $table->foreignId('product_id');
-            $table->string('shipping_status');
+            $table->string('shipping_status');//revisi
             $table->string('resi');
             $table->string('code');
             

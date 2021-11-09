@@ -31,7 +31,8 @@ class User extends Authenticatable
         'zip_code',
         'country',
         'role',
-        'status'
+        'status',
+        'last_seen'
     ];
     public function product()
     {

@@ -18,15 +18,15 @@ class HomeController extends Controller
         $promoslider = Promotion::where('type', 'slider')->limit(5)->get();
         $categories = Category::limit(8)->get();
         $subcategories = SubCategory::limit(8)->get();
-        // $subcategoryall = SubCategory::where('category_id', $id)->get();
+        $productall = Product::where('status', 1)->get();
         $products = Product::where('status', 1)->limit(6)->get();
-        $productoff = Product::where('status', 1)->limit(5)->get();
+        $productoff = Product::where('status', 1)->get()->random(5);
         $promospecial = Promotion::where('type', 'special')->limit(3)->get();
         $promoofficial = Promotion::where('type', 'officialads')->limit(1)->get();
 
         return view('pages.front.index', [
             'categories' => $categories,
-            // 'subcategoryall' => $subcategoryall,
+            'productall' => $productall,
             'subcategories' => $subcategories,
             'promoslider' => $promoslider,
             'productoff' => $productoff,

@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use App\Models\Promotion;
 
 class FrontCategoryController extends Controller
 {
@@ -19,15 +20,15 @@ class FrontCategoryController extends Controller
 
     public function show($id)
     {
+        $promoslider = Promotion::where('type', 'slidercate')->where('category_id', $id)->limit(5)->get();
         $category = Category::findOrFail($id);
         $subcategories = SubCategory::where('category_id', $id)->get();
         $products = Product::where('category_id', $id)->get();
-        // $productsubs = Product::where('subcategory_id', $sub)->get();
         return view('pages.front.category-detail', [
             'category' => $category,
             'subcategories' => $subcategories,
             'products' => $products,
-            // 'productsubs' => $productsubs,
+            'promoslider' => $promoslider,
         ]);
     }
 

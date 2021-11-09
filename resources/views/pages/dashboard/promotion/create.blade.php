@@ -48,9 +48,10 @@
                         <label for="crud-form-2" class="form-label">Type</label>
                         <select name="type" data-placeholder="Select your favorite actors" class="tom-select w-full" id="crud-form-2">
                             <option value="1" selected>Slider</option>
-                            <option value="2">Special Brand</option>
-                            <option value="3" selected>Topads Banner</option>
-                            <option value="4">Official Ads</option>
+                            <option value="2">Slider Category</option>
+                            <option value="3">Special Brand</option>
+                            <option value="4">Topads Banner</option>
+                            <option value="5">Official Ads</option>
                         </select>
                     </div>
                     {{-- <div class="mt-3">

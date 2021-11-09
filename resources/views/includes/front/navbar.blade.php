@@ -104,9 +104,9 @@
                             <a href="{{ route('cart') }}" class="text-blue-400 text-xs">Lihat sekarang</a>
                         </div>
                         @forelse ( Auth::user()->cart as $item)
-                            <div class="flex items-center space-x-4 py-2">
-                                <img class="w-12 h-12 object-cover" src="{{ asset('/storage/'.$item->product->galleries->first()->photo) }}" alt="">
-                                <div class="">
+                            <div class="flex items-center justify-between space-x-4 py-2">
+                                <div class="flex items-center space-x-4">
+                                    <img class="w-12 h-12 object-cover" src="{{ asset('/storage/'.$item->product->galleries->first()->photo) }}" alt="">
                                     <h2 class="hover:text-blue-400 text-sm">{{ Str::limit($item->product->name, 20) }}</h2>
                                     <h5  class="text-xs font-normal">1 Barang ({{ $item->product->weight }}gr)</h5>
                                 </div>
@@ -228,13 +228,13 @@
         <div class="col-span-1 ml-2">
             <div class="dropdown inline py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer text-base tracking-wide">
                 <div class="flex items-center space-x-2">
-                    <img class="h-6 rounded-full" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt=""> 
+                    <img class="h-6 rounded-full" src="{{ asset('/storage/'.Auth::user()->photo) }}" alt=""> 
                     <p class="text-gray-500 text-sm">{{ Auth::user()->name }}</p>
                 </div>
                 <div class="dropdown-menu absolute hidden w-60 text-gray-700  h-auto flex pt-4">
                     <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
                         <a href="/profile" class="border-b-2 flex items-center space-x-2">
-                            <img class="w-12 rounded-full p-2" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt="">
+                            <img class="w-12 rounded-full p-2" src="{{ asset('/storage/'.Auth::user()->photo) }}" alt="">
                             <div>
                                 <p class="font-bold text-sm">{{ Auth::user()->name }}</p>
                                 <p class="font-bold text-xs">Regular merchant</p>

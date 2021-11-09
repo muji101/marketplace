@@ -7,7 +7,16 @@
                     <img class="w-24 h-24 rounded-full" src="{{ asset('/storage/'.$stores->photo) }}" alt="">
                     <div class="text-left pl-4">
                         <h1 class="font-bold text-lg">{{ $stores->name }}</h1>
-                        <h1 class="py-2">Dibalas -+ 1 menit | <i class="fas fa-map-marker-alt"></i> {{ $stores->address }}</h1>
+                            <div>
+                                {{-- online offline status --}}
+                                @if (Cache::has('user-is-online-' . $stores->user->id))
+                                    <span class="font-bold text-xs py-1 px-2 text-blue-500 rounded bg-blue-100">Online</span>
+                                {{-- @else --}}
+                                    {{-- <p class="font-bold text-md">User {{ $stores->user->name }} is Offline</p> --}}
+                                    {{-- <span class="font-bold text-xs py-1 px-2 text-blue-500 rounded bg-blue-100"><span>Online</span> {{ \Carbon\Carbon::parse($stores->user->last_seen)->diffForHumans() }}</span> --}}
+                                @endif
+                            </div>
+                            <h1 class="py-2">Dibalas -+ 1 menit | <i class="fas fa-map-marker-alt"></i> {{ $stores->address }}</h1>
                         <button
                             class="py-1 px-4 border-2 rounded-lg p-4-lg" ype="button" onclick="toggleModal('modal-example-small')">
                             Info toko
@@ -61,9 +70,9 @@
                                         @foreach ($products as $product)
                                             <a href="{{ route('front.product-detail', $product->id) }}" class="p-2 border-2 rounded-lg p-4-lg w-56">
                                                 <img class="w-52 h-44 object-cover rounded" src="{{ asset('/storage/'.$product->galleries->first()->photo) }}" alt="">
-                                                <p class="text-xs text-yellow-500 font-bold">Produk terbaru</p>
-                                                <p>{{ $product->name }}</p>
-                                                <p class="font-bold text-base">Rp. {{ $product->price }}</p>
+                                                <p class="text-xs text-yellow-500 font-bold pt-2">Produk terbaru</p>
+                                                <p class="text-sm py-2">{{ $product->name }}</p>
+                                                <p class="font-bold text-base">Rp {{ number_format($product->price) }}</p>
                                             </a>
                                         @endforeach
                                     </div>
@@ -167,7 +176,7 @@
                             </div>
                             <div class="py-2">
                                 <label class="font-bold text-gray-500 text-md">Buka Sejak</label>
-                                <p class="text-gray-800">{{ $stores->created_at }}</p>
+                                <p class="text-gray-800">{{ $stores->created_at->isoFormat('D MMMM Y'); }}</p>
                             </div>
                         </div>
                         <div class="col-span-3 pl-4">

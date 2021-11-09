@@ -13,12 +13,20 @@
                             <img class="rounded-lg w-24 h-24 object-cover" src="{{ asset('/storage/'.$item->product->galleries->first()->photo) }}" alt="">
                             <div class="">
                                 <h3 class="text-lg">{{ $item->product->name }}</h3>
-                                <h3 class="font-bold">Rp.{{ $item->product->price }}</h3>
+                                <h3 class="font-bold">Rp {{ number_format($item->product->price) }}</h3>
                             </div>
                         </label>
                         <div class="text-gray-500 text-right flex justify-between px-6 py-4">
                             <button class="text-blue-600">Tulis catatan untuk barang ini</button>
-                            <h5 class="">Pindahkan ke Wishlist | <i class="fas fa-trash-alt"></i></h5>
+                            <div class="flex space-x-2">
+                                <p>Pindahkan ke Wishlist</p>
+                                <span>|</span>
+                                <form action="{{ route('cart-delete', $item->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"><i class="fas fa-trash-alt text-red-500 hover:text-red-600"></i></button>
+                                </form>
+                            </div>
                             <div class="space-x-2">
                                 <i class="fas fa-minus-circle"></i>
                                 <input type="number" class="w-12">
@@ -264,7 +272,7 @@
                         <h1 class="text-lg my-2 text-left font-bold">Total Harga</h1>
                         <h1 class="text-lg my-2 text-left font-bold">Rp6.350</h1>
                     </div>
-                    <a href="/checkout"  class="py-2 block text-center bg-blue-400 rounded-lg font-bold text-md text-white">Beli (1)</a>
+                    <a href="/checkout"  class="py-2 block text-center bg-blue-400 rounded-lg font-bold text-md text-white">Beli ({{ $carts->count() }})</a>
                 </div>
             </div>
         </div>

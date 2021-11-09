@@ -1,28 +1,28 @@
-<div class="w-full my-1">
-    <div class="flex items-center font-bold space-x-2 border-b-2 py-4">
+<div class="w-full p-2">
+    <a href="{{ route('store-show', Auth::user()->store->id) }}" class="flex items-center font-bold space-x-2 border-b-2 py-4">
         <img class="w-12 rounded-full shadow-lg" src="{{ asset('/storage/'.Auth::user()->store->photo) }}" alt="">
         <span class="pl-1">{{ Auth::user()->store->name }}</span>
-    </div>
+    </a>
     <ul class="flex flex-col">
         <li class="mt-3 text-blue-400 border-l-4 border-blue-400">
-            <a href="/seller" class="font-semibold p-3 cursor-pointer"><i class="fas fa-home"></i> Home</a>
+            <a href="/seller" class="block font-semibold p-2 cursor-pointer"><i class="fas fa-home"></i> Home</a>
         </li>
         <li class="mt-3">
-            <a href="/seller/chats" class="font-semibold p-3 cursor-pointer"><i class="fas fa-comment-dots"></i> Chat</a>
+            <a href="/seller/chats" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-comment-dots"></i> Chat</a>
         </li>
         <li class="mt-3">
-            <a href="/seller/discutions" class="font-semibold p-3 cursor-pointer"><i class="fas fa-comments"></i> Diskusi</a>
+            <a href="/seller/discutions" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-comments"></i> Diskusi</a>
         </li>
         <li class="mt-3">
-            <a href="/seller/sales" class="font-semibold p-3 cursor-pointer"><i class="fas fa-balance-scale-right"></i> Penjualan</a>
+            <a href="/seller/sales" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-balance-scale-right"></i> Penjualan</a>
         </li>
         <li class="mt-3">
-            <a href="/seller/reviews" class="font-semibold p-3 cursor-pointer"><i class="fas fa-blog"></i> Kata Pembeli</a>
+            <a href="/seller/reviews" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-blog"></i> Kata Pembeli</a>
         </li>
         <li class="mt-3">
-            <a href="/seller/store" class="font-semibold p-3 cursor-pointer"><i class="fas fa-cog"></i> Pengaturan Toko</a>
+            <a href="/seller/store" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-cog"></i> Pengaturan Toko</a>
         </li>
-        <li class="bg-white mt-3" x-data="accordion(1)">
+        <li class="bg-white block text-gray-700 hover:text-gray-900 mt-3" x-data="accordion(1)">
             <h2
             @click="handleClick()"
             class="flex flex-row justify-between items-center font-semibold px-3 cursor-pointer"
@@ -41,12 +41,17 @@
             :style="handleToggle()"
             class="border-l-4 border-blue-400 overflow-hidden max-h-0 duration-500 transition-all"
             >
-                <ul>
+                <ul class="pt-2">
                     <li>
-                        <a href="{{ route('seller.product-create') }}" class="pl-6 font-bold text-gray-500">Tambah produk</a>
+                        {{-- <form action="{{ route('seller.product-make') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                            <button>buat</button>
+                        </form> --}}
+                        <a href="{{ route('seller.product-create') }}" class="block pl-6 font-bold text-gray-500 hover:text-gray-700">Tambah produk</a>
                     </li>
                     <li>
-                        <a href="{{ route('seller.product-index') }}" class="pl-6 font-bold text-gray-500">Daftar produk</a>
+                        <a href="{{ route('seller.product-index') }}" class="block pl-6 font-bold text-gray-500 hover:text-gray-700">Daftar produk</a>
                     </li>
                 </ul>
             </div>
