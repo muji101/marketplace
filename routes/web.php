@@ -19,7 +19,12 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\FrontStoreController;
 use App\Http\Controllers\PayController;
 use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\profile\ProfileHomeController;
 use App\Http\Controllers\SubDiscussionController;
+use App\Http\Controllers\profile\ProfileAddressController;
+use App\Http\Controllers\profile\ProfileDiscussionController;
+use App\Http\Controllers\seller\SellerDiscussionController;
+use App\Http\Controllers\seller\SellerSettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,8 +122,28 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/products/{id}', [SellerProductController::class, 'destroy'] )->name('seller.product-delete');
         Route::post('/products/gallery/up', [SellerProductController::class, 'upload'] )->name('seller.gallery-upload');
         Route::delete('/products/gallery/{id}', [SellerProductController::class, 'delete'] )->name('seller.gallery-delete');
+
+        Route::get('/discussion', [SellerDiscussionController::class, 'index'])->name('seller.discussion-index');
+
+        Route::get('/setting', [SellerSettingController::class, 'index'])->name('seller.setting');
+        Route::post('/setting/photo/{id}', [SellerSettingController::class, 'rubahphoto'])->name('seller.setting-photo');
+        Route::post('/setting/cover/{id}', [SellerSettingController::class, 'rubahcover'])->name('seller.setting-cover');
     });
     
+// profile
+    Route::prefix('profile')->group(function () {
+        Route::get('/', [ProfileHomeController::class, 'index'])->name('profile-index');
+        Route::post('/changeName/{id}', [ProfileHomeController::class, 'changeName'])->name('profile-changeName');
+        Route::post('/changeBirth/{id}', [ProfileHomeController::class, 'changeBirth'])->name('profile-changeBirth');
+        Route::post('/changePhoto/{id}', [ProfileHomeController::class, 'changePhoto'])->name('profile-changePhoto');
+        Route::post('/changePass/{id}', [ProfileHomeController::class, 'changePass'])->name('profile-changePass');
+
+        Route::resource('addresses', ProfileAddressController::class);
+        Route::post('addresses/{id}/select', [ProfileAddressController::class, 'select'])->name('addresses.select');
+        Route::post('addresses/{id}/main', [ProfileAddressController::class, 'main'])->name('addresses.main');
+
+        Route::get('/discussion', [ProfileDiscussionController::class, 'index'])->name('profile-discussion-index');
+    });
 
 });
 

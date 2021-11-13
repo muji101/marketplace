@@ -18,9 +18,9 @@ class HomeController extends Controller
         $promoslider = Promotion::where('type', 'slider')->limit(5)->get();
         $categories = Category::limit(8)->get();
         $subcategories = SubCategory::limit(8)->get();
-        $productall = Product::where('status', 1)->get();
-        $products = Product::where('status', 1)->limit(6)->get();
-        $productoff = Product::where('status', 1)->get()->random(5);
+        $productall = Product::where('is_active', 1)->get();
+        $products = Product::where('is_active', 1)->limit(6)->get();
+        $productoff = Product::where('is_active', 1)->get()->random(5);
         $promospecial = Promotion::where('type', 'special')->limit(3)->get();
         $promoofficial = Promotion::where('type', 'officialads')->limit(1)->get();
 

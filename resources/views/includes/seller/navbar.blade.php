@@ -65,13 +65,13 @@
             </div>
             <div class="dropdown inline px-2 py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer text-base tracking-wide">
                 <div class="flex items-center space-x-2">
-                    <img class="h-6 rounded-full" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt=""> 
+                    <img class="h-6 rounded-full" src="{{ asset('/storage/'.Auth::user()->photo) }}" alt=""> 
                     <p class="text-gray-500 text-md">{{ Auth::user()->name }}</p>
                 </div>
                 <div class="dropdown-menu absolute hidden w-60 text-gray-700  h-auto flex pt-4">
                     <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
-                        <a href="/store" class="flex items-center space-x-2">
-                            <img class="w-12 rounded-full p-2" src="https://ecs7.tokopedia.net/img/cache/300/default_picture_user/default_toped-21.jpg" alt="">
+                        <a href="{{ route('store-show', Auth::user()->store->id) }}" class="flex items-center space-x-2">
+                            <img class="w-12 rounded-full p-2" src="{{ asset('/storage/'.Auth::user()->photo) }}" alt="">
                             <div>
                                 <p class="font-bold text-sm">{{ Auth::user()->name }}</p>
                                 <p class="font-bold text-xs"><i class="fas fa-store"></i> {{ Auth::user()->store->name }}</p>
@@ -82,10 +82,18 @@
                                 <a href="/" class="py-2 text-sm"><i  class="fas fa-bag"></i>Kembali ke Tokobilu</a>
                             </div>
                             <div class="py-1 border-t-2">
-                                <a href="/profile" class="py-2 text-md font-bold"><i  class="fas fa-cog"></i>Pengaturan Akun</a>
+                                <a href="{{ route('profile-index') }}" class="py-2 text-md font-bold"><i  class="fas fa-cog"></i>Pengaturan Akun</a>
                             </div>
                             <div class="py-1">
-                                <a href="/seller" class="py-2 text-md font-bold"><i class="fas fa-sign-out-alt"></i> Keluar</a>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a class="py-2 text-md font-bold" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                        <span>Keluar</span>
+                                    </a>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,7 @@
             <a href="/seller/chats" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-comment-dots"></i> Chat</a>
         </li>
         <li class="mt-3">
-            <a href="/seller/discutions" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-comments"></i> Diskusi</a>
+            <a href="{{ route('seller.discussion-index') }}" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-comments"></i> Diskusi</a>
         </li>
         <li class="mt-3">
             <a href="/seller/sales" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-balance-scale-right"></i> Penjualan</a>
@@ -20,7 +20,7 @@
             <a href="/seller/reviews" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-blog"></i> Kata Pembeli</a>
         </li>
         <li class="mt-3">
-            <a href="/seller/store" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-cog"></i> Pengaturan Toko</a>
+            <a href="{{ route('seller.setting') }}" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-cog"></i> Pengaturan Toko</a>
         </li>
         <li class="bg-white block text-gray-700 hover:text-gray-900 mt-3" x-data="accordion(1)">
             <h2

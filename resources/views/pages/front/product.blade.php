@@ -203,10 +203,10 @@
                                 <div class="text-sm">
                                     @if ($subdiscussion->user->id == $products->user_id)
                                         <p class="font-bold">{{ $stores->first()->name }} <span class="font-normal text-xs bg-blue-200 text-blue-600 p-1 rounded">Penjual</span> <span class="font-normal text-xs text-gray-500">| {{ \Carbon\Carbon::parse($subdiscussion->created_at)->diffForHumans() }}</span></p>
-                                        <p class="text-gray-400">{{ $subdiscussion->note }}</p>
+                                        <p class="text-gray-700">{{ $subdiscussion->note }}</p>
                                     @else
                                         <p class="font-bold">{{ $subdiscussion->user->name }} <span class="font-normal text-xs text-gray-500">| {{ \Carbon\Carbon::parse($subdiscussion->created_at)->diffForHumans() }}</span></p>
-                                        <p class="text-gray-400">{{ $subdiscussion->note }}</p>
+                                        <p class="text-gray-700">{{ $subdiscussion->note }}</p>
                                     @endif
                                 </div>
                             </div>

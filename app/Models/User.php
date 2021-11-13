@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -17,6 +18,10 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    // protected $appends = [
+    //     'birth_date'
+    // ];
+    
     protected $fillable = [
         'name',
         'email',
@@ -24,6 +29,7 @@ class User extends Authenticatable
         'phone',
         'gender',
         'photo',
+        'birth_date',
         'province_id',
         'regency_id',
         'district_id',
@@ -85,5 +91,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    
+    public function getBirthDateAttribute()
+    {
+        return Carbon::parse($this->attributes['birth_date'])->translatedFormat('d F Y');
+    }
 }

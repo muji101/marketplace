@@ -43,4 +43,9 @@ class Product extends Model
     {
         return $this->belongsTo(Store::class, 'store_id', 'id');
     }
+
+    public function discussion()
+    {
+        return $this->hasMany(Discussion::class);
+    }
 }

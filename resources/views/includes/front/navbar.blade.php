@@ -183,7 +183,7 @@
                     <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
                         <div class="flex flex-col text-xs font-normal">
                             <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Chat</a>
-                            <a href="/profile/discution" class="hover:bg-gray-200 rounded px-2 py-1">Diskusi</a>
+                            <a href="{{ route('profile-discussion-index') }}" class="hover:bg-gray-200 rounded px-2 py-1">Diskusi</a>
                             <a href="/profile/review" class="hover:bg-gray-200 rounded px-2 py-1">Ulasan</a>
                             <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Pesan bantuan</a>
                             <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Pesan dikomplain</a>
@@ -229,11 +229,11 @@
             <div class="dropdown inline py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer text-base tracking-wide">
                 <div class="flex items-center space-x-2">
                     <img class="h-6 rounded-full" src="{{ asset('/storage/'.Auth::user()->photo) }}" alt=""> 
-                    <p class="text-gray-500 text-sm">{{ Auth::user()->name }}</p>
+                    <p class="text-gray-500 text-sm">{{ Str::limit(Auth::user()->name, 7, '...') }}</p>
                 </div>
                 <div class="dropdown-menu absolute hidden w-60 text-gray-700  h-auto flex pt-4">
                     <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
-                        <a href="/profile" class="border-b-2 flex items-center space-x-2">
+                        <a href="{{ route('profile-index') }}" class="border-b-2 flex items-center space-x-2">
                             <img class="w-12 rounded-full p-2" src="{{ asset('/storage/'.Auth::user()->photo) }}" alt="">
                             <div>
                                 <p class="font-bold text-sm">{{ Auth::user()->name }}</p>
@@ -248,7 +248,7 @@
                                 <a href="/wishlist" class="py-2 px-4 text-sm"><i  class="fas fa-bag"></i>Wishlist</a>
                             </div>
                             <div class="py-1 bg-gray-100 rounded">
-                                <a href="/profile" class="py-2 px-4 text-sm"><i  class="fas fa-settings"></i>Pengaturan</a>
+                                <a href="{{ route('profile-index') }}" class="py-2 px-4 text-sm"><i  class="fas fa-settings"></i>Pengaturan</a>
                             </div>
                             <div class="text-center bg-blue-400 rounded-md py-1">
                                 {{-- <a href="/logout" class=" text-white font-bold text-sm">Logout</a> --}}

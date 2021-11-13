@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->text('phone')->nullable();
             $table->enum('gender', ['L', 'P'])->nullable();
             $table->string('photo')->nullable();
+            $table->date('birht_date')->nullable();
             $table->foreignId('province_id')->nullable();
             $table->foreignId('regency_id')->nullable();
             $table->foreignId('district_id')->nullable();
@@ -30,7 +31,7 @@ class CreateUsersTable extends Migration
             $table->integer('zip_code')->nullable();
             $table->string('country')->nullable();
             $table->string('role');
-            $table->boolean('status')->default(1);
+            $table->boolean('is_active')->default(1);
             // $table->text('address');
             
             // $table->timestamp('email_verified_at')->nullable();
