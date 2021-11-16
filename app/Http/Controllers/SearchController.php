@@ -12,17 +12,21 @@ class SearchController extends Controller
     public function search(Request $request)
     {
         $categories = Category::get();
-        $productstores = Product::where('user_id', );
         $search = $request->get('search');
         
-        $products = Product::where('name', 'like', '%'.$search.'%')->get();
-        $stores = Store::where('name', 'like', '%'.$search.'%')->get();
+        $products = Product::where('name', 'like', '%'.$search.'%')
+        ->orWhere('slug', 'like', '%'.$search.'%')
+        ->orWhere('description', 'like', '%'.$search.'%')
+        ->get();
+        $stores = Store::where('name', 'like', '%'.$search.'%')
+        ->orWhere('type', 'like', '%'.$search.'%')
+        ->orWhere('address', 'like', '%'.$search.'%')
+        ->get();
 
         return view('pages.front.search', [
             'stores' => $stores,
             'products' => $products,
             'categories' => $categories, 
-            'productstores' => $productstores,
         ]);
     }
     public function searchCategory(Request $request, $slug)

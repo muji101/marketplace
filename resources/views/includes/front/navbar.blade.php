@@ -82,12 +82,16 @@
         @auth
         <div class="col-span-5 flex">
             <div class="relative text-gray-600 w-full">
-            <input type="search" name="serch" placeholder="Search" class="bg-white h-10 px-5 pr-10 rounded-full text-sm w-full border-2">
-            <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-                <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
-                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
-                </svg>
-            </button>
+                <form action="{{ route('search') }}" method="GET">
+                    @csrf
+                    @method("GET")
+                    <input type="search" name="search" placeholder="Search" class="bg-white h-10 px-5 pr-10 rounded-full text-sm w-full border-2">
+                    <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                        <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
+                        <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+                        </svg>
+                    </button>
+                </form>
             </div>
         </div>
         <div class="col-span-2 flex flex-column justify-center items-center space-x-8 text-gray-500">
@@ -182,9 +186,9 @@
                 <div class="dropdown-menu absolute hidden w-60 text-gray-700  h-auto flex pt-4">
                     <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
                         <div class="flex flex-col text-xs font-normal">
-                            <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Chat</a>
+                            <a href="{{ route('chat') }}" class="hover:bg-gray-200 rounded px-2 py-1">Chat</a>
                             <a href="{{ route('profile-discussion-index') }}" class="hover:bg-gray-200 rounded px-2 py-1">Diskusi</a>
-                            <a href="/profile/review" class="hover:bg-gray-200 rounded px-2 py-1">Ulasan</a>
+                            <a href="{{ route('profile-review-index') }}" class="hover:bg-gray-200 rounded px-2 py-1">Ulasan</a>
                             <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Pesan bantuan</a>
                             <a href="" class="hover:bg-gray-200 rounded px-2 py-1">Pesan dikomplain</a>
                         </div>
@@ -197,15 +201,15 @@
             @if (isset(Auth::user()->store->name))
             <div class="dropdown inline px-2 py-1 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-200 cursor-pointer text-base tracking-wide">
                 <div class="flex items-center space-x-2">
-                    <img class="h-8 rounded-full" src="{{ asset('/storage/'.Auth::user()->store->photo) }}" alt=""> 
+                    <img class="h-8 w-8 object-cover rounded-full" src="{{ asset('/storage/'.Auth::user()->store->photo) }}" alt=""> 
                     <p class="text-gray-500 text-sm">
                         {{ Str::limit(Auth::user()->store->name, 7) }}
                     </p>
                 </div>
-                <div class="dropdown-menu absolute hidden w-96 text-gray-700  h-auto flex pt-4">
+                <div class="dropdown-menu absolute hidden w-96 text-gray-700  h-auto pt-4">
                     <div class="transform -translate-x-1/2 block w-full bg-white shadow p-4  rounded-md">
                         <a href="{{ route('store-show', Auth::user()->store->id) }}" class="border-b-2 flex items-center space-x-2">
-                            <img class="w-12" src="{{ asset('/storage/'.Auth::user()->store->photo) }}" alt="">
+                            <img class="w-12 h-12 object-cover rounded-full" src="{{ asset('/storage/'.Auth::user()->store->photo) }}" alt="">
                             <div>
                                 <p class="font-bold text-sm">{{ Auth::user()->store->name }}</p>
                                 <p class="font-bold text-xs">{{ Auth::user()->store->type }}</p>
@@ -245,7 +249,7 @@
                                 <a href="/profile/list-transactions" class="py-2 px-4 text-sm"><i  class="fas fa-bag"></i>Pembelian</a>
                             </div>
                             <div class="py-1 bg-gray-100 rounded">
-                                <a href="/wishlist" class="py-2 px-4 text-sm"><i  class="fas fa-bag"></i>Wishlist</a>
+                                <a href="{{ route('wishlist') }}" class="py-2 px-4 text-sm"><i  class="fas fa-bag"></i>Wishlist</a>
                             </div>
                             <div class="py-1 bg-gray-100 rounded">
                                 <a href="{{ route('profile-index') }}" class="py-2 px-4 text-sm"><i  class="fas fa-settings"></i>Pengaturan</a>

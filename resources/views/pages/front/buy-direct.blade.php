@@ -15,18 +15,18 @@
                         <h2 class="pt-4 font-bold">Barang yang dibeli</h2>
                         <div class="">
                             <div class="py-2">
-                                <div class="flex">
-                                    <img class="w-6" src="https://images.tokopedia.net/img/official_store/badge_os.png" alt="">
-                                    <h1 class="font-bold">PINZY Official Store</h1>
+                                <div class="flex space-x-2">
+                                    <img class="w-6 h-6 rounded object-cover" src="{{ asset('/storage/'.$product->store->photo) }}" alt="">
+                                    <h1 class="font-bold">{{ $product->store->name }}</h1>
                                 </div>
-                                <p class="text-xs text-gray-500">Jakarta Barat</p>
+                                <p class="text-xs text-gray-500 pt-1">{{ $product->store->address }}</p>
                             </div>
                             <div class="py-4">
                                 <div class="flex items-center space-x-4">
-                                    <img class="rounded-lg" src="https://images.tokopedia.net/img/cache/100-square/product-1/2020/7/11/48690432/48690432_73f8cf51-8be9-4323-8850-0df7f71abfc8_800_800.webp?ect=4g" alt="">
+                                    <img class="rounded-lg w-24 h-24 object-cover" src="{{ asset('/storage/'. $product->galleries->first()->photo) }}" alt="">
                                     <div class="">
-                                        <p class="text-black font-bold uppercase">Korek Api Kompor - Lighter Pemantik Kompor Gas</p>
-                                        <p class="font-bold">Rp6.350</p>
+                                        <p class="text-black font-bold uppercase">{{ $product->name }}</p>
+                                        <p class="font-bold">Rp {{ number_format($product->price) }}</p>
                                     </div>
                                 </div>
                                 <div class="text-gray-500 text-right flex justify-center space-x-4 px-6 py-4">
@@ -42,9 +42,15 @@
                                 <h2 class="pt-4 font-bold">Pengiriman dan pembayaran</h2>
                                 <div class="border-2 rounded p-4">
                                     <div class="border-b-2 py-2">
-                                        <p class="font-bold  text-sm">Pondok <span class="font-normal text-gray-500"> - Muji (6285747245474)</span></p>
-                                        <p class="text-sm text-gray-500">Pondok IT Al Madinah, Jl. Karanganyar Raya, Kec. Ngemplak, Kabupaten Sleman, Jogja, 55584[Tokopedia notes: Pondok IT Al Madinah]
-                                            Ngemplak, Kab. Sleman, 55584</p>
+                                        <p class="font-bold  text-sm">{{ $address->first()->label }} <span class="font-normal text-gray-500"> - {{ $address->first()->recipient_name }} ({{ $address->first()->phone }})</span></p>
+                                        <p class="text-sm text-gray-500">
+                                            {{ $address->first()->village->name }}, 
+                                            {{ $address->first()->district->name }}, 
+                                            {{ $address->first()->regency->name}}, 
+                                            {{ $address->first()->province->name }}, 
+                                            {{ $address->first()->zip_code }}
+                                            [Tokobilu notes: {{ $address->first()->address_note }}]
+                                        </p>
                                     </div>
                                     <div class="border-b-2 grid grid-cols-2 py-2 gap-2">
                                         <div class="col-span-1">
@@ -80,24 +86,33 @@
                     </div>
 
                 </div>
+
+                @php
+                    $price = $product->price;
+                    $shipping = 25000;
+                    $fee = 2500;
+                    
+                    $totalPrice = $price + $shipping + $fee;
+                @endphp
+
                 <div class="col-span-1">
                     <div class="border-2 rounded-lg p-4 sticky top-32">
                         <h1 class="text-lg text-left font-bold">Ringkasan Belanja</h1>
                         <div class="flex justify-between text-gray-600">
-                            <p>Total Harga (2 Barang)</p>
-                            <p>Rp10.000</p>
+                            <p>Total Harga (1 Barang)</p>
+                            <p>Rp  {{ number_format($product->price) }}</p>
                         </div>
                         <div class="flex justify-between text-gray-600">
                             <p>Total Ongkos Kirim</p>
-                            <p>Rp25.000</p>
+                            <p>Rp {{ number_format($shipping) }}</p>
                         </div>
                         <div class="flex justify-between text-gray-600">
                             <p>Biaya Layanan</p>
-                            <p>Rp2.500</p>
+                            <p>Rp {{ number_format($fee) }}</p>
                         </div>
                         <div class="flex justify-between border-t-2 border-b-2 my-2">
                             <h1 class="text-lg my-2 text-left font-bold">Total Tagihan</h1>
-                            <h1 class="text-lg my-2 text-left font-bold">Rp32.500</h1>
+                            <h1 class="text-lg my-2 text-left font-bold">Rp {{ number_format($totalPrice) }}</h1>
                         </div>
                         <button  class="py-2 w-full bg-blue-400 rounded-lg font-bold text-md text-white">Bayar</button>
                     </div>

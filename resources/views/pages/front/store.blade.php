@@ -4,7 +4,7 @@
     <div class="py-10 mx-32">
         <div class="flex justify-around items-center shadow-lg py-4 my-4 border-2 rounded-lg p-4-lg" style="background-image: url({{ asset('/storage/'.$stores->cover) }}); background-size: auto;">
                 <div class="flex items-center">
-                    <img class="w-24 h-24 rounded-full" src="{{ asset('/storage/'.$stores->photo) }}" alt="">
+                    <img class="w-24 h-24 object-cover rounded-full" src="{{ asset('/storage/'.$stores->photo) }}" alt="">
                     <div class="text-left pl-4">
                         <h1 class="font-bold text-lg">{{ $stores->name }}</h1>
                             <div>
@@ -71,7 +71,7 @@
                                             <a href="{{ route('front.product-detail', $product->id) }}" class="p-2 border-2 rounded-lg p-4-lg w-56">
                                                 <img class="w-52 h-44 object-cover rounded" src="{{ asset('/storage/'.$product->galleries->first()->photo) }}" alt="">
                                                 <p class="text-xs text-yellow-500 font-bold pt-2">Produk terbaru</p>
-                                                <p class="text-sm py-2">{{ $product->name }}</p>
+                                                <p class="text-sm py-2">{{ Str::limit($product->name, 40, '...') }}</p>
                                                 <p class="font-bold text-base">Rp {{ number_format($product->price) }}</p>
                                             </a>
                                         @endforeach
@@ -81,64 +81,58 @@
                         </div>
                     </div>
                     <div id="second" class="hidden border-2 rounded-lg p-4 mt-2">
-                        {{-- <div class="border-b-2 flex justify-between p-2 bg-gray-100">
-                            <span>Pesan diterima: 17 Nov 2021, 12:08</span>
-                        </div>
-                        <div class="p-4">
-                            <div class="grid grid-cols-6">
-                                <div class="col-span-1">
-                                    <img src="https://ecs7.tokopedia.net/img/cache/100-square/product-1/2019/11/13/7766400/7766400_bc88909b-f9ab-44a1-89fa-b2beb8f0fa67_690_690.webp" alt="">
-                                </div>
-                                <div class="col-span-5">
-                                    <p class="font-bold">Tp-link TL WN725N : 150Mbps Wireless N Nano USB Adapter N USB Wifi</p>
-                                    <p>
-                                            <i class="text-yellow-400 fas fa-star"></i>
-                                            <i class="text-yellow-400 fas fa-star"></i>
-                                            <i class="text-yellow-400 fas fa-star"></i>
-                                            <i class="text-yellow-400 fas fa-star"></i>
-                                            <i class="text-yellow-400 fas fa-star"></i>
-                                    </p>
-                                    <p class="text-gray-500 py-4">Mantap produk sesuai pesanan dan nyaman dipakai, pengiriman cepat dan respon toko sangat ramah</p>
-                                    <span class="text-gray-500">17 Nov 2021, 12:08</span>
-                                </div>
-                            </div>
-                        </div> --}}
-
-                        <div class="grid grid-cols-10 p-2">
-                            <div class="col-span1">
-                                <div class="p-2 border-2">
-                                    <img src="https://ecs7.tokopedia.net/img/cache/100-square/product-1/2019/11/13/7766400/7766400_bc88909b-f9ab-44a1-89fa-b2beb8f0fa67_690_690.webp" alt="">
-                                </div>
-                                <p class="text-blue-400 font-bold uppercase p-2 text-md">Tp-link TL WN725N : 150Mbps Wireless N Nano USB Adapter N USB Wifi</p>
-                            </div>
-                            <div class="col-span-9 border-l-2 ml-2 p-2">
-                                <div class="">
-                                    <div class="flex items-center space-x-2">
-                                        <span><img class="w-6" src="https://ecs7.tokopedia.net/img/cache/100-square/default_picture_user/default_toped-13.jpg" alt=""></span>
-                                        <span class="font-bold text-xs text-blue-500">Rudi</span>
-                                        <span class="text-xs bg-blue-400 rounded text-white py-1 px-2 font-bold">Pembeli</span>
-                                        <span class="text-gray-500 text-xs">04 Sep 2021, 19:03 WIB</span>
+                        @foreach ($products as $product)
+                            @foreach ($product->review as $review)
+                                <div class="grid grid-cols-10 p-2 border-2 my-2 rounded">
+                                    <div class="col-span1">
+                                        <div class="p-2 border-2 rounded">
+                                            <img src="{{ asset('/storage/'.$review->product->galleries->first()->photo) }}" class="w-28 h-24 object-cover rounded" alt="">
+                                        </div>
+                                        <p class="text-blue-400 font-bold uppercase p-2 text-sm">{{ $review->product->name }}</p>
                                     </div>
-                                    <p class="py-2">
-                                        <i class="text-yellow-400 fas fa-star"></i>
-                                        <i class="text-yellow-400 fas fa-star"></i>
-                                        <i class="text-yellow-400 fas fa-star"></i>
-                                        <i class="text-yellow-400 fas fa-star"></i>
-                                        <i class="text-yellow-400 fas fa-star"></i>
-                                    </p>
-                                    <p class="text-gray-500">terimakasih kak</p>
-                                </div>
-                                <div class="mt-2 border-t-2 py-2 bg-gray-100 p-2">
-                                    <div class="flex items-center space-x-2 py-1">
-                                        <span><img class="w-6" src="https://images.tokopedia.net/img/cache/215-square/shops-1/2014/9/5/1441677/1441677_297c9bc2-34eb-11e4-8dfe-d9e74908a8c2.jpg" alt=""></span>
-                                        <span class="font-bold text-xs text-blue-500">herbalonlineYK</span>
-                                        <span class="text-xs bg-blue-400 rounded text-white py-1 px-2 font-bold">Penjual</span>
-                                        <span class="text-gray-500 text-xs">12 Oct 2021, 14:07 WIB</span>
+                                    <div class="col-span-9 border-l-2 ml-2 p-2">
+                                        <div class="">
+                                            <div class="flex items-center space-x-2">
+                                                <span><img class="w-6 h-6 object-cover rounded" src="{{ asset('/storage/'.$review->user->photo ) }}" alt=""></span>
+                                                <span class="font-bold text-sm text-blue-500">{{ $review->user->name }}</span>
+                                                <span class="text-xs bg-green-400 rounded text-white py-1 px-2 font-bold">Pembeli</span>
+                                                <span class="text-gray-500 text-xs">{{ \Carbon\Carbon::parse($review->created_at)->diffForHumans() }}</span>
+                                            </div>
+                                            <p class="py-2">
+                                                @php 
+                                                    $rating = $review->rating; 
+                                                @endphp  
+                                                @for($x = 5; $x > 0; $x--)
+                                                    @php 
+                                                        if($rating > 0.5){
+                                                            echo '<i class="text-yellow-400 fas fa-star"></i>';
+                                                        }elseif($rating <= 0 ){
+                                                            echo '<i class="text-yellow-400 far fa-star"></i>';
+                                                        }else{
+                                                            echo '<i class="text-yellow-400 fas fa-star-half-alt"></i>';
+                                                        }
+                                                        $rating--;      
+                                                    @endphp
+                                                @endfor
+                                                </p>
+                                            </p>
+                                            <p class="text-gray-500">{{ $review->content }}</p>
+                                        </div>
+                                        <div class="mt-2 border-t-2 py-2 bg-gray-100 p-2">
+                                            <div class="flex items-center space-x-2 py-1">
+                                                <span><img class="w-6 h-6 object-cover rounded" src="{{ asset('/storage/'.$review->product->store->photo ) }}" alt=""></span>
+                                                <span class="font-bold text-xs text-blue-500">{{ $review->product->store->name }}</span>
+                                                <span class="text-xs bg-blue-400 rounded text-white py-1 px-2 font-bold">Penjual</span>
+                                                <span class="text-gray-500 text-xs">{{ \Carbon\Carbon::parse($review->reply->created_at)->diffForHumans() }}</span>
+                                            </div>
+                                            <p class="text-gray-600 text-md pl-8">
+                                                {{ $review->reply->reply }}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <p class="text-gray-500">Terima kasih telah berbelanja di herbalonlineYK. Bagikan link toko kami www.tokopedia.com/herbalonlineyk kepada teman-teman kamu. Jangan lupa follow toko kami untuk tahu update terbaru tentang stok dan produk yang kami tawarkan.</p>
                                 </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endforeach
                     </div>
                 </div>
         </div>

@@ -18,7 +18,7 @@ class CreateCartsTable extends Migration
 
             $table->foreignId('user_id'); 
             $table->foreignId('product_id'); 
-            // $table->string('note'); 
+            $table->string('note')->nullable(); 
 
             $table->timestamps();
         });

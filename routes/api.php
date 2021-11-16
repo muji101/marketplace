@@ -30,3 +30,8 @@ Route::get('/villages/{districts_id}', [LocationController::class, 'villages'])-
 
 Route::get('/categories', [CategoryController::class, 'categories'])->name('api-categories');
 Route::get('/subcategories/{category_id}', [CategoryController::class, 'subcategories'])->name('api-subcategories');
+
+
+// Route::get('/provinces', [App\Http\Controllers\RajaOngkirController::class, 'getProvinces']);
+// Route::get('/cities/{id}', [App\Http\Controllers\RajaOngkirController::class, 'getCities']);
+// Route::post('/checkOngkir', [App\Http\Controllers\RajaOngkirController::class, 'checkOngkir']);

@@ -28,7 +28,11 @@
                         </div>
                     </div>
                     <div>
-                        <a href="#" class="bg-blue-400 rounded py-2 px-4 text-white font-bold">Beri ulasan</a>
+                        <button
+                        class="bg-blue-400 rounded py-2 px-4 text-white font-bold"
+                        type="button" onclick="toggleModal('modal-example-small')">
+                        Beri ulasan
+                    </button>
                     </div>
                 </div>
             </div>
@@ -155,5 +159,149 @@
                 Fourth tab
             </div>
         </div>
+
+        <!-- Modal  address-->
+    <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-example-small">
+        <div class="relative w-auto my-6 mx-auto max-w-xl">
+            <!--content-->
+            <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+            <!--header-->
+            <div class="flex items-start justify-between p-5 border-b border-solid border-gray-200 rounded-t">
+                <h3 class="text-lg font-semibold">
+                    Berikan ulasan terbaik anda
+                </h3>
+                <button
+                class="p-1 ml-auto bg-transparent border-0 text-gray-300 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                onclick="toggleModal('modal-example-small')">
+                <span class="bg-transparent h-6 w-6 text-2xl block outline-none focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </span>
+                </button>
+            </div>
+            <form action="{{ route('profile-review-store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('POST')
+                <div class="p-4">
+                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                    <input type="hidden" name="product_id" value="1">
+                    <div class="flex space-x-4">
+                        <div class="py-1 w-1/2">
+                            <label class="font-bold text-gray-500 text-md">Foto Produk</label>
+                            <input name="photo" type="file" class="p-2 w-full border rounded-lg" placeholder="Tulis nama penerima">
+                        </div>
+                        <div class="py-1 w-1/2">
+                            <div class="font-bold text-gray-500 text-md">Rating</div>
+                            <ul class="rate-area pt-1">
+                                <input type="radio" id="5-star" name="rating" value="5">
+                                <label for="5-star" title="Amazing">5 stars</label>
+                                <input type="radio" id="4-star" name="rating" value="4">
+                                <label for="4-star" title="Good">4 stars</label>
+                                <input type="radio" id="3-star" name="rating" value="3">
+                                <label for="3-star" title="Average">3 stars</label>
+                                <input type="radio" id="2-star" name="rating" value="2">
+                                <label for="2-star" title="Not Good">2 stars</label>
+                                <input type="radio" id="1-star" required="" name="rating" value="1" aria-required="true">
+                                <label for="1-star" title="Bad">1 star</label>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="py-1">
+                        <label class="font-bold text-gray-500 text-md">Masukkan ulasan anda di sini</label>
+                        <textarea name="content" class="w-full p-2 block border rounded-lg" placeholder="Tulis nama jalan, nomor rumah, nomor kompleks, nama gedung"></textarea>
+                    </div>
+                </div>
+            <!--footer-->
+                <div class="flex items-center justify-end p-6 border-t border-solid border-gray-200 rounded-b">
+                    <button
+                        class="text-blue-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button" onclick="toggleModal('modal-example-small')">
+                        Batal
+                    </button>
+                    <button
+                        class="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="submit" onclick="toggleModal('modal-example-small')">
+                        Kirim Ulasan
+                    </button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-example-small-backdrop"></div>
+
 </div>
+@endpush
+
+@push('after-style')
+    <style>
+        .rate-area {
+    float:left;
+    border-style: none;
+}
+
+.rate-area:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rate-area:not(:checked) > label {
+    float: right;
+    width: .80em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 40px;
+    line-height: 32px;
+    color: lightgrey;
+    margin-bottom: 10px !important;
+}
+
+.rate-area:not(:checked) > label:before {
+    content: '★';
+}
+
+.rate-area > input:checked ~ label {
+    color: rgb(255, 187, 0);
+    text-shadow: none;
+}
+
+.rate-area:not(:checked) > label:hover,
+.rate-area:not(:checked) > label:hover ~ label {
+    color: rgb(255, 187, 0);
+    
+}
+
+.rate-area > input:checked + label:hover,
+.rate-area > input:checked + label:hover ~ label,
+.rate-area > input:checked ~ label:hover,
+.rate-area > input:checked ~ label:hover ~ label,
+.rate-area > label:hover ~ input:checked ~ label {
+    color: #e8262d;
+    text-shadow: none;
+    
+}
+
+.rate-area > label:active {
+    position:relative;
+    top:0px;
+    left:0px; 
+}
+    </style>
+@endpush
+
+@push('after-script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+    function toggleModal(modalID) {
+    document.getElementById(modalID).classList.toggle("hidden");
+    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+    document.getElementById(modalID).classList.toggle("flex");
+    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+    }
+
+    $(':radio').change(function() {
+    console.log('New star rating: ' + this.value);
+    });
+</script>
 @endpush

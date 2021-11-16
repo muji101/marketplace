@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Product | '.$products->name)
 
 @section('content')
 <div class="py-12 mx-32">
@@ -57,7 +58,22 @@
                         <h1 class="font-bold text-lg">{{ $products->name }}</h1>
                         <div class="flex space-x-4 py-2">
                             <h5>Terjual <span class="text-gray-500">338</span></h5>
-                            <h5><i class="text-yellow-400 fas fa-star"></i> 4.8 (<span class="text-gray-500">32 Ulasan</span>)</h5>
+                            <h5>
+                                <i class="text-yellow-400 fas fa-star"></i>
+                                {{-- Result seluruh rating --}}
+                                @php
+                                    $sumRating = $products->review->sum('rating');
+                                    if ($products->review->count() >= 1) {
+                                        $countRating = $products->review->count();
+                                        $resRating = $sumRating/$countRating;
+                                    }else
+                                    {
+                                        $resRating = 0;
+                                    }
+                                @endphp
+                                {{ $resRating }}
+                                (<span class="text-gray-500">{{ $products->review->count() }} Ulasan</span>)
+                            </h5>
                             <h5>Diskusi <span class="text-gray-500">{{ $discussions->count() }}</span></h5>
                         </div>
                         <h1 class="font-bold text-lg">Rp {{ number_format($products->price) }}</h1>
@@ -104,14 +120,14 @@
                     <div class="py-2">
                         <div class="flex justify-between">
                             <a href="{{ route('store-show', $stores->first()->id) }}" class="flex space-x-2">
-                                <img class="w-12 rounded-full" src="{{ asset('/storage/'.$stores->first()->photo) }}" alt="">
+                                <img class="w-12 h-12 object-cover rounded-full" src="{{ asset('/storage/'.$stores->first()->photo) }}" alt="">
                                 <div class="text-left">
                                     <h2>{{ $stores->first()->name }}</h2>
                                     {{-- <h2 class="text-blue-400">• Online</h2> --}}
                                     <div>
                                         {{-- online offline status --}}
                                         @if (Cache::has('user-is-online-' . $stores->first()->user->id))
-                                            <span class="text-blue-400">• Online</span>
+                                            <span class="text-blue-400 font-bold">• Online</span>
                                         @else
                                             <div class="text-blue-400">Online <span class="font-bold">{{ \Carbon\Carbon::parse($stores->first()->user->last_seen)->diffForHumans() }}</span></div>
                                         @endif
@@ -144,35 +160,72 @@
                 </div>
             </div>
             <div class="py-4">
-                <h1 class="font-bold">Ulasan (32)</h1>
+                <h1 class="font-bold">Ulasan ({{ $products->review->count() }})</h1>
                 <h3 class="text-sm">{{ $products->name }}</h3>
                 <div class="py-4">
-                    <h3 class="text-sm">Semua Ulasan (32)</h3>
+                    <h3 class="text-sm font-bold">Foto Dari Pembeli ({{ $products->review->count() }})</h3>
+                    <div class="flex space-x-3 overflow-x-auto mt-2">
+                        @foreach ($products->review as $photo)
+                            <img src="{{ asset('/storage/'.$photo->photo) }}" class="w-24 h-24 rounded-md object-cover  border-2 border-blue-400" alt="">
+                        @endforeach
+                    </div>
+                </div>
+                <div class="py-4">
+                    <h3 class="text-sm font-bold">Semua Ulasan ({{ $products->review->count() }})</h3>
+                    @foreach ($products->review as $review)
                     <div class="flex space-x-4 border-b-2 py-4">
-                        <img class="w-8 h-8 rounded-full" src="https://ecs7.tokopedia.net/img/cache/100-square/default_picture_user/default_toped-15.jpg" alt="">
-                        <div class="text-sm">
-                            <p class="font-bold text-blue-400">Sugianto</p>
-                            <p class="text-gray-400">2 minggu lalu</p>
-                        </div>
-                        <div class="text-sm">
-                            <div class="flex">
-                                <i class="text-yellow-400 fas fa-star"></i>
-                                <i class="text-yellow-400 fas fa-star"></i>
-                                <i class="text-yellow-400 fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                        <div class="text-sm flex space-x-2 w-60">
+                            <img class="w-8 h-8 rounded-full" src="{{ asset('/storage/'.$review->user->photo) }}" alt="">
+                            <div>
+                                <p class="font-bold text-blue-400">{{ $review->user->name }}</p>
+                                <p class="text-gray-400">{{ \Carbon\Carbon::parse($review->created_at)->diffForHumans() }}</p>
                             </div>
-                            <p>barang nya bagus,cuman proses atau pengiriman nya yg lumayan lama</p>
+                        </div>
+                        <div class="text-sm space-y-2">
+                            <div class="flex">
+                                {{-- rating view --}}
+                                @php 
+                                    $rating = $review->rating; 
+                                @endphp  
+                                @for($x = 5; $x > 0; $x--)
+                                    @php 
+                                        if($rating > 0.5){
+                                            echo '<i class="text-yellow-400 fas fa-star"></i>';
+                                        }elseif($rating <= 0 ){
+                                            echo '<i class="text-yellow-400 far fa-star"></i>';
+                                        }else{
+                                            echo '<i class="text-yellow-400 fas fa-star-half-alt"></i>';
+                                        }
+                                        $rating--;      
+                                    @endphp
+                                @endfor
+                                </p>
+                            </div>
+                            <p class="text-sm text-gray-700">{{ $review->content }}</p>
+                            <img src="{{ asset('/storage/'.$review->photo) }}" class="w-16 h-16 object-cover rounded-md border-2 border-blue-400" alt="">
+                            <div class="p-2 bg-gray-100 rounded w-4/5">
+                                <div class="flex space-x-2 items-center">
+                                    <img src="{{ asset('/storage/'.$review->product->store->photo) }}" class="w-8 h-8 rounded-full object-cover shadow-md" alt="">
+                                    <div class="">
+                                        <p class="font-bold text-blue-400">{{ $review->product->store->name }} <span class="font-normal text-xs bg-blue-200 text-blue-600 p-1 rounded">Penjual</span></p>
+                                        <p class="text-gray-700 text-xs">{{ \Carbon\Carbon::parse($review->reply->created_at)->diffForHumans() }}</p>
+                                    </div>
+                                </div>
+                                <p class="pl-10 text-gray-900 pt-2 text-md">
+                                    {{ $review->reply->reply }}
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
             <div class="py-4">
                 <h1 class="font-bold">Diskusi ({{ $discussions->count() }})</h1>
                 <h3 class="text-sm">Kapas Filter Air Humidifier Diffuser Purifier Replacement Cotton Swab</h3>
                 <div class="py-4">
-                    <div class="flex items-center justify-between text-sm border-2 p-4">
-                        <h3><i class="fas fa-question"></i> 
+                    <div class="flex items-center justify-between text-sm border-2 p-4 rounded">
+                        <h3><i class="fas fa-question text-2xl"></i> 
                             Ada pertanyaan?
                             <span class="font-bold">Diskusikan dengan penjual atau pengguna lain</span>
                         </h3>
@@ -182,8 +235,8 @@
                         </button>
                     </div>
                     @foreach ($discussions as $discussion)
-                    <div class=" my-4 border-2">
-                        <div class="flex space-x-4 p-2">
+                    <div class=" my-4 border-2 rounded">
+                        <div class="flex space-x-4 p-2 bg-gray-200">
                             <img class="w-8 h-8 rounded-full" src="{{ asset('/storage/'.$discussion->user->photo) }}" alt="">
                             <div class="text-sm">
                                 <p class="font-bold">{{ $discussion->user->name }} <span class="font-normal text-xs text-gray-500">| {{ \Carbon\Carbon::parse($discussion->created_at)->diffForHumans() }}</span></p>
@@ -191,7 +244,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="p-4 bg-gray-100">
+                        <div class="p-4 bg-gray-50">
                             <div class="pl-8">
                                 @foreach ($discussion->subdiscussion as $subdiscussion)
                             <div class="flex space-x-4 py-4">
@@ -221,10 +274,10 @@
                                         <input type="hidden" name="discussion_id" value="{{ $discussion->id }}">
                                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                         <input type="hidden" name="product_id" value="{{ $products->id }}">
-                                        <textarea name="note" id="" cols="100%" rows="2" class="p-2 border-2" placeholder="Tulis komentar disini..."></textarea>
+                                        <textarea name="note" id="" cols="100%" rows="2" class="p-2 border-2 rounded resize-none" placeholder="Tulis komentar disini..."></textarea>
                                         <div class="flex justify-end space-x-2 pt-2">
                                             {{-- <button class="py-2 px-4 font-bold border-2 rounded-lg">Batal</button> --}}
-                                            <button class="py-2 px-4 font-bold bg-gray-200 rounded-lg">Kirim</button>
+                                            <button class="py-2 px-4 font-bold bg-blue-400 text-white rounded-lg">Kirim</button>
                                         </div>
                                     </div>
                                 </form>
@@ -318,10 +371,26 @@
                             Sign in to Add
                         </a> --}}
                     @endauth
-                    <a  href="{{ route('pay') }}" class="block text-center py-2 w-full text-blue-400 border-2 border-blue-400 rounded-lg font-bold text-md">Beli Langsung</a>
+                    <a  href="{{ route('pay', $products->id) }}" class="block text-center py-2 w-full text-blue-400 border-2 border-blue-400 rounded-lg font-bold text-md">Beli Langsung</a>
                     <div class="pt-2 flex justify-center space-x-2 text-xs">
-                        <a href=""><i class="fas fa-comment-dots"></i> Chat</a>
-                        <a href=""><i class="fas fa-heart"></i> Wishlist</a>
+                        <form action="{{ route('chat-store') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                            <div class="flex space-x-1">
+                                <input type="hidden" name="user_id" value="{{ $products->user_id }}">
+                                <input type="hidden" name="friend_id" value="{{ Auth::user()->id }}">
+                                <button class=""><i class="fas fa-comment-dots"></i> Chat</button>
+                            </div>
+                        </form>
+                        <form action="{{ route('wishlist-create') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                            <div class="flex space-x-1">
+                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                <input type="hidden" name="product_id" value="{{ $products->id }}">
+                                <button class=""><i class="fas fa-heart"></i> Wishlist</button>
+                            </div>
+                        </form>
                         <a href=""><i class="fas fa-share"></i> Share</a>
                     </div>
                 </div>
@@ -336,21 +405,40 @@
         </div>
         <div class="py-8 grid grid-cols-6 gap-4">
             @foreach ($productStore as $productSto)
-                <div class="shadow-lg rounded-lg text-left ">
+                <a href="{{ route('front.product-detail', $productSto->id) }}" class="shadow-lg rounded-lg text-left ">
                     <img class="mb-2 w-full h-52 object-cover rounded-t-lg" src="{{ asset('/storage/'.$productSto->galleries->first()->photo) }}">
                     <div class="px-2 leading-6 py-2">
-                        <h4 class="text-sm">{{ $productSto->name }}</h4>
-                        <h3 class="font-bold  text-yellow-600 text-sm">Rp {{ $productSto->price }}</h3>
-                        <h5 class="text-gray-500 text-xs">{{ $stores->first()->address }}</h5>
+                        <h4 class="text-sm">{{ Str::limit($productSto->name, 40, '...') }}</h4>
+                        <h3 class="font-bold  text-yellow-600 text-sm py-1">Rp {{ number_format($productSto->price) }}</h3>
+                        <h5 class="text-gray-500 text-xs">{{ Str::limit($stores->first()->address, 20, '...') }}</h5>
                         <h5 class=" text-gray-600 text-xs">
-                            <i class="text-yellow-400 fas fa-star"></i> 
-                            <i class="text-yellow-400 fas fa-star"></i> 
-                            <i class="text-yellow-400 fas fa-star"></i> 
-                            <i class="text-yellow-400 fas fa-star"></i> 
-                            <i class="text-yellow-400 fas fa-star"></i> 
-                        ulasan (209)</h5>
+                            {{-- rating perproduct --}}
+                            @foreach ($productSto->review as $review)
+                                @php
+                                    $sumRating = $review->sum('rating');
+                                    if ($review->count() >= 1) {
+                                            $countRating = $review->count();
+                                        }
+                                    $resRating = $sumRating/$countRating;
+                                @endphp  
+                            @endforeach
+                                @foreach(range(1,5) as $i)
+                                    <span class="fa-stack" style="width:1em">
+                                        <i class="text-yellow-400 far fa-star fa-stack-1x"></i>
+                                        @if($resRating >0)
+                                            @if($resRating >0.5)
+                                                <i class="text-yellow-400 fas fa-star fa-stack-1x"></i>
+                                            @else
+                                                <i class="text-yellow-400 fas fa-star-half fa-stack-1x"></i>
+                                            @endif
+                                        @endif
+                                        @php $resRating--; @endphp
+                                    </span>
+                                @endforeach
+                                ulasan ({{ $productSto->review->count() }})
+                        </h5>
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
     </div>
@@ -360,126 +448,40 @@
             <h1 class="text-xl font-bold text-left">Pilihan lainnya untukmu</h1>
         </div>
         <div class="py-8 grid grid-cols-6 gap-4">
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/VqbcmM/2021/6/12/34d8b942-c4f3-41a3-9910-06d6ebb0c400.jpg.webp?ect=4g">
+            @foreach ($productAll as $productall)
+            <a href="{{ route('front.product-detail', $productall->id) }}" class="shadow-lg rounded-lg text-left ">
+                <img class="mb-2 w-full h-52 rounded-t-lg object-cover" src="{{ asset('/storage/'.$productall->galleries->first()->photo) }}">
                 <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
+                    <h4 class="text-sm">{{ Str::limit($productall->name, 40, '...') }}</h4>
+                    <h3 class="font-bold  text-yellow-600 text-sm py-1">Rp {{ number_format($productall->price) }}</h3>
+                    <h5 class="text-gray-500 text-xs">{{ Str::limit($productall->store->address, 20, '...') }}</h5>
+                    <h5 class=" text-gray-600 text-xs mt-1">
+                        {{-- rating perproduct --}}
+                        @foreach ($productall->review as $review)
+                            @php
+                                $sumRating = $review->sum('rating');
+                                $countRating = $review->count();
+                                $resRating = $sumRating/$countRating;
+                            @endphp  
+                        @endforeach
+                        @foreach(range(1,5) as $i)
+                            <span class="fa-stack" style="width:1em">
+                                <i class="text-yellow-400 far fa-star fa-stack-1x"></i>
+                                @if($resRating >0)
+                                    @if($resRating >0.5)
+                                        <i class="text-yellow-400 fas fa-star fa-stack-1x"></i>
+                                    @else
+                                        <i class="text-yellow-400 fas fa-star-half fa-stack-1x"></i>
+                                    @endif
+                                @endif
+                                @php $resRating--; @endphp
+                            </span>
+                        @endforeach
+                        ulasan ({{ $productall->review->count() }})
+                    </h5>
                 </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/product-1/2020/6/29/84028385/84028385_e2fa7210-2a30-4f2a-8e90-e0409e8ae1fe_1000_1000.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/product-1/2020/5/16/910865/910865_cf2ccc9b-0d6d-4d80-ab37-b88b2cebeff8_2048_2048.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/VqbcmM/2021/5/10/877fcd2c-85dc-49bb-8571-4ccb7e1d2dc9.jpg.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/product-1/2020/10/10/38905081/38905081_eb25c74b-e46f-4db3-b992-5debf67315c9_1771_1771.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/VqbcmM/2021/6/10/f2040cf0-06bf-4ddc-a65c-6a96ca0ab186.jpg.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/VqbcmM/2020/12/6/2b13c463-fa58-4e22-99b9-6eced60b1478.jpg.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
-            <div class="shadow-lg rounded-lg text-left ">
-                <img class="mb-2 w-26 rounded-t-lg" src="https://images.tokopedia.net/img/cache/250-square/attachment/2021/6/15/-1/-1_e51276a1-0c95-4558-80dc-184cad8058e6.jpg.webp?ect=4g">
-                <div class="px-2 leading-6 py-2">
-                    <h4 class="text-sm">Case Luxury Candi Love Samsung A10S</h4>
-                    <h3 class="font-bold  text-yellow-600 text-sm">Rp 6.950</h3>
-                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>
-                    <h5 class=" text-gray-600 text-xs">
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                        <i class="text-yellow-400 fas fa-star"></i> 
-                    ulasan (209)</h5>
-                </div>
-            </div>
+            </a>
+            @endforeach
         </div>
     </div>
     

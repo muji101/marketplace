@@ -32,7 +32,7 @@ class CreateUsersTable extends Migration
             $table->string('country')->nullable();
             $table->string('role');
             $table->boolean('is_active')->default(1);
-            // $table->text('address');
+            $table->timestamps('last_seen');
             
             // $table->timestamp('email_verified_at')->nullable();
             // $table->rememberToken();

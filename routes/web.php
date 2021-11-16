@@ -13,6 +13,7 @@ use App\Http\Controllers\seller\SellerDashboardController;
 use App\Http\Controllers\seller\SellerProductController;
 use App\Http\Controllers\FrontProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\FrontCategoryController;
 use App\Http\Controllers\SearchController;
@@ -23,8 +24,12 @@ use App\Http\Controllers\profile\ProfileHomeController;
 use App\Http\Controllers\SubDiscussionController;
 use App\Http\Controllers\profile\ProfileAddressController;
 use App\Http\Controllers\profile\ProfileDiscussionController;
+use App\Http\Controllers\seller\SellerChatController;
 use App\Http\Controllers\seller\SellerDiscussionController;
 use App\Http\Controllers\seller\SellerSettingController;
+use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\profile\ProfileReviewController;
+use App\Http\Controllers\seller\SellerReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,12 +64,22 @@ Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::get('/search/{slug}', [SearchController::class, 'searchCategory'])->name('search-category');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart/{id}/note', [CartController::class, 'note'])->name('cart-note');
 Route::post('/cart/{id}', [CartController::class, 'add'])->name('cart-add');
 Route::delete('/cart/{id}', [CartController::class, 'delete'])->name('cart-delete');
 
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 
-Route::get('pay', [PayController::class, 'index'])->name('pay');
+Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist');
+Route::post('wishlist', [WishlistController::class, 'store'])->name('wishlist-create');
+Route::post('wishlist/{id?}', [WishlistController::class, 'storeCart'])->name('wishlist-store');
+Route::delete('wishlist/{id}', [WishlistController::class, 'destroy'])->name('wishlist-delete');
+
+Route::get('chat', [ChatController::class, 'index'])->name('chat');
+Route::post('chat', [ChatController::class, 'store'])->name('chat-store');
+Route::post('chat/sub', [ChatController::class, 'storeSub'])->name('chat-store-sub');
+
+Route::get('pay/{id}', [PayController::class, 'index'])->name('pay');
 
 Route::resource('discussions', DiscussionController::class);
 Route::resource('subdiscussions', SubDiscussionController::class);
@@ -128,6 +143,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/setting', [SellerSettingController::class, 'index'])->name('seller.setting');
         Route::post('/setting/photo/{id}', [SellerSettingController::class, 'rubahphoto'])->name('seller.setting-photo');
         Route::post('/setting/cover/{id}', [SellerSettingController::class, 'rubahcover'])->name('seller.setting-cover');
+
+        Route::get('/chat', [SellerChatController::class, 'index'])->name('seller.chat-index');
+        // Route::get('/chat/read', [SellerChatController::class, 'markAsRead'])->name('seller.chat-read');
+
+        Route::get('/reviews', [SellerReviewController::class, 'index'])->name('seller.review-index');
+        Route::post('/reviews/reply', [SellerReviewController::class, 'replyStore'])->name('seller.review-reply');
     });
     
 // profile
@@ -142,7 +163,11 @@ Route::middleware(['auth'])->group(function () {
         Route::post('addresses/{id}/select', [ProfileAddressController::class, 'select'])->name('addresses.select');
         Route::post('addresses/{id}/main', [ProfileAddressController::class, 'main'])->name('addresses.main');
 
-        Route::get('/discussion', [ProfileDiscussionController::class, 'index'])->name('profile-discussion-index');
+        Route::get('/discussions', [ProfileDiscussionController::class, 'index'])->name('profile-discussion-index');
+        
+        Route::get('/reviews', [ProfileReviewController::class, 'index'])->name('profile-review-index');
+        Route::post('/reviews', [ProfileReviewController::class, 'store'])->name('profile-review-store');
+
     });
 
 });

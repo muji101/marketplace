@@ -13,9 +13,9 @@
                 <label class="font-bold block p-5 leading-normal cursor-pointer" for="tab-multi-one">Kotak masuk</label>
                 <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blue-400 leading-normal">
                     <ul class="p-2 space-y-4">
-                        <li><a href="/profile/chat" class="px-4 py-1 hover:bg-gray-200">Chat</a></li>
+                        <li><a href="{{ route('chat') }}" class="px-4 py-1 hover:bg-gray-200">Chat</a></li>
                         <li><a href="{{ route('profile-discussion-index') }}" class="px-4 py-1 hover:bg-gray-200">Diskusi produk</a></li>
-                        <li><a href="/profile/review" class="px-4 py-1 hover:bg-gray-200">Ulasan</a></li>
+                        <li><a href="{{ route('profile-review-index') }}" class="px-4 py-1 hover:bg-gray-200">Ulasan</a></li>
                         <li><a href="#" class="px-4 py-1 hover:bg-gray-200">Pesan bantuan</a></li>
                         <li><a href="#" class="px-4 py-1 hover:bg-gray-200">Pesanan dikomplain</a></li>
                         <li><a href="#" class="px-4 py-1 hover:bg-gray-200">Update</a></li>

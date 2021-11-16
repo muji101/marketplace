@@ -58,9 +58,9 @@
                                     </button>
                                 </div>
                                 <p>
-                                    @if (Auth::user()->gender == 'L' )
+                                    @if (Auth::user()->gender == 'L')
                                         Laki-laki
-                                    @else
+                                    @elseif(Auth::user()->gender == 'P')
                                         Perempuan
                                     @endif
                                 </p>

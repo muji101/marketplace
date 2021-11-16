@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Store;
 use App\Models\Category;
 use App\Models\Discussion;
+use App\Models\Review;
 use App\Models\SubDiscussion;
 use Illuminate\Foundation\Auth\User;
 
@@ -22,7 +23,10 @@ class FrontProductController extends Controller
         $categoryall = Category::get();
         $discussions = Discussion::where('product_id', $id)->get();
         $productStore = Product::where('store_id', $products->store_id)->get();
-        // dd($products);
+        $productAll = Product::where('is_active', 1)->get();
+
+        $ratingProducts = Review::get();
+        // dd($ratingProducts);
 
         return view('pages.front.product', [
             'products' => $products,
@@ -31,6 +35,8 @@ class FrontProductController extends Controller
             'categoryall' => $categoryall,
             'discussions' => $discussions,
             'productStore' => $productStore,
+            'productAll' => $productAll,
+            'ratingProducts' => $ratingProducts,
         ]);
     }
 }

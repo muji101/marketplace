@@ -26,7 +26,7 @@ class CreateMasterAddressesTable extends Migration
             $table->foreignId('village_id');
             $table->integer('zip_code');
             $table->text('address_note')->nullable();
-            $table->boolean('is_active');
+            $table->boolean('status');
             $table->boolean('is_default');
             
             $table->timestamps();

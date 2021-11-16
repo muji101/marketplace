@@ -136,7 +136,7 @@
                     <!-- Tab Contents -->
                         <div id="tab-contents">
                             <div id="first" class="py-4">
-                                <div class="py-4 grid grid-cols-6 gap-2">
+                                <div class="py-4 grid grid-cols-5 gap-2">
                                     @forelse ($products as $product)
                                         <a href="{{ route('front.product-detail', $product->id) }}" class="col-span-1 shadow-lg rounded-lg text-left ">
                                             <img class="mb-2 w-full h-40 object-cover rounded-t-lg" src="{{ asset('/storage/'.$product->galleries->first()->photo) }}">
@@ -144,7 +144,18 @@
                                                 <h4 class="text-sm">{{ Str::limit($product->name, 30, '...') }}</h4>
                                                 <h3 class="font-bold py-2">Rp {{ number_format($product->price) }}</h3>
                                                 <h5 class="text-gray-500 text-xs pb-1">{{ $product->store->address }}</h5>
-                                                <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                                                <h5 class=" text-gray-600 text-xs">
+                                                    <i class="text-yellow-400 fas fa-star"></i> 
+                                                    {{-- rating perproduct --}}
+                                                    @php
+                                                        $sumRating = $product->review->sum('rating');
+                                                        if ($product->review->count() >= 1) {
+                                                            $countRating = $product->review->count();
+                                                        }
+                                                        $resRating = $sumRating/$countRating;
+                                                    @endphp 
+                                                    {{ $resRating }} 
+                                                    | Terjual 765</h5>
                                             </div>
                                         </a>
                                     @empty
@@ -163,14 +174,14 @@
                                                 <img class="mb-2 w-26 h-16 object-cover rounded-full" src="{{ asset('/storage/'.$store->photo) }}">
                                                 <div class="">
                                                     <h4 class="text-sm font-bold">{{ $store->name }}</h4>
-                                                    <h5 class="text-gray-500 text-xs">Kota Tangerang</h5>   
+                                                    <h5 class="text-gray-500 text-xs uppercase">{{ Str::limit($store->address, 10, '...') }}</h5>   
                                                 </div>
                                                 <div class="">
                                                     <a href="{{ route('store-show', $store->id) }}" class="font-bold text-blue-400 text-sm py-2 px-4 rounded-lg border-2 border-blue-400">Lihat Toko</a>
                                                 </div>
                                             </div>
-                                            <div class="flex space-x-2">
-                                                @foreach ($products as $product)
+                                            <div class="flex space-x-2 justify-between">
+                                                @foreach ($store->product->take(3) as $product)
                                                     <div class="text-center">
                                                         <img class="mx-auto w-20 h-20 object-cover rounded" src="{{ asset('/storage/'.$product->galleries->first()->photo) }}" alt="">
                                                         <p class="text-yellow-400 font-bold text-sm">Rp. {{ $product->price }}</p>

@@ -14,7 +14,7 @@ class FrontStoreController extends Controller
     public function show($id)
     {
         $stores = Store::FindOrFail($id);
-        $products = Product::where('store_id', $id)->get();
+        $products = Product::where('store_id', $id)->orderBy('id', 'desc')->get();
         // $users = User::select("*")
         //                 ->whereNotNull('last_seen')
         //                 ->orderBy('last_seen', 'DESC')

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,10 +14,7 @@ class CheckoutController extends Controller
         $data = $request->except('transaction_details');
         $data['code'] = 'TRX' . mt_rand(10000,  99999) . mt_rand(100, 999);
 
-        dd($data);
-
         Transaction::create($data);
-
         return back();
         // $transaction = Transaction::create($data);
 

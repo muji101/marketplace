@@ -46,9 +46,9 @@
                     <span class="bg-yellow-400 py-1 pl-1 pr-4 text-sm text-white rounded-r-full">#{{ $no++ }}</span>
                     <div class="px-2 leading-6 py-2">
                         <h4 class="text-sm">{{ $product->name }}</h4>
-                        <h3 class="font-bold ">Rp {{ $product->price }}</h3>
+                        <h3 class="font-bold py-1">Rp {{ number_format($product->price) }}</h3>
                         <h5 class="text-gray-500 text-xs">{{ $product->store->address }}</h5>
-                        <h5 class=" text-gray-600 text-xs"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                        <h5 class=" text-gray-600 text-xs mt-1"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
                     </div>
                 </a>
             @empty

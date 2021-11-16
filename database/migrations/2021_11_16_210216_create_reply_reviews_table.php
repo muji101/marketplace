@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateChatsTable extends Migration
+class CreateReplyReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateChatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('chats', function (Blueprint $table) {
+        Schema::create('reply_reviews', function (Blueprint $table) {
             $table->id();
-            
-            $table->foreignId('masterchat_id'); 
-            $table->foreignId('user_id'); 
-            $table->foreignId('product_id'); 
-            $table->text('message'); 
-            $table->boolean('read'); 
-            
+            $table->text('reply');
+            $table->foreignId('review_id');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateChatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chats');
+        Schema::dropIfExists('reply_reviews');
     }
 }

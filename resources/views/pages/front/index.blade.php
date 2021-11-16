@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Tokobilu | Home')
 @section('content')
     <div class="mx-32 p-4">
         <div class="splide">
@@ -52,7 +52,18 @@
                     <h4 class="text-sm">{{ Str::limit($product->name, 44, '...') }}</h4>
                     <h3 class="font-bold py-1">Rp {{ number_format($product->price) }}</h3>
                     <h5 class="text-gray-500 text-xs">{{ $product->store->address }}</h5>
-                    <h5 class=" text-gray-600 text-xs pt-2"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                    <h5 class=" text-gray-600 text-xs pt-2">
+                        <i class="text-yellow-400 fas fa-star"></i> 
+                        {{-- rating peritem --}}
+                        @php
+                            $sumRating = $product->review->sum('rating');
+                            if ($product->review->count() >= 1) {
+                                $countRating = $product->review->count();
+                            }
+                            $resRating = $sumRating/$countRating;
+                        @endphp 
+                        {{ $resRating }}
+                        | Terjual 765</h5>
                 </div>
             </a>
             @endforeach
@@ -142,17 +153,28 @@
                 @endforeach
             </div>
             <div class="absolute rounded-lg left-80 bg-white flex space-x-4">
-                @foreach ($productoff as $item)
-                    <a href="{{ route('front.product-detail', $item->id) }}" class="shadow-lg rounded-lg text-left w-52">
+                @foreach ($productoff as $productOfficial)
+                    <a href="{{ route('front.product-detail', $productOfficial->id) }}" class="shadow-lg rounded-lg text-left w-52">
                         <div class="">
-                            <img class="w-full h-48 object-cover rounded-t-lg" src="{{ asset('/storage/'.$item->galleries->first()->photo) }}">
+                            <img class="w-full h-48 object-cover rounded-t-lg" src="{{ asset('/storage/'.$productOfficial->galleries->first()->photo) }}">
                         </div>
                         <span class="bg-purple-400 py-1 px-2 text-sm text-white rounded-b-lg">official</span>
                         <div class="px-2 leading-6 py-2">
-                            <h4 class="text-sm">{{ Str::limit($item->name, 44, '...') }}</h4>
-                            <h3 class="font-bold py-1">Rp {{ number_format($item->price) }}</h3>
-                            <h5 class="text-gray-500 text-xs"><i class="text-blue-400 fas fa-check"></i> Kota {{ $item->store->address }}</h5>
-                            <h5 class=" text-gray-600 text-xs pt-2"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                            <h4 class="text-sm">{{ Str::limit($productOfficial->name, 44, '...') }}</h4>
+                            <h3 class="font-bold py-1">Rp {{ number_format($productOfficial->price) }}</h3>
+                            <h5 class="text-gray-500 text-xs"><i class="text-blue-400 fas fa-check"></i> Kota {{ $productOfficial->store->address }}</h5>
+                            <h5 class=" text-gray-600 text-xs pt-2">
+                                <i class="text-yellow-400 fas fa-star"></i> 
+                                {{-- rating perproductOfficial --}}
+                                @php
+                                    $sumRating = $productOfficial->review->sum('rating');
+                                    if ($productOfficial->review->count() >= 1) {
+                                        $countRating = $productOfficial->review->count();
+                                    }
+                                    $resRating = $sumRating/$countRating;
+                                @endphp 
+                                {{ $resRating }} 
+                                | Terjual 765</h5>
                         </div>
                     </a>
                 @endforeach
@@ -200,7 +222,18 @@
                                 <h4 class="text-sm">{{ Str::limit($product->name, 44, '...') }}</h4>
                                 <h3 class="font-bold py-1">Rp {{ number_format($product->price) }}</h3>
                                 <h5 class="text-gray-500 text-xs">{{ $product->store->address }}</h5>
-                                <h5 class=" text-gray-600 text-xs pt-2"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                                <h5 class=" text-gray-600 text-xs pt-2">
+                                    <i class="text-yellow-400 fas fa-star"></i> 
+                                    {{-- rating perproduct --}}
+                                    @php
+                                        $sumRating = $product->review->sum('rating');
+                                        if ($product->review->count() >= 1) {
+                                            $countRating = $product->review->count();
+                                        }
+                                        $resRating = $sumRating/$countRating;
+                                    @endphp 
+                                    {{ $resRating }} 
+                                    | Terjual 765</h5>
                             </div>
                         </a>
                         @endforeach
@@ -218,7 +251,18 @@
                                 <h4 class="text-sm">{{ Str::limit($product->name, 44, '...') }}</h4>
                                 <h3 class="font-bold py-1">Rp {{ number_format($product->price) }}</h3>
                                 <h5 class="text-gray-500 text-xs">{{ $product->store->address }}</h5>
-                                <h5 class=" text-gray-600 text-xs pt-2"><i class="text-yellow-400 fas fa-star"></i> 4,8 | Terjual 765</h5>
+                                <h5 class=" text-gray-600 text-xs pt-2">
+                                    <i class="text-yellow-400 fas fa-star"></i> 
+                                    {{-- rating perproduct --}}
+                                    @php
+                                        $sumRating = $product->review->sum('rating');
+                                        if ($product->review->count() >= 1) {
+                                            $countRating = $product->review->count();
+                                        }
+                                        $resRating = $sumRating/$countRating;
+                                    @endphp 
+                                    {{ $resRating }} 
+                                    | Terjual 765</h5>
                             </div>
                         </a>
                         @endforeach

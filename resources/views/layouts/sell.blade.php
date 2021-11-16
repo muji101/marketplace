@@ -22,10 +22,10 @@
             @include("includes.seller.navbar")
             
             <div class="grid grid-cols-6">
-                <div class="col-span-1 p-1 h-screen overflow-y-auto">
+                <div class="col-span-1 py-1 pl-8 h-screen overflow-y-auto">
                     @include('includes.seller.sidebar')
                 </div>
-                <div class="col-span-5 bg-gray-100">
+                <div class="col-span-5 bg-gray-100 px-4 pb-6">
                     @yield('content')
                 </div>
             </div>

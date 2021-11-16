@@ -1,31 +1,31 @@
 <div class="w-full p-2">
     <a href="{{ route('store-show', Auth::user()->store->id) }}" class="flex items-center font-bold space-x-2 border-b-2 py-4">
-        <img class="w-12 rounded-full shadow-lg" src="{{ asset('/storage/'.Auth::user()->store->photo) }}" alt="">
+        <img class="w-12 h-12 object-cover rounded-full shadow-lg" src="{{ asset('/storage/'.Auth::user()->store->photo) }}" alt="">
         <span class="pl-1">{{ Auth::user()->store->name }}</span>
     </a>
     <ul class="flex flex-col">
-        <li class="mt-3 text-blue-400 border-l-4 border-blue-400">
+        <li class="mt-3 {{ (request()->is('seller')) ? 'text-blue-400 border-l-4 border-blue-400' : '' }}">
             <a href="/seller" class="block font-semibold p-2 cursor-pointer"><i class="fas fa-home"></i> Home</a>
         </li>
-        <li class="mt-3">
-            <a href="/seller/chats" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-comment-dots"></i> Chat</a>
+        <li class="mt-3 {{ (request()->is('seller/chat*')) ? 'text-blue-400 border-l-4 border-blue-400' : '' }}">
+            <a href="{{ route('seller.chat-index') }}" class="block font-semibold p-2 cursor-pointer"><i class="fas fa-comment-dots"></i> Chat</a>
+        </li>
+        <li class="mt-3 {{ (request()->is('seller/discussion*')) ? 'text-blue-400 border-l-4 border-blue-400' : '' }}">
+            <a href="{{ route('seller.discussion-index') }}" class="block font-semibold p-2 cursor-pointer"><i class="fas fa-comments"></i> Diskusi</a>
         </li>
         <li class="mt-3">
-            <a href="{{ route('seller.discussion-index') }}" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-comments"></i> Diskusi</a>
+            <a href="/seller/sales" class="block font-semibold p-2 cursor-pointer"><i class="fas fa-balance-scale-right"></i> Penjualan</a>
         </li>
-        <li class="mt-3">
-            <a href="/seller/sales" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-balance-scale-right"></i> Penjualan</a>
+        <li class="mt-3 {{ (request()->is('seller/reviews*')) ? 'text-blue-400 border-l-4 border-blue-400' : '' }}">
+            <a href="{{ route('seller.review-index') }}" class="block font-semibold p-2 cursor-pointer"><i class="fas fa-blog"></i> Kata Pembeli</a>
         </li>
-        <li class="mt-3">
-            <a href="/seller/reviews" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-blog"></i> Kata Pembeli</a>
+        <li class="mt-3 {{ (request()->is('seller/setting*')) ? 'text-blue-400 border-l-4 border-blue-400' : '' }}">
+            <a href="{{ route('seller.setting') }}" class="block font-semibold p-2 cursor-pointer"><i class="fas fa-cog"></i> Pengaturan Toko</a>
         </li>
-        <li class="mt-3">
-            <a href="{{ route('seller.setting') }}" class="block text-gray-700 hover:text-gray-900 font-semibold p-2 cursor-pointer"><i class="fas fa-cog"></i> Pengaturan Toko</a>
-        </li>
-        <li class="bg-white block text-gray-700 hover:text-gray-900 mt-3" x-data="accordion(1)">
+        <li class="{{ (request()->is('seller/products*')) ? 'text-blue-400 border-l-4 border-blue-400' : '' }} mt-3" x-data="accordion(1)">
             <h2
             @click="handleClick()"
-            class="flex flex-row justify-between items-center font-semibold px-3 cursor-pointer"
+            class="flex flex-row justify-between items-center font-semibold px-2 cursor-pointer"
             >
             <span><i class="fas fa-archive"></i>  Produk</span>
             <svg
@@ -39,7 +39,7 @@
             <div
             x-ref="tab"
             :style="handleToggle()"
-            class="border-l-4 border-blue-400 overflow-hidden max-h-0 duration-500 transition-all"
+            class="overflow-hidden max-h-0 duration-500 transition-all"
             >
                 <ul class="pt-2">
                     <li>
@@ -48,10 +48,10 @@
                             @method('POST')
                             <button>buat</button>
                         </form> --}}
-                        <a href="{{ route('seller.product-create') }}" class="block pl-6 font-bold text-gray-500 hover:text-gray-700">Tambah produk</a>
+                        <a href="{{ route('seller.product-create') }}" class="block pl-4 ml-2 font-bold text-gray-500 hover:text-gray-700 border-l-4 border-blue-400">Tambah produk</a>
                     </li>
                     <li>
-                        <a href="{{ route('seller.product-index') }}" class="block pl-6 font-bold text-gray-500 hover:text-gray-700">Daftar produk</a>
+                        <a href="{{ route('seller.product-index') }}" class="block pl-4 ml-2 font-bold text-gray-500 hover:text-gray-700 border-l-4 border-blue-400 mt-2">Daftar produk</a>
                     </li>
                 </ul>
             </div>
